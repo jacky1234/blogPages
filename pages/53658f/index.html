@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>mysql case | Jacky&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="勤学如春起之苗, 不见其增, 日有所长；辍学如磨刀之石, 不见其损, 日有所亏。">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/blogPages/assets/css/0.styles.83b5fbe5.css" as="style"><link rel="preload" href="/blogPages/assets/js/app.7e06e929.js" as="script"><link rel="preload" href="/blogPages/assets/js/2.ce95ee6e.js" as="script"><link rel="preload" href="/blogPages/assets/js/233.322e6a38.js" as="script"><link rel="prefetch" href="/blogPages/assets/js/10.effd2b33.js"><link rel="prefetch" href="/blogPages/assets/js/100.856fcc53.js"><link rel="prefetch" href="/blogPages/assets/js/101.2fe04807.js"><link rel="prefetch" href="/blogPages/assets/js/102.a570fe0b.js"><link rel="prefetch" href="/blogPages/assets/js/103.00546020.js"><link rel="prefetch" href="/blogPages/assets/js/104.d78b38da.js"><link rel="prefetch" href="/blogPages/assets/js/105.8feb4296.js"><link rel="prefetch" href="/blogPages/assets/js/106.e16f62e7.js"><link rel="prefetch" href="/blogPages/assets/js/107.1750545e.js"><link rel="prefetch" href="/blogPages/assets/js/108.cb3ca371.js"><link rel="prefetch" href="/blogPages/assets/js/109.e6ef1c19.js"><link rel="prefetch" href="/blogPages/assets/js/11.713c286e.js"><link rel="prefetch" href="/blogPages/assets/js/110.38b88640.js"><link rel="prefetch" href="/blogPages/assets/js/111.546521ea.js"><link rel="prefetch" href="/blogPages/assets/js/112.6b0ef40e.js"><link rel="prefetch" href="/blogPages/assets/js/113.8b689694.js"><link rel="prefetch" href="/blogPages/assets/js/114.efb0d75d.js"><link rel="prefetch" href="/blogPages/assets/js/115.b3450440.js"><link rel="prefetch" href="/blogPages/assets/js/116.59a8a82a.js"><link rel="prefetch" href="/blogPages/assets/js/117.a9e3d4c3.js"><link rel="prefetch" href="/blogPages/assets/js/118.1958ce33.js"><link rel="prefetch" href="/blogPages/assets/js/119.405c1672.js"><link rel="prefetch" href="/blogPages/assets/js/12.2815f35b.js"><link rel="prefetch" href="/blogPages/assets/js/120.e2740dd1.js"><link rel="prefetch" href="/blogPages/assets/js/121.0aa78c4e.js"><link rel="prefetch" href="/blogPages/assets/js/122.7fe22975.js"><link rel="prefetch" href="/blogPages/assets/js/123.7e9ba265.js"><link rel="prefetch" href="/blogPages/assets/js/124.de810087.js"><link rel="prefetch" href="/blogPages/assets/js/125.de7aba6e.js"><link rel="prefetch" href="/blogPages/assets/js/126.b8d307f4.js"><link rel="prefetch" href="/blogPages/assets/js/127.b944c6bd.js"><link rel="prefetch" href="/blogPages/assets/js/128.d9fbd218.js"><link rel="prefetch" href="/blogPages/assets/js/129.9f32686a.js"><link rel="prefetch" href="/blogPages/assets/js/13.d27b9fe5.js"><link rel="prefetch" href="/blogPages/assets/js/130.4234001e.js"><link rel="prefetch" href="/blogPages/assets/js/131.5fbc5fd4.js"><link rel="prefetch" href="/blogPages/assets/js/132.6e85e726.js"><link rel="prefetch" href="/blogPages/assets/js/133.1b9b2012.js"><link rel="prefetch" href="/blogPages/assets/js/134.ddd33937.js"><link rel="prefetch" href="/blogPages/assets/js/135.cb7a50a2.js"><link rel="prefetch" href="/blogPages/assets/js/136.db91a988.js"><link rel="prefetch" href="/blogPages/assets/js/137.f31a522d.js"><link rel="prefetch" href="/blogPages/assets/js/138.367e06be.js"><link rel="prefetch" href="/blogPages/assets/js/139.769ea4af.js"><link rel="prefetch" href="/blogPages/assets/js/14.fdde4a68.js"><link rel="prefetch" href="/blogPages/assets/js/140.2ee3edb4.js"><link rel="prefetch" href="/blogPages/assets/js/141.1244633c.js"><link rel="prefetch" href="/blogPages/assets/js/142.66c748b7.js"><link rel="prefetch" href="/blogPages/assets/js/143.24875298.js"><link rel="prefetch" href="/blogPages/assets/js/144.9812ea81.js"><link rel="prefetch" href="/blogPages/assets/js/145.acd0069a.js"><link rel="prefetch" href="/blogPages/assets/js/146.39ce1178.js"><link rel="prefetch" href="/blogPages/assets/js/147.8272cac5.js"><link rel="prefetch" href="/blogPages/assets/js/148.b96b2996.js"><link rel="prefetch" href="/blogPages/assets/js/149.d150cff8.js"><link rel="prefetch" href="/blogPages/assets/js/15.222f035d.js"><link rel="prefetch" href="/blogPages/assets/js/150.50288e9f.js"><link rel="prefetch" href="/blogPages/assets/js/151.0eb10e98.js"><link rel="prefetch" href="/blogPages/assets/js/152.b01dd6dc.js"><link rel="prefetch" href="/blogPages/assets/js/153.5bbdea0d.js"><link rel="prefetch" href="/blogPages/assets/js/154.c2893844.js"><link rel="prefetch" href="/blogPages/assets/js/155.b4853cfe.js"><link rel="prefetch" href="/blogPages/assets/js/156.3a320751.js"><link rel="prefetch" href="/blogPages/assets/js/157.2a6c017a.js"><link rel="prefetch" href="/blogPages/assets/js/158.a526bc4b.js"><link rel="prefetch" href="/blogPages/assets/js/159.0fa12b9e.js"><link rel="prefetch" href="/blogPages/assets/js/16.32123a80.js"><link rel="prefetch" href="/blogPages/assets/js/160.794a2fab.js"><link rel="prefetch" href="/blogPages/assets/js/161.37ca7986.js"><link rel="prefetch" href="/blogPages/assets/js/162.f326722e.js"><link rel="prefetch" href="/blogPages/assets/js/163.713a7700.js"><link rel="prefetch" href="/blogPages/assets/js/164.bf9a07e3.js"><link rel="prefetch" href="/blogPages/assets/js/165.7daed5e5.js"><link rel="prefetch" href="/blogPages/assets/js/166.d60901fe.js"><link rel="prefetch" href="/blogPages/assets/js/167.1db96ae6.js"><link rel="prefetch" href="/blogPages/assets/js/168.06a6de79.js"><link rel="prefetch" href="/blogPages/assets/js/169.b28e42a7.js"><link rel="prefetch" href="/blogPages/assets/js/17.80f38037.js"><link rel="prefetch" href="/blogPages/assets/js/170.5e2b19ac.js"><link rel="prefetch" href="/blogPages/assets/js/171.90db8586.js"><link rel="prefetch" href="/blogPages/assets/js/172.cc24f14b.js"><link rel="prefetch" href="/blogPages/assets/js/173.fe9a6f35.js"><link rel="prefetch" href="/blogPages/assets/js/174.374b8ab4.js"><link rel="prefetch" href="/blogPages/assets/js/175.096a945e.js"><link rel="prefetch" href="/blogPages/assets/js/176.284db50d.js"><link rel="prefetch" href="/blogPages/assets/js/177.6e9e60bf.js"><link rel="prefetch" href="/blogPages/assets/js/178.48bedc23.js"><link rel="prefetch" href="/blogPages/assets/js/179.c2841c5f.js"><link rel="prefetch" href="/blogPages/assets/js/18.a934f28e.js"><link rel="prefetch" href="/blogPages/assets/js/180.832ec21f.js"><link rel="prefetch" href="/blogPages/assets/js/181.edf08aa8.js"><link rel="prefetch" href="/blogPages/assets/js/182.24f1be2e.js"><link rel="prefetch" href="/blogPages/assets/js/183.52a67e98.js"><link rel="prefetch" href="/blogPages/assets/js/184.c5b66db2.js"><link rel="prefetch" href="/blogPages/assets/js/185.1530ae0c.js"><link rel="prefetch" href="/blogPages/assets/js/186.fff99cfa.js"><link rel="prefetch" href="/blogPages/assets/js/187.33cf6355.js"><link rel="prefetch" href="/blogPages/assets/js/188.2bee451f.js"><link rel="prefetch" href="/blogPages/assets/js/189.9ad6c9bc.js"><link rel="prefetch" href="/blogPages/assets/js/19.afa8e383.js"><link rel="prefetch" href="/blogPages/assets/js/190.e09ec135.js"><link rel="prefetch" href="/blogPages/assets/js/191.e442adbb.js"><link rel="prefetch" href="/blogPages/assets/js/192.1d52114b.js"><link rel="prefetch" href="/blogPages/assets/js/193.dd17e4c6.js"><link rel="prefetch" href="/blogPages/assets/js/194.807a9f9b.js"><link rel="prefetch" href="/blogPages/assets/js/195.714e39d4.js"><link rel="prefetch" href="/blogPages/assets/js/196.dec82a34.js"><link rel="prefetch" href="/blogPages/assets/js/197.2ae1eb8f.js"><link rel="prefetch" href="/blogPages/assets/js/198.a118e965.js"><link rel="prefetch" href="/blogPages/assets/js/199.b9ee0287.js"><link rel="prefetch" href="/blogPages/assets/js/20.6d521f87.js"><link rel="prefetch" href="/blogPages/assets/js/200.43ba144f.js"><link rel="prefetch" href="/blogPages/assets/js/201.367b7a45.js"><link rel="prefetch" href="/blogPages/assets/js/202.38830093.js"><link rel="prefetch" href="/blogPages/assets/js/203.a2f798c8.js"><link rel="prefetch" href="/blogPages/assets/js/204.b6ea19da.js"><link rel="prefetch" href="/blogPages/assets/js/205.db88bf4e.js"><link rel="prefetch" href="/blogPages/assets/js/206.7e6160bd.js"><link rel="prefetch" href="/blogPages/assets/js/207.689001c6.js"><link rel="prefetch" href="/blogPages/assets/js/208.f95afd68.js"><link rel="prefetch" href="/blogPages/assets/js/209.52968bd5.js"><link rel="prefetch" href="/blogPages/assets/js/21.891edb5e.js"><link rel="prefetch" href="/blogPages/assets/js/210.81ce8c94.js"><link rel="prefetch" href="/blogPages/assets/js/211.10b3d3a1.js"><link rel="prefetch" href="/blogPages/assets/js/212.b59c8e05.js"><link rel="prefetch" href="/blogPages/assets/js/213.4f466de5.js"><link rel="prefetch" href="/blogPages/assets/js/214.79e0d90a.js"><link rel="prefetch" href="/blogPages/assets/js/215.be04d383.js"><link rel="prefetch" href="/blogPages/assets/js/216.30ed7240.js"><link rel="prefetch" href="/blogPages/assets/js/217.dc1e844c.js"><link rel="prefetch" href="/blogPages/assets/js/218.8b529da0.js"><link rel="prefetch" href="/blogPages/assets/js/219.bdfd22ce.js"><link rel="prefetch" href="/blogPages/assets/js/22.9cefb9ed.js"><link rel="prefetch" href="/blogPages/assets/js/220.cd2d6b20.js"><link rel="prefetch" href="/blogPages/assets/js/221.e378215e.js"><link rel="prefetch" href="/blogPages/assets/js/222.96f337e3.js"><link rel="prefetch" href="/blogPages/assets/js/223.10e37547.js"><link rel="prefetch" href="/blogPages/assets/js/224.6613fa26.js"><link rel="prefetch" href="/blogPages/assets/js/225.e8de9e4b.js"><link rel="prefetch" href="/blogPages/assets/js/226.52cf7a7e.js"><link rel="prefetch" href="/blogPages/assets/js/227.6e1150c5.js"><link rel="prefetch" href="/blogPages/assets/js/228.59195d3c.js"><link rel="prefetch" href="/blogPages/assets/js/229.7a8af49b.js"><link rel="prefetch" href="/blogPages/assets/js/23.3e7db05d.js"><link rel="prefetch" href="/blogPages/assets/js/230.b59e7082.js"><link rel="prefetch" href="/blogPages/assets/js/231.c7b11961.js"><link rel="prefetch" href="/blogPages/assets/js/232.4d615f62.js"><link rel="prefetch" href="/blogPages/assets/js/234.f726741a.js"><link rel="prefetch" href="/blogPages/assets/js/235.2d2fc6b7.js"><link rel="prefetch" href="/blogPages/assets/js/236.b0765fb6.js"><link rel="prefetch" href="/blogPages/assets/js/237.b522514f.js"><link rel="prefetch" href="/blogPages/assets/js/238.b0a10949.js"><link rel="prefetch" href="/blogPages/assets/js/239.e05cd6f7.js"><link rel="prefetch" href="/blogPages/assets/js/24.09089cf2.js"><link rel="prefetch" href="/blogPages/assets/js/240.8017efae.js"><link rel="prefetch" href="/blogPages/assets/js/241.a647dc00.js"><link rel="prefetch" href="/blogPages/assets/js/242.a39755a2.js"><link rel="prefetch" href="/blogPages/assets/js/243.f22cc879.js"><link rel="prefetch" href="/blogPages/assets/js/244.0251a355.js"><link rel="prefetch" href="/blogPages/assets/js/245.030f97d6.js"><link rel="prefetch" href="/blogPages/assets/js/246.eb65f86c.js"><link rel="prefetch" href="/blogPages/assets/js/247.83f1228a.js"><link rel="prefetch" href="/blogPages/assets/js/248.8baf02b9.js"><link rel="prefetch" href="/blogPages/assets/js/249.c12ad9dd.js"><link rel="prefetch" href="/blogPages/assets/js/25.1dcde82e.js"><link rel="prefetch" href="/blogPages/assets/js/250.1e367ae0.js"><link rel="prefetch" href="/blogPages/assets/js/251.cd3b8b6c.js"><link rel="prefetch" href="/blogPages/assets/js/252.c1d9e95b.js"><link rel="prefetch" href="/blogPages/assets/js/253.0f3b2b2b.js"><link rel="prefetch" href="/blogPages/assets/js/254.1300bf58.js"><link rel="prefetch" href="/blogPages/assets/js/255.e71e8fd1.js"><link rel="prefetch" href="/blogPages/assets/js/256.a781b878.js"><link rel="prefetch" href="/blogPages/assets/js/257.6047bce5.js"><link rel="prefetch" href="/blogPages/assets/js/258.2b75ca4f.js"><link rel="prefetch" href="/blogPages/assets/js/259.3dac3542.js"><link rel="prefetch" href="/blogPages/assets/js/26.442a5284.js"><link rel="prefetch" href="/blogPages/assets/js/260.4f015c64.js"><link rel="prefetch" href="/blogPages/assets/js/261.bbd6a104.js"><link rel="prefetch" href="/blogPages/assets/js/262.543e9a41.js"><link rel="prefetch" href="/blogPages/assets/js/263.45578d1f.js"><link rel="prefetch" href="/blogPages/assets/js/264.961c7815.js"><link rel="prefetch" href="/blogPages/assets/js/265.393c48e3.js"><link rel="prefetch" href="/blogPages/assets/js/266.6a246b1d.js"><link rel="prefetch" href="/blogPages/assets/js/267.5ead7519.js"><link rel="prefetch" href="/blogPages/assets/js/268.ac8f322a.js"><link rel="prefetch" href="/blogPages/assets/js/269.2c7ceab6.js"><link rel="prefetch" href="/blogPages/assets/js/27.1a40b968.js"><link rel="prefetch" href="/blogPages/assets/js/270.0574c03d.js"><link rel="prefetch" href="/blogPages/assets/js/271.f1659e2f.js"><link rel="prefetch" href="/blogPages/assets/js/272.eb2050fc.js"><link rel="prefetch" href="/blogPages/assets/js/273.354a789a.js"><link rel="prefetch" href="/blogPages/assets/js/274.1228e133.js"><link rel="prefetch" href="/blogPages/assets/js/275.394c4ec9.js"><link rel="prefetch" href="/blogPages/assets/js/276.65895377.js"><link rel="prefetch" href="/blogPages/assets/js/277.7839383e.js"><link rel="prefetch" href="/blogPages/assets/js/28.865d52b2.js"><link rel="prefetch" href="/blogPages/assets/js/29.8acf9431.js"><link rel="prefetch" href="/blogPages/assets/js/3.42b83bd2.js"><link rel="prefetch" href="/blogPages/assets/js/30.94f1b647.js"><link rel="prefetch" href="/blogPages/assets/js/31.708ebdf9.js"><link rel="prefetch" href="/blogPages/assets/js/32.7f03de55.js"><link rel="prefetch" href="/blogPages/assets/js/33.4f017467.js"><link rel="prefetch" href="/blogPages/assets/js/34.f5c2f907.js"><link rel="prefetch" href="/blogPages/assets/js/35.aa001f48.js"><link rel="prefetch" href="/blogPages/assets/js/36.eb60c85a.js"><link rel="prefetch" href="/blogPages/assets/js/37.e31fbe86.js"><link rel="prefetch" href="/blogPages/assets/js/38.952a3c65.js"><link rel="prefetch" href="/blogPages/assets/js/39.fa701de3.js"><link rel="prefetch" href="/blogPages/assets/js/4.cad3a178.js"><link rel="prefetch" href="/blogPages/assets/js/40.f1146ac7.js"><link rel="prefetch" href="/blogPages/assets/js/41.b41b1524.js"><link rel="prefetch" href="/blogPages/assets/js/42.67e51ac3.js"><link rel="prefetch" href="/blogPages/assets/js/43.5b8ee8b1.js"><link rel="prefetch" href="/blogPages/assets/js/44.7a2933f9.js"><link rel="prefetch" href="/blogPages/assets/js/45.43eca009.js"><link rel="prefetch" href="/blogPages/assets/js/46.8b17b531.js"><link rel="prefetch" href="/blogPages/assets/js/47.51f3b902.js"><link rel="prefetch" href="/blogPages/assets/js/48.dcdcecdf.js"><link rel="prefetch" href="/blogPages/assets/js/49.7ebd93d4.js"><link rel="prefetch" href="/blogPages/assets/js/5.9b78ed29.js"><link rel="prefetch" href="/blogPages/assets/js/50.bc20668e.js"><link rel="prefetch" href="/blogPages/assets/js/51.f624689e.js"><link rel="prefetch" href="/blogPages/assets/js/52.32587c4c.js"><link rel="prefetch" href="/blogPages/assets/js/53.9597d1d9.js"><link rel="prefetch" href="/blogPages/assets/js/54.ebbd8840.js"><link rel="prefetch" href="/blogPages/assets/js/55.216003cc.js"><link rel="prefetch" href="/blogPages/assets/js/56.d8aa6c5c.js"><link rel="prefetch" href="/blogPages/assets/js/57.d6b75d95.js"><link rel="prefetch" href="/blogPages/assets/js/58.c26ae01e.js"><link rel="prefetch" href="/blogPages/assets/js/59.2e9430c6.js"><link rel="prefetch" href="/blogPages/assets/js/6.69b19f48.js"><link rel="prefetch" href="/blogPages/assets/js/60.d0b4f988.js"><link rel="prefetch" href="/blogPages/assets/js/61.56295b49.js"><link rel="prefetch" href="/blogPages/assets/js/62.a80cb665.js"><link rel="prefetch" href="/blogPages/assets/js/63.6fc0066e.js"><link rel="prefetch" href="/blogPages/assets/js/64.40c9dcdc.js"><link rel="prefetch" href="/blogPages/assets/js/65.ea35b2e8.js"><link rel="prefetch" href="/blogPages/assets/js/66.2b77f97d.js"><link rel="prefetch" href="/blogPages/assets/js/67.ce376cf5.js"><link rel="prefetch" href="/blogPages/assets/js/68.588eaf51.js"><link rel="prefetch" href="/blogPages/assets/js/69.bb1ef415.js"><link rel="prefetch" href="/blogPages/assets/js/7.0e22bc5e.js"><link rel="prefetch" href="/blogPages/assets/js/70.8fc3bef9.js"><link rel="prefetch" href="/blogPages/assets/js/71.e445ff46.js"><link rel="prefetch" href="/blogPages/assets/js/72.51a05da1.js"><link rel="prefetch" href="/blogPages/assets/js/73.3e9b6a2b.js"><link rel="prefetch" href="/blogPages/assets/js/74.3719d2db.js"><link rel="prefetch" href="/blogPages/assets/js/75.74255ca6.js"><link rel="prefetch" href="/blogPages/assets/js/76.1b43e06f.js"><link rel="prefetch" href="/blogPages/assets/js/77.1fd95d8f.js"><link rel="prefetch" href="/blogPages/assets/js/78.7c73f45b.js"><link rel="prefetch" href="/blogPages/assets/js/79.a31c58be.js"><link rel="prefetch" href="/blogPages/assets/js/8.5fb41da7.js"><link rel="prefetch" href="/blogPages/assets/js/80.92e6bf0a.js"><link rel="prefetch" href="/blogPages/assets/js/81.84f5f558.js"><link rel="prefetch" href="/blogPages/assets/js/82.4ad9f313.js"><link rel="prefetch" href="/blogPages/assets/js/83.d767f201.js"><link rel="prefetch" href="/blogPages/assets/js/84.f85a0682.js"><link rel="prefetch" href="/blogPages/assets/js/85.d23f3225.js"><link rel="prefetch" href="/blogPages/assets/js/86.d30659c0.js"><link rel="prefetch" href="/blogPages/assets/js/87.060b5818.js"><link rel="prefetch" href="/blogPages/assets/js/88.391b0507.js"><link rel="prefetch" href="/blogPages/assets/js/89.f5f35918.js"><link rel="prefetch" href="/blogPages/assets/js/9.a45a02f8.js"><link rel="prefetch" href="/blogPages/assets/js/90.f6afb3ec.js"><link rel="prefetch" href="/blogPages/assets/js/91.9028eb49.js"><link rel="prefetch" href="/blogPages/assets/js/92.4607a108.js"><link rel="prefetch" href="/blogPages/assets/js/93.780c6d79.js"><link rel="prefetch" href="/blogPages/assets/js/94.11ed27dd.js"><link rel="prefetch" href="/blogPages/assets/js/95.dc3ecec1.js"><link rel="prefetch" href="/blogPages/assets/js/96.440f5259.js"><link rel="prefetch" href="/blogPages/assets/js/97.e43387fc.js"><link rel="prefetch" href="/blogPages/assets/js/98.ae9203a0.js"><link rel="prefetch" href="/blogPages/assets/js/99.853784cd.js">
+    <link rel="stylesheet" href="/blogPages/assets/css/0.styles.83b5fbe5.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogPages/" class="home-link router-link-active"><!----> <span class="site-name">Jacky's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogPages/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><a href="/blogPages/fe/" class="link-title">前端</a> <span class="title" style="display:none;">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blogPages/web/" class="nav-link">web</a></li><li class="dropdown-subitem"><a href="/blogPages/android/" class="nav-link">android</a></li><li class="dropdown-subitem"><a href="/blogPages/iOS/" class="nav-link">iOS</a></li><li class="dropdown-subitem"><a href="/blogPages/vue/" class="nav-link">vue</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/blogPages/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogPages/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/blogPages/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/blogPages/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="/blogPages/pages/5a96b7/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><a href="/blogPages/other/" class="link-title">其他</a> <span class="title" style="display:none;">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogPages/tool/" class="nav-link">tool</a></li><li class="dropdown-item"><!----> <a href="/blogPages/algo/" class="nav-link">algo</a></li><li class="dropdown-item"><!----> <a href="/blogPages/python/" class="nav-link">python</a></li><li class="dropdown-item"><!----> <a href="/blogPages/java/" class="nav-link">java</a></li><li class="dropdown-item"><!----> <a href="/blogPages/server/" class="nav-link">server</a></li><li class="dropdown-item"><!----> <a href="/blogPages/growth/" class="nav-link">growth</a></li><li class="dropdown-item"><!----> <a href="/blogPages/pages/0fe5d6/" class="nav-link">frida</a></li><li class="dropdown-item"><!----> <a href="/blogPages/blog/" class="nav-link">blog</a></li><li class="dropdown-item"><!----> <a href="/blogPages/sp/" class="nav-link">SP</a></li><li class="dropdown-item"><!----> <a href="/blogPages/more/" class="nav-link">more</a></li></ul></div></div> <a href="https://github.com/jacky1234" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://raw.githubusercontent.com/jacky1234/picArchieve/master/uPic/dUmDI0.jpg"> <div class="blogger-info"><h3>Jack Yang</h3> <span>编程; 随笔</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/blogPages/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><a href="/blogPages/fe/" class="link-title">前端</a> <span class="title" style="display:none;">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blogPages/web/" class="nav-link">web</a></li><li class="dropdown-subitem"><a href="/blogPages/android/" class="nav-link">android</a></li><li class="dropdown-subitem"><a href="/blogPages/iOS/" class="nav-link">iOS</a></li><li class="dropdown-subitem"><a href="/blogPages/vue/" class="nav-link">vue</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/blogPages/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogPages/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/blogPages/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/blogPages/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="/blogPages/pages/5a96b7/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><a href="/blogPages/other/" class="link-title">其他</a> <span class="title" style="display:none;">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogPages/tool/" class="nav-link">tool</a></li><li class="dropdown-item"><!----> <a href="/blogPages/algo/" class="nav-link">algo</a></li><li class="dropdown-item"><!----> <a href="/blogPages/python/" class="nav-link">python</a></li><li class="dropdown-item"><!----> <a href="/blogPages/java/" class="nav-link">java</a></li><li class="dropdown-item"><!----> <a href="/blogPages/server/" class="nav-link">server</a></li><li class="dropdown-item"><!----> <a href="/blogPages/growth/" class="nav-link">growth</a></li><li class="dropdown-item"><!----> <a href="/blogPages/pages/0fe5d6/" class="nav-link">frida</a></li><li class="dropdown-item"><!----> <a href="/blogPages/blog/" class="nav-link">blog</a></li><li class="dropdown-item"><!----> <a href="/blogPages/sp/" class="nav-link">SP</a></li><li class="dropdown-item"><!----> <a href="/blogPages/more/" class="nav-link">more</a></li></ul></div></div> <a href="https://github.com/jacky1234" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/blogPages/pages/0d7cc1/" class="sidebar-link">服务器tutorial</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>spring</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>数据库</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogPages/pages/233ea5/" class="sidebar-link">database</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>mysql</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogPages/pages/e9db87/" class="sidebar-link">mysql base</a></li><li><a href="/blogPages/pages/273346/" class="sidebar-link">mysql command</a></li><li><a href="/blogPages/pages/53658f/" aria-current="page" class="active sidebar-link">mysql case</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/blogPages/pages/53658f/#查询练习" class="sidebar-link">查询练习</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#准备数据" class="sidebar-link">准备数据</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#_1-到-10" class="sidebar-link">1 到 10</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#分组计算平均成绩" class="sidebar-link">分组计算平均成绩</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#分组条件与模糊查询" class="sidebar-link">分组条件与模糊查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#多表查询-1" class="sidebar-link">多表查询-1</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#多表查询-2" class="sidebar-link">多表查询-2</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#三表关联查询" class="sidebar-link">三表关联查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#子查询加分组求平均分" class="sidebar-link">子查询加分组求平均分</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#子查询-1" class="sidebar-link">子查询 - 1</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#子查询-2" class="sidebar-link">子查询 - 2</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#year-函数与带-in-关键字查询" class="sidebar-link">YEAR 函数与带 IN 关键字查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#多层嵌套子查询" class="sidebar-link">多层嵌套子查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#多表查询" class="sidebar-link">多表查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#子查询-3" class="sidebar-link">子查询 - 3</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#union-和-not-in-的使用" class="sidebar-link">UNION 和 NOT IN 的使用</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#any-表示至少一个" class="sidebar-link">ANY 表示至少一个</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#表示所有的-all" class="sidebar-link">表示所有的 ALL</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#复制表的数据作为条件查询" class="sidebar-link">复制表的数据作为条件查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#子查询" class="sidebar-link">子查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#条件加组筛选" class="sidebar-link">条件加组筛选</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#not-like-模糊查询取反" class="sidebar-link">NOT LIKE 模糊查询取反</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#year-与-now-函数" class="sidebar-link">YEAR 与 NOW 函数</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#max-与-min-函数" class="sidebar-link">MAX 与 MIN 函数</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#多段排序" class="sidebar-link">多段排序</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#子查询-4" class="sidebar-link">子查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#max-函数与子查询" class="sidebar-link">MAX 函数与子查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#子查询-6" class="sidebar-link">子查询 - 6</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#子查询-5" class="sidebar-link">子查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#子查询-7" class="sidebar-link">子查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#按等级查询" class="sidebar-link">按等级查询</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#连接查询" class="sidebar-link">连接查询</a></li><li class="sidebar-sub-header level4"><a href="/blogPages/pages/53658f/#内连接" class="sidebar-link">内连接</a></li><li class="sidebar-sub-header level4"><a href="/blogPages/pages/53658f/#左外连接" class="sidebar-link">左外连接</a></li><li class="sidebar-sub-header level4"><a href="/blogPages/pages/53658f/#右外链接" class="sidebar-link">右外链接</a></li><li class="sidebar-sub-header level4"><a href="/blogPages/pages/53658f/#全外链接" class="sidebar-link">全外链接</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/blogPages/pages/53658f/#事务" class="sidebar-link">事务</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#如何控制事务-commit-rollback" class="sidebar-link">如何控制事务 - COMMIT / ROLLBACK</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#手动开启事务-begin-start-transaction" class="sidebar-link">手动开启事务 - BEGIN / START TRANSACTION</a></li><li class="sidebar-sub-header level3"><a href="/blogPages/pages/53658f/#事务的-acid-特征与使用" class="sidebar-link">事务的 ACID 特征与使用</a></li><li class="sidebar-sub-header level4"><a href="/blogPages/pages/53658f/#事务的隔离性" class="sidebar-link">事务的隔离性</a></li><li class="sidebar-sub-header level4"><a href="/blogPages/pages/53658f/#脏读" class="sidebar-link">脏读</a></li><li class="sidebar-sub-header level4"><a href="/blogPages/pages/53658f/#读取已提交" class="sidebar-link">读取已提交</a></li><li class="sidebar-sub-header level4"><a href="/blogPages/pages/53658f/#幻读" class="sidebar-link">幻读</a></li><li class="sidebar-sub-header level4"><a href="/blogPages/pages/53658f/#串行化" class="sidebar-link">串行化</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/blogPages/pages/53658f/#删除数据库内数据-保留表结构" class="sidebar-link">删除数据库内数据，保留表结构</a></li></ul></li><li><a href="/blogPages/pages/5659c4/" class="sidebar-link">mysql faq</a></li></ul></section></li><li><a href="/blogPages/pages/4f9d0c/" class="sidebar-link">sqlite</a></li><li><a href="/blogPages/pages/50da41/" class="sidebar-link">PostgreSQL</a></li><li><a href="/blogPages/pages/ae741c/" class="sidebar-link">redis</a></li><li><a href="/blogPages/pages/d94596/" class="sidebar-link">mysql2pgsql</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>运维</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>other</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/blogPages/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/blogPages/categories/?category=%E3%80%8Aserver%E3%80%8B" title="分类" data-v-06225672>《server》</a></li><li data-v-06225672><a href="/blogPages/categories/?category=%E6%95%B0%E6%8D%AE%E5%BA%93" title="分类" data-v-06225672>数据库</a></li><li data-v-06225672><a href="/blogPages/categories/?category=mysql" title="分类" data-v-06225672>mysql</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/jacky1234" target="_blank" title="作者" class="beLink" data-v-06225672>Jacky</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2023-10-27</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">mysql case<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="查询练习"><a href="#查询练习" class="header-anchor">#</a> 查询练习</h2> <h3 id="准备数据"><a href="#准备数据" class="header-anchor">#</a> 准备数据</h3> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 创建数据库
+CREATE DATABASE select_test;
+-- 切换数据库
+USE select_test;
+
+-- 创建学生表
+CREATE TABLE student (
+    no VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    sex VARCHAR(10) NOT NULL,
+    birthday DATE, -- 生日
+    class VARCHAR(20) -- 所在班级
+);
+
+-- 创建教师表
+CREATE TABLE teacher (
+    no VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    sex VARCHAR(10) NOT NULL,
+    birthday DATE,
+    profession VARCHAR(20) NOT NULL, -- 职称
+    department VARCHAR(20) NOT NULL -- 部门
+);
+
+-- 创建课程表
+CREATE TABLE course (
+    no VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    t_no VARCHAR(20) NOT NULL, -- 教师编号
+    -- 表示该 tno 来自于 teacher 表中的 no 字段值
+    FOREIGN KEY(t_no) REFERENCES teacher(no)
+);
+
+-- 成绩表
+CREATE TABLE score (
+    s_no VARCHAR(20) NOT NULL, -- 学生编号
+    c_no VARCHAR(20) NOT NULL, -- 课程号
+    degree DECIMAL, -- 成绩
+    -- 表示该 s_no, c_no 分别来自于 student, course 表中的 no 字段值
+    FOREIGN KEY(s_no) REFERENCES student(no),
+    FOREIGN KEY(c_no) REFERENCES course(no),
+    -- 设置 s_no, c_no 为联合主键
+    PRIMARY KEY(s_no, c_no)
+);
+
+-- 查看所有表
+SHOW TABLES;
+
+-- 添加学生表数据
+INSERT INTO student VALUES('101', '曾华', '男', '1977-09-01', '95033');
+INSERT INTO student VALUES('102', '匡明', '男', '1975-10-02', '95031');
+INSERT INTO student VALUES('103', '王丽', '女', '1976-01-23', '95033');
+INSERT INTO student VALUES('104', '李军', '男', '1976-02-20', '95033');
+INSERT INTO student VALUES('105', '王芳', '女', '1975-02-10', '95031');
+INSERT INTO student VALUES('106', '陆军', '男', '1974-06-03', '95031');
+INSERT INTO student VALUES('107', '王尼玛', '男', '1976-02-20', '95033');
+INSERT INTO student VALUES('108', '张全蛋', '男', '1975-02-10', '95031');
+INSERT INTO student VALUES('109', '赵铁柱', '男', '1974-06-03', '95031');
+
+-- 添加教师表数据
+INSERT INTO teacher VALUES('804', '李诚', '男', '1958-12-02', '副教授', '计算机系');
+INSERT INTO teacher VALUES('856', '张旭', '男', '1969-03-12', '讲师', '电子工程系');
+INSERT INTO teacher VALUES('825', '王萍', '女', '1972-05-05', '助教', '计算机系');
+INSERT INTO teacher VALUES('831', '刘冰', '女', '1977-08-14', '助教', '电子工程系');
+
+-- 添加课程表数据
+INSERT INTO course VALUES('3-105', '计算机导论', '825');
+INSERT INTO course VALUES('3-245', '操作系统', '804');
+INSERT INTO course VALUES('6-166', '数字电路', '856');
+INSERT INTO course VALUES('9-888', '高等数学', '831');
+
+-- 添加添加成绩表数据
+INSERT INTO score VALUES('103', '3-105', '92');
+INSERT INTO score VALUES('103', '3-245', '86');
+INSERT INTO score VALUES('103', '6-166', '85');
+INSERT INTO score VALUES('105', '3-105', '88');
+INSERT INTO score VALUES('105', '3-245', '75');
+INSERT INTO score VALUES('105', '6-166', '79');
+INSERT INTO score VALUES('109', '3-105', '76');
+INSERT INTO score VALUES('109', '3-245', '68');
+INSERT INTO score VALUES('109', '6-166', '81');
+
+-- 查看表结构
+SELECT * FROM course;
+SELECT * FROM score;
+SELECT * FROM student;
+SELECT * FROM teacher;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br></div></div><h3 id="_1-到-10"><a href="#_1-到-10" class="header-anchor">#</a> 1 到 10</h3> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 查询 student 表的所有行
+SELECT * FROM student;
+
+-- 查询 student 表中的 name、sex 和 class 字段的所有行
+SELECT name, sex, class FROM student;
+
+-- 查询 teacher 表中不重复的 department 列
+-- department: 去重查询
+SELECT DISTINCT department FROM teacher;
+
+-- 查询 score 表中成绩在60-80之间的所有行(区间查询和运算符查询)
+-- BETWEEN xx AND xx: 查询区间, AND 表示 &quot;并且&quot;
+SELECT * FROM score WHERE degree BETWEEN 60 AND 80;
+SELECT * FROM score WHERE degree &gt; 60 AND degree &lt; 80;
+
+-- 查询 score 表中成绩为 85, 86 或 88 的行
+-- IN: 查询规定中的多个值
+SELECT * FROM score WHERE degree IN (85, 86, 88);
+
+-- 查询 student 表中 '95031' 班或性别为 '女' 的所有行
+-- or: 表示或者关系
+SELECT * FROM student WHERE class = '95031' or sex = '女';
+
+-- 以 class 降序的方式查询 student 表的所有行
+-- DESC: 降序, 从高到低
+-- ASC(默认): 升序, 从低到高
+SELECT * FROM student ORDER BY class DESC;
+SELECT * FROM student ORDER BY class ASC;
+
+-- 以 c_no 升序、degree 降序查询 score 表的所有行
+SELECT * FROM score ORDER BY c_no ASC, degree DESC;
+
+-- 查询 &quot;95031&quot; 班的学生人数
+-- COUNT: 统计
+SELECT COUNT(*) FROM student WHERE class = '95031';
+
+-- 查询 score 表中的最高分的学生学号和课程编号(子查询或排序查询)。
+-- (SELECT MAX(degree) FROM score): 子查询, 算出最高分
+SELECT s_no, c_no FROM score WHERE degree = (SELECT MAX(degree) FROM score);
+
+--  排序查询
+-- LIMIT r, n: 表示从第r行开始, 查询n条数据
+SELECT s_no, c_no, degree FROM score ORDER BY degree DESC LIMIT 0, 1;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h3 id="分组计算平均成绩"><a href="#分组计算平均成绩" class="header-anchor">#</a> 分组计算平均成绩</h3> <blockquote><p>查询每门课的平均成绩</p></blockquote> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- AVG: 平均值
+SELECT AVG(degree) FROM score WHERE c_no = '3-105';
+SELECT AVG(degree) FROM score WHERE c_no = '3-245';
+SELECT AVG(degree) FROM score WHERE c_no = '6-166';
+
+-- GROUP BY: 分组查询
+SELECT c_no, AVG(degree) FROM score GROUP BY c_no;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="分组条件与模糊查询"><a href="#分组条件与模糊查询" class="header-anchor">#</a> 分组条件与模糊查询</h3> <blockquote><p>查询 <code>score</code> 表中至少有 2 名学生选修, 并以 3 开头的课程的平均分数。</p></blockquote> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT * FROM score;
+
+-- s_no 学生id
+-- c_no 课程编号
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 103 : 3-105:     92
+- 103 : 3-245:     86
+- 103 : 6-166:     85
+- 105 : 3-105:     88
+- 105 : 3-245:     75
+- 105 : 6-166:     79
+- 109 : 3-105:     76
+- 109 : 3-245:     68
+- 109 : 6-166:     81
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>分析表发现, 至少有 2 名学生选修的课程是 <code>3-105</code> 、<code>3-245</code> 、<code>6-166</code> , 以 3 开头的课程是 <code>3-105</code> 、<code>3-245</code> 。也就是说, 我们要查询所有 <code>3-105</code> 和 <code>3-245</code> 的 <code>degree</code> 平均分。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 首先把 c_no, AVG(degree) 通过分组查询出来
+SELECT c_no, AVG(degree) FROM score GROUP BY c_no
++-------+-------------+
+- c_no : AVG(degree)
++-------+-------------+
+- 3-105:     85.3333
+- 3-245:     76.3333
+- 6-166:     81.6667
++-------+-------------+
+
+-- 再查询出至少有 2 名学生选修的课程
+-- HAVING: 表示持有
+HAVING COUNT(c_no) &gt;= 2
+
+-- 并且是以 3 开头的课程
+-- LIKE 表示模糊查询, &quot;%&quot; 是一个通配符, 匹配 &quot;3&quot; 后面的任意字符。
+AND c_no LIKE '3%';
+
+-- 把前面的SQL语句拼接起来,
+-- 后面加上一个 COUNT(*), 表示将每个分组的个数也查询出来。
+
+SELECT c_no, AVG(degree), COUNT(*) FROM score GROUP BY c_no
+HAVING COUNT(c_no) &gt;= 2 AND c_no LIKE '3%';
++-------+-------------+----------+
+- c_no : AVG(degree): COUNT(*)
++-------+-------------+----------+
+- 3-105:     85.3333:        3
+- 3-245:     76.3333:        3
++-------+-------------+----------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h3 id="多表查询-1"><a href="#多表查询-1" class="header-anchor">#</a> 多表查询-1</h3> <blockquote><p>查询所有学生的 <code>name</code>, 以及该学生在 <code>score</code> 表中对应的 <code>c_no</code> 和 <code>degree</code></p></blockquote> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT no, name FROM student;
++-----+-----------+
+- no : name
++-----+-----------+
+- 101: 曾华
+- 102: 匡明
+- 103: 王丽
+- 104: 李军
+- 105: 王芳
+- 106: 陆军
+- 107: 王尼玛
+- 108: 张全蛋
+- 109: 赵铁柱
++-----+-----------+
+
+SELECT s_no, c_no, degree FROM score;
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 103 : 3-105:     92
+- 103 : 3-245:     86
+- 103 : 6-166:     85
+- 105 : 3-105:     88
+- 105 : 3-245:     75
+- 105 : 6-166:     79
+- 109 : 3-105:     76
+- 109 : 3-245:     68
+- 109 : 6-166:     81
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><p>通过分析可以发现, 只要把 <code>score</code> 表中的 <code>s_no</code> 字段值替换成 <code>student</code> 表中对应的 <code>name</code> 字段值就可以了, 如何做呢？</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- FROM...: 表示从 student, score 表中查询
+-- WHERE 的条件表示为, 只有在 student.no 和 score.s_no 相等时才显示出来。
+
+SELECT name, c_no, degree FROM student, score
+WHERE student.no = score.s_no;
++-----------+-------+--------+
+- name     : c_no : degree
++-----------+-------+--------+
+- 王丽     : 3-105:     92
+- 王丽     : 3-245:     86
+- 王丽     : 6-166:     85
+- 王芳     : 3-105:     88
+- 王芳     : 3-245:     75
+- 王芳     : 6-166:     79
+- 赵铁柱   : 3-105:     76
+- 赵铁柱   : 3-245:     68
+- 赵铁柱   : 6-166:     81
++-----------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="多表查询-2"><a href="#多表查询-2" class="header-anchor">#</a> 多表查询-2</h3> <blockquote><p>查询所有学生的 <code>no</code> 、课程名称 ( <code>course</code> 表中的 <code>name</code> ) 和成绩 ( <code>score</code> 表中的 <code>degree</code> ) 列.</p></blockquote> <p>只有 <code>score</code> 关联学生的 <code>no</code> , 因此只要查询 <code>score</code> 表, 就能找出所有和学生相关的 <code>no</code> 和 <code>degree</code> :</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT s_no, c_no, degree FROM score;
+
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 103 : 3-105:     92
+- 103 : 3-245:     86
+- 103 : 6-166:     85
+- 105 : 3-105:     88
+- 105 : 3-245:     75
+- 105 : 6-166:     79
+- 109 : 3-105:     76
+- 109 : 3-245:     68
+- 109 : 6-166:     81
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>然后查询 <code>course</code> 表:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>+-------+-----------------+
+- no   : name
++-------+-----------------+
+- 3-105: 计算机导论
+- 3-245: 操作系统
+- 6-166: 数字电路
+- 9-888: 高等数学
++-------+-----------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>只要把 <code>score</code> 表中的 <code>c_no</code> 替换成 <code>course</code> 表中对应的 <code>name</code> 字段值就可以了。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 增加一个查询字段 name, 分别从 score、course 这两个表中查询。
+-- as 表示取一个该字段的别名。
+
+SELECT s_no, name as c_name, degree FROM score, course
+WHERE score.c_no = course.no;
++------+-----------------+--------+
+- s_no: c_name         : degree
++------+-----------------+--------+
+- 103 : 计算机导论     :     92
+- 105 : 计算机导论     :     88
+- 109 : 计算机导论     :     76
+- 103 : 操作系统       :     86
+- 105 : 操作系统       :     75
+- 109 : 操作系统       :     68
+- 103 : 数字电路       :     85
+- 105 : 数字电路       :     79
+- 109 : 数字电路       :     81
++------+-----------------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="三表关联查询"><a href="#三表关联查询" class="header-anchor">#</a> 三表关联查询</h3> <blockquote><p>查询所有学生的 <code>name</code> 、课程名 ( <code>course</code> 表中的 <code>name</code> ) 和 <code>degree</code> 。</p></blockquote> <p><strong>分析</strong></p> <p>只有 <code>score</code> 表中关联学生的学号和课堂号, 我们只要围绕着 <code>score</code> 这张表查询就好了。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT * FROM score;
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 103 : 3-105:     92
+- 103 : 3-245:     86
+- 103 : 6-166:     85
+- 105 : 3-105:     88
+- 105 : 3-245:     75
+- 105 : 6-166:     79
+- 109 : 3-105:     76
+- 109 : 3-245:     68
+- 109 : 6-166:     81
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>只要把 <code>s_no</code> 和 <code>c_no</code> 替换成 <code>student</code> 和 <code>course</code> 表中对应的 <code>name</code> 字段值就好了。</p> <p>首先把 <code>s_no</code> 替换成 <code>student</code> 表中的 <code>name</code> 字段:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT name, c_no, degree FROM student, score WHERE student.no = score.s_no;
++-----------+-------+--------+
+- name     : c_no : degree
++-----------+-------+--------+
+- 王丽     : 3-105:     92
+- 王丽     : 3-245:     86
+- 王丽     : 6-166:     85
+- 王芳     : 3-105:     88
+- 王芳     : 3-245:     75
+- 王芳     : 6-166:     79
+- 赵铁柱   : 3-105:     76
+- 赵铁柱   : 3-245:     68
+- 赵铁柱   : 6-166:     81
++-----------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>再把 <code>c_no</code> 替换成 <code>course</code> 表中的 <code>name</code> 字段:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 课程表
+SELECT no, name FROM course;
++-------+-----------------+
+- no   : name
++-------+-----------------+
+- 3-105: 计算机导论
+- 3-245: 操作系统
+- 6-166: 数字电路
+- 9-888: 高等数学
++-------+-----------------+
+
+-- 由于字段名存在重复, 使用 &quot;表名.字段名 as 别名&quot; 代替。
+
+SELECT student.name as s_name, course.name as c_name, degree
+FROM student, score, course
+WHERE student.NO = score.s_no
+AND score.c_no = course.no;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="子查询加分组求平均分"><a href="#子查询加分组求平均分" class="header-anchor">#</a> 子查询加分组求平均分</h3> <blockquote><p>查询 <code>95031</code> 班学生每门课程的平均成绩</p></blockquote> <p>在 <code>score</code> 表中根据 <code>student</code> 表的学生编号筛选出学生的课堂号和成绩:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- IN (..): 将筛选出的学生号当做 s_no 的条件查询
+SELECT s_no, c_no, degree FROM score
+WHERE s_no IN (SELECT no FROM student WHERE class = '95031');
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 105 : 3-105:     88
+- 105 : 3-245:     75
+- 105 : 6-166:     79
+- 109 : 3-105:     76
+- 109 : 3-245:     68
+- 109 : 6-166:     81
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>这时只要将 <code>c_no</code> 分组一下就能得出 <code>95031</code> 班学生每门课的平均成绩:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT c_no, AVG(degree) FROM score
+WHERE s_no IN (SELECT no FROM student WHERE class = '95031')
+GROUP BY c_no;
++-------+-------------+
+- c_no : AVG(degree)
++-------+-------------+
+- 3-105:     82.0000
+- 3-245:     71.5000
+- 6-166:     80.0000
++-------+-------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="子查询-1"><a href="#子查询-1" class="header-anchor">#</a> 子查询 - 1</h3> <p><strong>查询在 <code>3-105</code> 课程中, 所有成绩高于 <code>109</code> 号同学的记录。</strong></p> <p>首先筛选出课堂号为 <code>3-105</code> , 在找出所有成绩高于 <code>109</code> 号同学的的行。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT * FROM score
+WHERE c_no = '3-105'
+AND degree &gt; (SELECT degree FROM score WHERE s_no = '109' AND c_no = '3-105');
+------------
++------+-------+--------+
+| s_no | c_no  | degree |
++------+-------+--------+
+| 103  | 3-105 |     92 |
+| 105  | 3-105 |     88 |
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="子查询-2"><a href="#子查询-2" class="header-anchor">#</a> 子查询 - 2</h3> <p><strong>查询所有成绩高于 <code>109</code> 号同学的 <code>3-105</code> 课程成绩记录。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 不限制课程号, 只要成绩大于109号同学的3-105课程成绩就可以。
+SELECT * FROM score
+WHERE degree &gt; (SELECT degree FROM score WHERE s_no = '109' AND c_no = '3-105');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="year-函数与带-in-关键字查询"><a href="#year-函数与带-in-关键字查询" class="header-anchor">#</a> YEAR 函数与带 IN 关键字查询</h3> <p><strong>查询所有和 <code>101</code> 、<code>108</code> 号学生同年出生的 <code>no</code> 、<code>name</code> 、<code>birthday</code> 列。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- YEAR(..): 取出日期中的年份
+SELECT no, name, birthday FROM student
+WHERE YEAR(birthday) IN (SELECT YEAR(birthday) FROM student WHERE no IN (101, 108));
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="多层嵌套子查询"><a href="#多层嵌套子查询" class="header-anchor">#</a> 多层嵌套子查询</h3> <p><strong>查询 <code>'张旭'</code> 教师任课的学生成绩表。</strong></p> <p>首先找到教师编号:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT NO FROM teacher WHERE NAME = '张旭'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>通过 <code>course</code> 表找到该教师课程号:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT NO FROM course WHERE t_no = ( SELECT NO FROM teacher WHERE NAME = '张旭' );
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>通过筛选出的课程号查询成绩表:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT * FROM score WHERE c_no = (
+    SELECT no FROM course WHERE t_no = (
+        SELECT no FROM teacher WHERE NAME = '张旭'
+    )
+);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="多表查询"><a href="#多表查询" class="header-anchor">#</a> 多表查询</h3> <p><strong>查询某选修课程多于 5 个同学的教师姓名。</strong></p> <p>首先在 <code>teacher</code> 表中, 根据 <code>no</code> 字段来判断该教师的同一门课程是否有至少 5 名学员选修:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 查询 teacher 表
+SELECT no, name FROM teacher;
++-----+--------+
+- no : name
++-----+--------+
+- 804: 李诚
+- 825: 王萍
+- 831: 刘冰
+- 856: 张旭
++-----+--------+
+
+SELECT name FROM teacher WHERE no IN (
+    -- 在这里找到对应的条件
+);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>查看和教师编号有有关的表的信息:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT * FROM course;
+-- t_no: 教师编号
++-------+-----------------+------+
+- no   : name           : t_no
++-------+-----------------+------+
+- 3-105: 计算机导论     : 825
+- 3-245: 操作系统       : 804
+- 6-166: 数字电路       : 856
+- 9-888: 高等数学       : 831
++-------+-----------------+------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>我们已经找到和教师编号有关的字段就在 <code>course</code> 表中, 但是还无法知道哪门课程至少有 5 名学生选修, 所以还需要根据 <code>score</code> 表来查询:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 在此之前向 score 插入一些数据, 以便丰富查询条件。
+INSERT INTO score VALUES ('101', '3-105', '90');
+INSERT INTO score VALUES ('102', '3-105', '91');
+INSERT INTO score VALUES ('104', '3-105', '89');
+
+-- 查询 score 表
+SELECT * FROM score;
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 101 : 3-105:     90
+- 102 : 3-105:     91
+- 103 : 3-105:     92
+- 103 : 3-245:     86
+- 103 : 6-166:     85
+- 104 : 3-105:     89
+- 105 : 3-105:     88
+- 105 : 3-245:     75
+- 105 : 6-166:     79
+- 109 : 3-105:     76
+- 109 : 3-245:     68
+- 109 : 6-166:     81
++------+-------+--------+
+
+-- 在 score 表中将 c_no 作为分组, 并且限制 c_no 持有至少 5 条数据。
+SELECT c_no FROM score GROUP BY c_no HAVING COUNT(*) &gt; 5;
++-------+
+- c_no
++-------+
+- 3-105
++-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p>根据筛选出来的课程号, 找出在某课程中, 拥有至少 5 名学员的教师编号:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT t_no FROM course WHERE no IN (
+    SELECT c_no FROM score GROUP BY c_no HAVING COUNT(*) &gt; 5
+);
++------+
+- t_no
++------+
+- 825
++------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>在 <code>teacher</code> 表中, 根据筛选出来的教师编号找到教师姓名:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT name FROM teacher WHERE no IN (
+    -- 最终条件
+    SELECT t_no FROM course WHERE no IN (
+        SELECT c_no FROM score GROUP BY c_no HAVING COUNT(*) &gt; 5
+    )
+);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="子查询-3"><a href="#子查询-3" class="header-anchor">#</a> 子查询 - 3</h3> <p><strong>查询 &quot;计算机系&quot; 课程的成绩表。</strong></p> <p>思路是, 先找出 <code>course</code> 表中所有 <code>计算机系</code> 课程的编号, 然后根据这个编号查询 <code>score</code> 表。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 通过 teacher 表查询所有 `计算机系` 的教师编号
+SELECT no, name, department FROM teacher WHERE department = '计算机系'
++-----+--------+--------------+
+- no : name  : department
++-----+--------+--------------+
+- 804: 李诚  : 计算机系
+- 825: 王萍  : 计算机系
++-----+--------+--------------+
+
+-- 通过 course 表查询该教师的课程编号
+SELECT no FROM course WHERE t_no IN (
+    SELECT no FROM teacher WHERE department = '计算机系'
+);
++-------+
+- no
++-------+
+- 3-245
+- 3-105
++-------+
+
+-- 根据筛选出来的课程号查询成绩表
+SELECT * FROM score WHERE c_no IN (
+    SELECT no FROM course WHERE t_no IN (
+        SELECT no FROM teacher WHERE department = '计算机系'
+    )
+);
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 103 : 3-245:     86
+- 105 : 3-245:     75
+- 109 : 3-245:     68
+- 101 : 3-105:     90
+- 102 : 3-105:     91
+- 103 : 3-105:     92
+- 104 : 3-105:     89
+- 105 : 3-105:     88
+- 109 : 3-105:     76
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><h3 id="union-和-not-in-的使用"><a href="#union-和-not-in-的使用" class="header-anchor">#</a> UNION 和 NOT IN 的使用</h3> <p><strong>查询 <code>计算机系</code> 与 <code>电子工程系</code> 中的不同职称的教师。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- NOT: 代表逻辑非
+SELECT * FROM teacher WHERE department = '计算机系' AND profession NOT IN (
+    SELECT profession FROM teacher WHERE department = '电子工程系'
+)
+
+-- 合并两个集
+UNION
+SELECT * FROM teacher WHERE department = '电子工程系' AND profession NOT IN (
+    SELECT profession FROM teacher WHERE department = '计算机系'
+);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="any-表示至少一个"><a href="#any-表示至少一个" class="header-anchor">#</a> ANY 表示至少一个</h3> <p><strong>查询课程 <code>3-105</code> 且成绩至少高于 <code>3-245</code> 的 <code>score</code> 表。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT * FROM score WHERE c_no = '3-105';
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 101 : 3-105:     90
+- 102 : 3-105:     91
+- 103 : 3-105:     92
+- 104 : 3-105:     89
+- 105 : 3-105:     88
+- 109 : 3-105:     76
++------+-------+--------+
+
+SELECT * FROM score WHERE c_no = '3-245';
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 103 : 3-245:     86
+- 105 : 3-245:     75
+- 109 : 3-245:     68
++------+-------+--------+
+
+-- ANY: 符合SQL语句中的任意条件。
+-- 也就是说, 在 3-105 成绩中, 只要有一个大于从 3-245 筛选出来的任意行就符合条件,
+-- 最后根据降序查询结果。
+
+SELECT * FROM score WHERE c_no = '3-105' AND degree &gt; ANY(
+    SELECT degree FROM score WHERE c_no = '3-245'
+) ORDER BY degree DESC;
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 103 : 3-105:     92
+- 102 : 3-105:     91
+- 101 : 3-105:     90
+- 104 : 3-105:     89
+- 105 : 3-105:     88
+- 109 : 3-105:     76
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><h3 id="表示所有的-all"><a href="#表示所有的-all" class="header-anchor">#</a> 表示所有的 ALL</h3> <p><strong>查询课程 <code>3-105</code> 且成绩高于 <code>3-245</code> 的 <code>score</code> 表。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 只需对上一道题稍作修改。
+-- ALL: 符合SQL语句中的所有条件。
+-- 也就是说, 在 3-105 每一行成绩中, 都要大于从 3-245 筛选出来全部行才算符合条件。
+SELECT * FROM score WHERE c_no = '3-105' AND degree &gt; ALL(
+    SELECT degree FROM score WHERE c_no = '3-245'
+);
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 101 : 3-105:     90
+- 102 : 3-105:     91
+- 103 : 3-105:     92
+- 104 : 3-105:     89
+- 105 : 3-105:     88
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="复制表的数据作为条件查询"><a href="#复制表的数据作为条件查询" class="header-anchor">#</a> 复制表的数据作为条件查询</h3> <p><strong>查询某课程成绩比该课程平均成绩低的 <code>score</code> 表。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 查询平均分
+SELECT c_no, AVG(degree) FROM score GROUP BY c_no;
++-------+-------------+
+- c_no : AVG(degree)
++-------+-------------+
+- 3-105:     87.6667
+- 3-245:     76.3333
+- 6-166:     81.6667
++-------+-------------+
+
+-- 查询 score 表
+SELECT degree FROM score;
++--------+
+- degree
++--------+
+-     90
+-     91
+-     92
+-     86
+-     85
+-     89
+-     88
+-     75
+-     79
+-     76
+-     68
+-     81
++--------+
+
+-- 将表 b 作用于表 a 中查询数据
+-- score a (b): 将表声明为 a (b),
+-- 如此就能用 a.c_no = b.c_no 作为条件执行查询了。
+SELECT * FROM score a WHERE degree &lt; (
+    (SELECT AVG(degree) FROM score b WHERE a.c_no = b.c_no)
+);
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 105 : 3-245:     75
+- 105 : 6-166:     79
+- 109 : 3-105:     76
+- 109 : 3-245:     68
+- 109 : 6-166:     81
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br></div></div><h3 id="子查询"><a href="#子查询" class="header-anchor">#</a> 子查询</h3> <p><strong>查询所有任课 ( 在 <code>course</code> 表里有课程 ) 教师的 <code>name</code> 和 <code>department</code></strong> 。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT name, department FROM teacher WHERE no IN (SELECT t_no FROM course);
++--------+-----------------+
+- name  : department
++--------+-----------------+
+- 李诚  : 计算机系
+- 王萍  : 计算机系
+- 刘冰  : 电子工程系
+- 张旭  : 电子工程系
++--------+-----------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="条件加组筛选"><a href="#条件加组筛选" class="header-anchor">#</a> 条件加组筛选</h3> <p><strong>查询 <code>student</code> 表中至少有 2 名男生的 <code>class</code> 。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 查看学生表信息
+SELECT * FROM student;
++-----+-----------+-----+------------+-------+
+- no : name     : sex: birthday  : class
++-----+-----------+-----+------------+-------+
+- 101: 曾华     : 男 : 1977-09-01: 95033
+- 102: 匡明     : 男 : 1975-10-02: 95031
+- 103: 王丽     : 女 : 1976-01-23: 95033
+- 104: 李军     : 男 : 1976-02-20: 95033
+- 105: 王芳     : 女 : 1975-02-10: 95031
+- 106: 陆军     : 男 : 1974-06-03: 95031
+- 107: 王尼玛   : 男 : 1976-02-20: 95033
+- 108: 张全蛋   : 男 : 1975-02-10: 95031
+- 109: 赵铁柱   : 男 : 1974-06-03: 95031
+- 110: 张飞     : 男 : 1974-06-03: 95038
++-----+-----------+-----+------------+-------+
+
+-- 只查询性别为男, 然后按 class 分组, 并限制 class 行大于 1。
+SELECT class FROM student WHERE sex = '男' GROUP BY class HAVING COUNT(*) &gt; 1;
++-------+
+- class
++-------+
+- 95033
+- 95031
++-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="not-like-模糊查询取反"><a href="#not-like-模糊查询取反" class="header-anchor">#</a> NOT LIKE 模糊查询取反</h3> <p><strong>查询 <code>student</code> 表中不姓 &quot;王&quot; 的同学记录。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- NOT: 取反
+-- LIKE: 模糊查询
+
+mysql&gt; SELECT * FROM student WHERE name NOT LIKE '王%';
++-----+-----------+-----+------------+-------+
+- no : name     : sex: birthday  : class
++-----+-----------+-----+------------+-------+
+- 101: 曾华     : 男 : 1977-09-01: 95033
+- 102: 匡明     : 男 : 1975-10-02: 95031
+- 104: 李军     : 男 : 1976-02-20: 95033
+- 106: 陆军     : 男 : 1974-06-03: 95031
+- 108: 张全蛋   : 男 : 1975-02-10: 95031
+- 109: 赵铁柱   : 男 : 1974-06-03: 95031
+- 110: 张飞     : 男 : 1974-06-03: 95038
++-----+-----------+-----+------------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="year-与-now-函数"><a href="#year-与-now-函数" class="header-anchor">#</a> YEAR 与 NOW 函数</h3> <p><strong>查询 <code>student</code> 表中每个学生的姓名和年龄。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 使用函数 YEAR(NOW()) 计算出当前年份, 减去出生年份后得出年龄。
+SELECT name, YEAR(NOW()) - YEAR(birthday) as age FROM student;
++-----------+------+
+- name     : age
++-----------+------+
+- 曾华     :   42
+- 匡明     :   44
+- 王丽     :   43
+- 李军     :   43
+- 王芳     :   44
+- 陆军     :   45
+- 王尼玛   :   43
+- 张全蛋   :   44
+- 赵铁柱   :   45
+- 张飞     :   45
++-----------+------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="max-与-min-函数"><a href="#max-与-min-函数" class="header-anchor">#</a> MAX 与 MIN 函数</h3> <p><strong>查询 <code>student</code> 表中最大和最小的 <code>birthday</code> 值。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT MAX(birthday), MIN(birthday) FROM student;
++---------------+---------------+
+- MAX(birthday): MIN(birthday)
++---------------+---------------+
+- 1977-09-01   : 1974-06-03
++---------------+---------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="多段排序"><a href="#多段排序" class="header-anchor">#</a> 多段排序</h3> <p><strong>以 <code>class</code> 和 <code>birthday</code> 从大到小的顺序查询 <code>student</code> 表。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT * FROM student ORDER BY class DESC, birthday;
++-----+-----------+-----+------------+-------+
+- no : name     : sex: birthday  : class
++-----+-----------+-----+------------+-------+
+- 110: 张飞     : 男 : 1974-06-03: 95038
+- 103: 王丽     : 女 : 1976-01-23: 95033
+- 104: 李军     : 男 : 1976-02-20: 95033
+- 107: 王尼玛   : 男 : 1976-02-20: 95033
+- 101: 曾华     : 男 : 1977-09-01: 95033
+- 106: 陆军     : 男 : 1974-06-03: 95031
+- 109: 赵铁柱   : 男 : 1974-06-03: 95031
+- 105: 王芳     : 女 : 1975-02-10: 95031
+- 108: 张全蛋   : 男 : 1975-02-10: 95031
+- 102: 匡明     : 男 : 1975-10-02: 95031
++-----+-----------+-----+------------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="子查询-4"><a href="#子查询-4" class="header-anchor">#</a> 子查询</h3> <p><strong>查询 &quot;男&quot; 教师及其所上的课程。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT * FROM course WHERE t_no in (SELECT no FROM teacher WHERE sex = '男');
++-------+--------------+------+
+- no   : name        : t_no
++-------+--------------+------+
+- 3-245: 操作系统    : 804
+- 6-166: 数字电路    : 856
++-------+--------------+------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="max-函数与子查询"><a href="#max-函数与子查询" class="header-anchor">#</a> MAX 函数与子查询</h3> <p><strong>查询最高分同学的 <code>score</code> 表。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 找出最高成绩(该查询只能有一个结果)
+SELECT MAX(degree) FROM score;
+
+-- 根据上面的条件筛选出所有最高成绩表,
+-- 该查询可能有多个结果, 假设 degree 值多次符合条件。
+SELECT * FROM score WHERE degree = (SELECT MAX(degree) FROM score);
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 103 : 3-105:     92
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="子查询-6"><a href="#子查询-6" class="header-anchor">#</a> 子查询 - 6</h3> <p><strong>查询和 &quot;李军&quot; 同性别的所有同学 <code>name</code> 。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 首先将李军的性别作为条件取出来
+SELECT sex FROM student WHERE name = '李军';
++-----+
+- sex
++-----+
+- 男
++-----+
+
+-- 根据性别查询 name 和 sex
+SELECT name, sex FROM student WHERE sex = (
+    SELECT sex FROM student WHERE name = '李军'
+);
++-----------+-----+
+- name     : sex
++-----------+-----+
+- 曾华     : 男
+- 匡明     : 男
+- 李军     : 男
+- 陆军     : 男
+- 王尼玛   : 男
+- 张全蛋   : 男
+- 赵铁柱   : 男
+- 张飞     : 男
++-----------+-----+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h3 id="子查询-5"><a href="#子查询-5" class="header-anchor">#</a> 子查询</h3> <p><strong>查询和 &quot;李军&quot; 同性别且同班的同学 <code>name</code> 。</strong></p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT name, sex, class FROM student WHERE sex = (
+    SELECT sex FROM student WHERE name = '李军'
+) AND class = (
+    SELECT class FROM student WHERE name = '李军'
+);
++-----------+-----+-------+
+- name     : sex: class
++-----------+-----+-------+
+- 曾华     : 男 : 95033
+- 李军     : 男 : 95033
+- 王尼玛   : 男 : 95033
++-----------+-----+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="子查询-7"><a href="#子查询-7" class="header-anchor">#</a> 子查询</h3> <p><strong>查询所有选修 &quot;计算机导论&quot; 课程的 &quot;男&quot; 同学成绩表。</strong></p> <p>需要的 &quot;计算机导论&quot; 和性别为 &quot;男&quot; 的编号可以在 <code>course</code> 和 <code>student</code> 表中找到。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT * FROM score WHERE c_no = (
+    SELECT no FROM course WHERE name = '计算机导论'
+) AND s_no IN (
+    SELECT no FROM student WHERE sex = '男'
+);
++------+-------+--------+
+- s_no: c_no : degree
++------+-------+--------+
+- 101 : 3-105:     90
+- 102 : 3-105:     91
+- 104 : 3-105:     89
+- 109 : 3-105:     76
++------+-------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="按等级查询"><a href="#按等级查询" class="header-anchor">#</a> 按等级查询</h3> <p>建立一个 <code>grade</code> 表代表学生的成绩等级, 并插入数据:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>CREATE TABLE grade (
+    low INT(3),
+    upp INT(3),
+    grade char(1)
+);
+
+INSERT INTO grade VALUES (90, 100, 'A');
+INSERT INTO grade VALUES (80, 89, 'B');
+INSERT INTO grade VALUES (70, 79, 'C');
+INSERT INTO grade VALUES (60, 69, 'D');
+INSERT INTO grade VALUES (0, 59, 'E');
+
+SELECT * FROM grade;
++------+------+-------+
+- low : upp : grade
++------+------+-------+
+-   90:  100: A
+-   80:   89: B
+-   70:   79: C
+-   60:   69: D
+-    0:   59: E
++------+------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p><strong>查询所有学生的 <code>s_no</code> 、<code>c_no</code> 和 <code>grade</code> 列。</strong></p> <p>思路是, 使用区间 ( <code>BETWEEN</code> ) 查询, 判断学生的成绩 ( <code>degree</code> ) 在 <code>grade</code> 表的 <code>low</code> 和 <code>upp</code> 之间。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT s_no, c_no, grade FROM score, grade
+WHERE degree BETWEEN low AND upp;
++------+-------+-------+
+- s_no: c_no : grade
++------+-------+-------+
+- 101 : 3-105: A
+- 102 : 3-105: A
+- 103 : 3-105: A
+- 103 : 3-245: B
+- 103 : 6-166: B
+- 104 : 3-105: B
+- 105 : 3-105: B
+- 105 : 3-245: C
+- 105 : 6-166: C
+- 109 : 3-105: C
+- 109 : 3-245: D
+- 109 : 6-166: B
++------+-------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="连接查询"><a href="#连接查询" class="header-anchor">#</a> 连接查询</h3> <p>准备用于测试连接查询的数据:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>CREATE DATABASE testJoin;
+
+CREATE TABLE person (
+    id INT,
+    name VARCHAR(20),
+    cardId INT
+);
+
+CREATE TABLE card (
+    id INT,
+    name VARCHAR(20)
+);
+
+INSERT INTO card VALUES (1, '饭卡'), (2, '建行卡'), (3, '农行卡'), (4, '工商卡'), (5, '邮政卡');
+SELECT * FROM card;
++------+-----------+
+- id  : name
++------+-----------+
+-    1: 饭卡
+-    2: 建行卡
+-    3: 农行卡
+-    4: 工商卡
+-    5: 邮政卡
++------+-----------+
+
+INSERT INTO person VALUES (1, '张三', 1), (2, '李四', 3), (3, '王五', 6);
+SELECT * FROM person;
++------+--------+--------+
+- id  : name  : cardId
++------+--------+--------+
+-    1: 张三  :      1
+-    2: 李四  :      3
+-    3: 王五  :      6
++------+--------+--------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><p>分析两张表发现, <code>person</code> 表并没有为 <code>cardId</code> 字段设置一个在 <code>card</code> 表中对应的 <code>id</code> 外键。如果设置了的话, <code>person</code> 中 <code>cardId</code> 字段值为 <code>6</code> 的行就插不进去, 因为该 <code>cardId</code> 值在 <code>card</code> 表中并没有。</p> <h4 id="内连接"><a href="#内连接" class="header-anchor">#</a> 内连接</h4> <p>要查询这两张表中有关系的数据, 可以使用 <code>INNER JOIN</code> ( 内连接 ) 将它们连接在一起。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- INNER JOIN: 表示为内连接, 将两张表拼接在一起。
+-- on: 表示要执行某个条件。
+SELECT * FROM person INNER JOIN card on person.cardId = card.id;
++------+--------+--------+------+-----------+
+- id  : name  : cardId: id  : name
++------+--------+--------+------+-----------+
+-    1: 张三  :      1:    1: 饭卡
+-    2: 李四  :      3:    3: 农行卡
++------+--------+--------+------+-----------+
+
+-- 将 INNER 关键字省略掉, 结果也是一样的。
+-- SELECT * FROM person JOIN card on person.cardId = card.id;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><blockquote><p>注意: <code>card</code> 的整张表被连接到了右边。</p></blockquote> <h4 id="左外连接"><a href="#左外连接" class="header-anchor">#</a> 左外连接</h4> <p>完整显示左边的表 ( <code>person</code> ) , 右边的表如果符合条件就显示, 不符合则补 <code>NULL</code> 。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- LEFT JOIN 也叫做 LEFT OUTER JOIN, 用这两种方式的查询结果是一样的。
+
+SELECT * FROM person LEFT JOIN card on person.cardId = card.id;
++------+--------+--------+------+-----------+
+- id  : name  : cardId: id  : name
++------+--------+--------+------+-----------+
+-    1: 张三  :      1:    1: 饭卡
+-    2: 李四  :      3:    3: 农行卡
+-    3: 王五  :      6: NULL: NULL
++------+--------+--------+------+-----------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="右外链接"><a href="#右外链接" class="header-anchor">#</a> 右外链接</h4> <p>完整显示右边的表 ( <code>card</code> ) , 左边的表如果符合条件就显示, 不符合则补 <code>NULL</code> 。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SELECT * FROM person RIGHT JOIN card on person.cardId = card.id;
++------+--------+--------+------+-----------+
+- id  : name  : cardId: id  : name
++------+--------+--------+------+-----------+
+-    1: 张三  :      1:    1: 饭卡
+-    2: 李四  :      3:    3: 农行卡
+- NULL: NULL  :   NULL:    2: 建行卡
+- NULL: NULL  :   NULL:    4: 工商卡
+- NULL: NULL  :   NULL:    5: 邮政卡
++------+--------+--------+------+-----------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="全外链接"><a href="#全外链接" class="header-anchor">#</a> 全外链接</h4> <p>完整显示两张表的全部数据。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- MySQL 不支持这种语法的全外连接
+-- SELECT * FROM person FULL JOIN card on person.cardId = card.id;
+-- 出现错误:
+-- ERROR 1054 (42S22): Unknown column 'person.cardId' in 'on clause'
+
+-- MySQL全连接语法, 使用 UNION 将两张表合并在一起。
+SELECT * FROM person LEFT JOIN card on person.cardId = card.id
+UNION
+SELECT * FROM person RIGHT JOIN card on person.cardId = card.id;
++------+--------+--------+------+-----------+
+- id  : name  : cardId: id  : name
++------+--------+--------+------+-----------+
+-    1: 张三  :      1:    1: 饭卡
+-    2: 李四  :      3:    3: 农行卡
+-    3: 王五  :      6: NULL: NULL
+- NULL: NULL  :   NULL:    2: 建行卡
+- NULL: NULL  :   NULL:    4: 工商卡
+- NULL: NULL  :   NULL:    5: 邮政卡
++------+--------+--------+------+-----------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h2 id="事务"><a href="#事务" class="header-anchor">#</a> 事务</h2> <p>在 MySQL 中, 事务其实是一个最小的不可分割的工作单元。事务能够<strong>保证一个业务的完整性</strong>。</p> <p>比如我们的银行转账:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- a -&gt; -100
+UPDATE user set money = money - 100 WHERE name = 'a';
+
+-- b -&gt; +100
+UPDATE user set money = money + 100 WHERE name = 'b';
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>在实际项目中, 假设只有一条 SQL 语句执行成功, 而另外一条执行失败了, 就会出现数据前后不一致。</p> <p>因此, 在执行多条有关联 SQL 语句时, <strong>事务</strong>可能会要求这些 SQL 语句要么同时执行成功, 要么就都执行失败。</p> <h3 id="如何控制事务-commit-rollback"><a href="#如何控制事务-commit-rollback" class="header-anchor">#</a> 如何控制事务 - COMMIT / ROLLBACK</h3> <p>在 MySQL 中, 事务的<strong>自动提交</strong>状态默认是开启的。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 查询事务的自动提交状态
+SELECT @@AUTOCOMMIT;
++--------------+
+- @@AUTOCOMMIT
++--------------+
+-            1
++--------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><strong>自动提交的作用</strong>: 当我们执行一条 SQL 语句的时候, 其产生的效果就会立即体现出来, 且不能<strong>回滚</strong>。</p> <p>什么是回滚？举个例子:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>CREATE DATABASE bank;
+
+USE bank;
+
+CREATE TABLE user (
+    id INT PRIMARY KEY,
+    name VARCHAR(20),
+    money INT
+);
+
+INSERT INTO user VALUES (1, 'a', 1000);
+
+SELECT * FROM user;
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :  1000
++----+------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>可以看到, 在执行插入语句后数据立刻生效, 原因是 MySQL 中的事务自动将它<strong>提交</strong>到了数据库中。那么所谓<strong>回滚</strong>的意思就是, 撤销执行过的所有 SQL 语句, 使其回滚到<strong>最后一次提交</strong>数据时的状态。</p> <p>在 MySQL 中使用 <code>ROLLBACK</code> 执行回滚:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 回滚到最后一次提交
+ROLLBACK;
+
+SELECT * FROM user;
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :  1000
++----+------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>由于所有执行过的 SQL 语句都已经被提交过了, 所以数据并没有发生回滚。那如何让数据可以发生回滚？</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 关闭自动提交
+SET AUTOCOMMIT = 0;
+
+-- 查询自动提交状态
+SELECT @@AUTOCOMMIT;
++--------------+
+- @@AUTOCOMMIT
++--------------+
+-            0
++--------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>将自动提交关闭后, 测试数据回滚:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>INSERT INTO user VALUES (2, 'b', 1000);
+
+-- 关闭 AUTOCOMMIT 后, 数据的变化是在一张虚拟的临时数据表中展示,
+-- 发生变化的数据并没有真正插入到数据表中。
+SELECT * FROM user;
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :  1000
+-  2: b   :  1000
++----+------+-------+
+
+-- 数据表中的真实数据其实还是:
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :  1000
++----+------+-------+
+
+-- 由于数据还没有真正提交, 可以使用回滚
+ROLLBACK;
+
+-- 再次查询
+SELECT * FROM user;
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :  1000
++----+------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><p>那如何将虚拟的数据真正提交到数据库中？使用 <code>COMMIT</code> :</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>INSERT INTO user VALUES (2, 'b', 1000);
+-- 手动提交数据(持久性),
+-- 将数据真正提交到数据库中, 执行后不能再回滚提交过的数据。
+COMMIT;
+
+-- 提交后测试回滚
+ROLLBACK;
+
+-- 再次查询(回滚无效了)
+SELECT * FROM user;
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :  1000
+-  2: b   :  1000
++----+------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p><strong>总结</strong></p> <ol><li><p>自动提交</p> <ul><li>查看自动提交状态: <code>SELECT @@AUTOCOMMIT</code> ；</li> <li>设置自动提交状态: <code>SET AUTOCOMMIT = 0</code> 。</li></ul></li> <li><p>手动提交
+<code>@@AUTOCOMMIT = 0</code> 时, 使用 <code>COMMIT</code> 命令提交事务。</p></li> <li><p>事务回滚
+<code>@@AUTOCOMMIT = 0</code> 时, 使用 <code>ROLLBACK</code> 命令回滚事务。</p></li></ol> <p><strong>事务的实际应用</strong>, 让我们再回到银行转账项目:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 转账
+UPDATE user set money = money - 100 WHERE name = 'a';
+
+-- 到账
+UPDATE user set money = money + 100 WHERE name = 'b';
+
+SELECT * FROM user;
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :   900
+-  2: b   :  1100
++----+------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>这时假设在转账时发生了意外, 就可以使用 <code>ROLLBACK</code> 回滚到最后一次提交的状态:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 假设转账发生了意外, 需要回滚。
+ROLLBACK;
+
+SELECT * FROM user;
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :  1000
+-  2: b   :  1000
++----+------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>这时我们又回到了发生意外之前的状态, 也就是说, 事务给我们提供了一个可以反悔的机会。假设数据没有发生意外, 这时可以手动将数据真正提交到数据表中: <code>COMMIT</code> 。</p> <h3 id="手动开启事务-begin-start-transaction"><a href="#手动开启事务-begin-start-transaction" class="header-anchor">#</a> 手动开启事务 - BEGIN / START TRANSACTION</h3> <p>事务的默认提交被开启 ( <code>@@AUTOCOMMIT = 1</code> ) 后, 此时就不能使用事务回滚了。但是我们还可以手动开启一个事务处理事件, 使其可以发生回滚:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 使用 BEGIN 或者 START TRANSACTION 手动开启一个事务
+-- START TRANSACTION;
+BEGIN;
+UPDATE user set money = money - 100 WHERE name = 'a';
+UPDATE user set money = money + 100 WHERE name = 'b';
+
+-- 由于手动开启的事务没有开启自动提交,
+-- 此时发生变化的数据仍然是被保存在一张临时表中。
+SELECT * FROM user;
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :   900
+-  2: b   :  1100
++----+------+-------+
+
+-- 测试回滚
+ROLLBACK;
+
+SELECT * FROM user;
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :  1000
+-  2: b   :  1000
++----+------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>仍然使用 <code>COMMIT</code> 提交数据, 提交后无法再发生本次事务的回滚。</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>BEGIN;
+UPDATE user set money = money - 100 WHERE name = 'a';
+UPDATE user set money = money + 100 WHERE name = 'b';
+
+SELECT * FROM user;
++----+------+-------+
+- id: name: money
++----+------+-------+
+-  1: a   :   900
+-  2: b   :  1100
++----+------+-------+
+
+-- 提交数据
+COMMIT;
+
+-- 测试回滚(无效, 因为表的数据已经被提交)
+ROLLBACK;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="事务的-acid-特征与使用"><a href="#事务的-acid-特征与使用" class="header-anchor">#</a> 事务的 ACID 特征与使用</h3> <p><strong>事务的四大特征</strong></p> <ul><li>A(Atomicity) 原子性: 事务是最小的单位, 不可以再分割</li> <li>C(Consistency) 一致性: 要求同一事务中的 SQL 语句, 必须保证同时成功或者失败</li> <li>I(Isolation) 隔离性: 事务 1 和 事务 2 之间是具有隔离性的</li> <li>D(Durability) 持久性: 事务一旦结束 ( <code>COMMIT</code> ) , 就不可以再返回了 ( <code>ROLLBACK</code> )</li></ul> <h4 id="事务的隔离性"><a href="#事务的隔离性" class="header-anchor">#</a> 事务的隔离性</h4> <p><strong>事务的隔离性可分为四种 ( 性能从低到高 )</strong> :</p> <ol><li><p><strong>READ UNCOMMITTED ( 读取未提交 )</strong></p> <p>如果有多个事务, 那么任意事务都可以看见其他事务的<strong>未提交数据</strong>。</p></li> <li><p><strong>READ COMMITTED ( 读取已提交 )</strong></p> <p>只能读取到其他事务<strong>已经提交的数据</strong>。</p></li> <li><p><strong>REPEATABLE READ ( 可被重复读 )</strong></p> <p>如果有多个连接都开启了事务, 那么事务之间不能共享数据记录, 否则只能共享已提交的记录。</p></li> <li><p><strong>SERIALIZABLE ( 串行化 )</strong></p> <p>所有的事务都会按照<strong>固定顺序执行</strong>, 执行完一个事务后再继续执行下一个事务的<strong>写入操作</strong>。</p></li></ol> <p>查看当前数据库的默认隔离级别:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- MySQL 8.x, GLOBAL 表示系统级别, 不加表示会话级别。
+SELECT @@GLOBAL.TRANSACTION_ISOLATION;
+SELECT @@TRANSACTION_ISOLATION;
++--------------------------------+
+- @@GLOBAL.TRANSACTION_ISOLATION
++--------------------------------+
+- REPEATABLE-READ               : -- MySQL的默认隔离级别, 可以重复读。
++--------------------------------+
+
+-- MySQL 5.x
+SELECT @@GLOBAL.TX_ISOLATION;
+SELECT @@TX_ISOLATION;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>修改隔离级别:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 设置系统隔离级别, LEVEL 后面表示要设置的隔离级别 (READ UNCOMMITTED)。
+SET GLOBAL TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+
+-- 查询系统隔离级别, 发现已经被修改。
+SELECT @@GLOBAL.TRANSACTION_ISOLATION;
++--------------------------------+
+- @@GLOBAL.TRANSACTION_ISOLATION
++--------------------------------+
+- READ-UNCOMMITTED
++--------------------------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="脏读"><a href="#脏读" class="header-anchor">#</a> 脏读</h4> <p>测试 <strong>READ UNCOMMITTED ( 读取未提交 )</strong> 的隔离性:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>INSERT INTO user VALUES (3, '小明', 1000);
+INSERT INTO user VALUES (4, '淘宝店', 1000);
+
+SELECT * FROM user;
++----+-----------+-------+
+- id: name     : money
++----+-----------+-------+
+-  1: a        :   900
+-  2: b        :  1100
+-  3: 小明     :  1000
+-  4: 淘宝店   :  1000
++----+-----------+-------+
+
+-- 开启一个事务操作数据
+-- 假设小明在淘宝店买了一双800块钱的鞋子:
+START TRANSACTION;
+UPDATE user SET money = money - 800 WHERE name = '小明';
+UPDATE user SET money = money + 800 WHERE name = '淘宝店';
+
+-- 然后淘宝店在另一方查询结果, 发现钱已到账。
+SELECT * FROM user;
++----+-----------+-------+
+- id: name     : money
++----+-----------+-------+
+-  1: a        :   900
+-  2: b        :  1100
+-  3: 小明     :   200
+-  4: 淘宝店   :  1800
++----+-----------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><p>由于小明的转账是在新开启的事务上进行操作的, 而该操作的结果是可以被其他事务(另一方的淘宝店)看见的, 因此淘宝店的查询结果是正确的, 淘宝店确认到账。但就在这时, 如果小明在它所处的事务上又执行了 <code>ROLLBACK</code> 命令, 会发生什么？</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 小明所处的事务
+ROLLBACK;
+
+-- 此时无论对方是谁, 如果再去查询结果就会发现:
+SELECT * FROM user;
++----+-----------+-------+
+- id: name     : money
++----+-----------+-------+
+-  1: a        :   900
+-  2: b        :  1100
+-  3: 小明     :  1000
+-  4: 淘宝店   :  1000
++----+-----------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>这就是所谓的<strong>脏读</strong>, 一个事务读取到另外一个事务还未提交的数据。这在实际开发中是不允许出现的。</p> <h4 id="读取已提交"><a href="#读取已提交" class="header-anchor">#</a> 读取已提交</h4> <p>把隔离级别设置为 <strong>READ COMMITTED</strong> :</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SET GLOBAL TRANSACTION ISOLATION LEVEL READ COMMITTED;
+SELECT @@GLOBAL.TRANSACTION_ISOLATION;
++--------------------------------+
+- @@GLOBAL.TRANSACTION_ISOLATION
++--------------------------------+
+- READ-COMMITTED
++--------------------------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>这样, 再有新的事务连接进来时, 它们就只能查询到已经提交过的事务数据了。但是对于当前事务来说, 它们看到的还是未提交的数据, 例如:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 正在操作数据事务(当前事务)
+START TRANSACTION;
+UPDATE user SET money = money - 800 WHERE name = '小明';
+UPDATE user SET money = money + 800 WHERE name = '淘宝店';
+
+-- 虽然隔离级别被设置为了 READ COMMITTED, 但在当前事务中,
+-- 它看到的仍然是数据表中临时改变数据, 而不是真正提交过的数据。
+SELECT * FROM user;
++----+-----------+-------+
+- id: name     : money
++----+-----------+-------+
+-  1: a        :   900
+-  2: b        :  1100
+-  3: 小明     :   200
+-  4: 淘宝店   :  1800
++----+-----------+-------+
+
+
+-- 假设此时在远程开启了一个新事务, 连接到数据库。
+$ mysql -u root -p12345612
+
+-- 此时远程连接查询到的数据只能是已经提交过的
+SELECT * FROM user;
++----+-----------+-------+
+- id: name     : money
++----+-----------+-------+
+-  1: a        :   900
+-  2: b        :  1100
+-  3: 小明     :  1000
+-  4: 淘宝店   :  1000
++----+-----------+-------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p>但是这样还有问题, 那就是假设一个事务在操作数据时, 其他事务干扰了这个事务的数据。例如:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 小张在查询数据的时候发现:
+SELECT * FROM user;
++----+-----------+-------+
+- id: name     : money
++----+-----------+-------+
+-  1: a        :   900
+-  2: b        :  1100
+-  3: 小明     :   200
+-  4: 淘宝店   :  1800
++----+-----------+-------+
+
+-- 在小张求表的 money 平均值之前, 小王做了一个操作:
+START TRANSACTION;
+INSERT INTO user VALUES (5, 'c', 100);
+COMMIT;
+
+-- 此时表的真实数据是:
+SELECT * FROM user;
++----+-----------+-------+
+- id: name     : money
++----+-----------+-------+
+-  1: a        :   900
+-  2: b        :  1100
+-  3: 小明     :  1000
+-  4: 淘宝店   :  1000
+-  5: c        :   100
++----+-----------+-------+
+
+-- 这时小张再求平均值的时候, 就会出现计算不相符合的情况:
+SELECT AVG(money) FROM user;
++------------+
+- AVG(money)
++------------+
+-  820.0000
++------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><p>虽然 <strong>READ COMMITTED</strong> 让我们只能读取到其他事务已经提交的数据, 但还是会出现问题, 就是<strong>在读取同一个表的数据时, 可能会发生前后不一致的情况。<strong>这被称为</strong>不可重复读现象 ( READ COMMITTED )</strong> 。</p> <h4 id="幻读"><a href="#幻读" class="header-anchor">#</a> 幻读</h4> <p>将隔离级别设置为 <strong>REPEATABLE READ ( 可被重复读取 )</strong> :</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SET GLOBAL TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+SELECT @@GLOBAL.TRANSACTION_ISOLATION;
++--------------------------------+
+- @@GLOBAL.TRANSACTION_ISOLATION
++--------------------------------+
+- REPEATABLE-READ
++--------------------------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>测试 <strong>REPEATABLE READ</strong> , 假设在两个不同的连接上分别执行 <code>START TRANSACTION</code> :</p> <div class="language-sql line-numbers-mode"><pre class="language-sql"><code><span class="token comment">-- 小张 - 成都</span>
+<span class="token keyword">START</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token keyword">user</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- 小王 - 北京</span>
+<span class="token keyword">START</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- 小张 - 成都</span>
+<span class="token keyword">COMMIT</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>当前事务开启后, 没提交之前, 查询不到, 提交后可以被查询到。但是, 在提交之前其他事务被开启了, 那么在这条事务线上, 就不会查询到当前有操作事务的连接。相当于开辟出一条单独的线程。</p> <p>无论小张是否执行过 <code>COMMIT</code> , 在小王这边, 都不会查询到小张的事务记录, 而是只会查询到自己所处事务的记录:</p> <div class="language-sql line-numbers-mode"><pre class="language-sql"><code><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token keyword">user</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----+-----------+-------+</span>
+<span class="token operator">-</span> id: name     : money
+<span class="token operator">+</span><span class="token comment">----+-----------+-------+</span>
+<span class="token operator">-</span>  <span class="token number">1</span>: a        :   <span class="token number">900</span>
+<span class="token operator">-</span>  <span class="token number">2</span>: b        :  <span class="token number">1100</span>
+<span class="token operator">-</span>  <span class="token number">3</span>: 小明     :  <span class="token number">1000</span>
+<span class="token operator">-</span>  <span class="token number">4</span>: 淘宝店   :  <span class="token number">1000</span>
+<span class="token operator">-</span>  <span class="token number">5</span>: c        :   <span class="token number">100</span>
+<span class="token operator">+</span><span class="token comment">----+-----------+-------+</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>这是<strong>因为小王在此之前开启了一个新的事务 ( <code>START TRANSACTION</code> )</strong>, 那么<strong>在他的这条新事务的线上, 跟其他事务是没有联系的</strong>, 也就是说, 此时如果其他事务正在操作数据, 它是不知道的。</p> <p>然而事实是, 在真实的数据表中, 小张已经插入了一条数据。但是小王此时并不知道, 也插入了同一条数据, 会发生什么呢？</p> <div class="language-sql line-numbers-mode"><pre class="language-sql"><code><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token keyword">user</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- ERROR 1062 (23000): Duplicate entry '6' for key 'PRIMARY'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>报错了, 操作被告知已存在主键为 <code>6</code> 的字段。这种现象也被称为<strong>幻读, 一个事务提交的数据, 不能被其他事务读取到</strong>。</p> <h4 id="串行化"><a href="#串行化" class="header-anchor">#</a> 串行化</h4> <p>顾名思义, 就是所有事务的<strong>写入操作</strong>全都是串行化的。什么意思？把隔离级别修改成 <strong>SERIALIZABLE</strong> :</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>SET GLOBAL TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+SELECT @@GLOBAL.TRANSACTION_ISOLATION;
++--------------------------------+
+- @@GLOBAL.TRANSACTION_ISOLATION
++--------------------------------+
+- SERIALIZABLE
++--------------------------------+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>还是拿小张和小王来举例:</p> <div class="language-mysql line-numbers-mode"><pre class="language-text"><code>-- 小张 - 成都
+START TRANSACTION;
+
+-- 小王 - 北京
+START TRANSACTION;
+
+-- 开启事务之前先查询表, 准备操作数据。
+SELECT * FROM user;
++----+-----------+-------+
+- id: name     : money
++----+-----------+-------+
+-  1: a        :   900
+-  2: b        :  1100
+-  3: 小明     :  1000
+-  4: 淘宝店   :  1000
+-  5: c        :   100
+-  6: d        :  1000
++----+-----------+-------+
+
+-- 发现没有 7 号王小花, 于是插入一条数据:
+INSERT INTO user VALUES (7, '王小花', 1000);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>此时会发生什么呢？由于现在的隔离级别是 <strong>SERIALIZABLE ( 串行化 )</strong> , 串行化的意思就是: 假设把所有的事务都放在一个串行的队列中, 那么所有的事务都会按照<strong>固定顺序执行</strong>, 执行完一个事务后再继续执行下一个事务的<strong>写入操作</strong> ( <strong>这意味着队列中同时只能执行一个事务的写入操作</strong> ) 。</p> <p>根据这个解释, 小王在插入数据时, 会出现等待状态, 直到小张执行 <code>COMMIT</code> 结束它所处的事务, 或者出现等待超时。</p> <h2 id="删除数据库内数据-保留表结构"><a href="#删除数据库内数据-保留表结构" class="header-anchor">#</a> 删除数据库内数据，保留表结构</h2> <blockquote><p>使用 TRUNCATE 删除</p></blockquote> <ol><li>生成 TRUNCATE 语句</li></ol> <div class="language-sql line-numbers-mode"><pre class="language-sql"><code><span class="token comment">-- 禁用外键检查，以避免因外键约束而导致的错误</span>
+<span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- 遍历所有表并执行 TRUNCATE</span>
+<span class="token comment">-- 用于生成 SQL 语句的查询</span>
+<span class="token keyword">SELECT</span> CONCAT<span class="token punctuation">(</span><span class="token string">'TRUNCATE TABLE '</span><span class="token punctuation">,</span> table_name<span class="token punctuation">,</span> <span class="token string">';'</span><span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span>
+<span class="token keyword">WHERE</span> table_schema <span class="token operator">=</span> <span class="token string">'&lt;your_database_name&gt;'</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- 重新启用外键检查</span>
+<span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><ol start="2"><li>复制并执行生成的 TRUNCATE 语句，并执行</li></ol></div></div> <!----> <div class="page-edit"><!----> <div class="tags"><a href="/blogPages/tags/?tag=case" title="标签">#case</a></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2024/09/13, 16:20:58</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/blogPages/pages/273346/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">mysql command</div></a> <a href="/blogPages/pages/5659c4/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">mysql faq</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blogPages/pages/273346/" class="prev">mysql command</a></span> <span class="next"><a href="/blogPages/pages/5659c4/">mysql faq</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/blogPages/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/blogPages/pages/9729d0/"><div>
+            mac
+            <!----></div></a> <span class="date">10-24</span></dt></dl><dl><dd>02</dd> <dt><a href="/blogPages/pages/ae37cb/"><div>
+            xargs
+            <!----></div></a> <span class="date">10-24</span></dt></dl><dl><dd>03</dd> <dt><a href="/blogPages/pages/f3e095/"><div>
+            brew
+            <!----></div></a> <span class="date">10-18</span></dt></dl> <dl><dd></dd> <dt><a href="/blogPages/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:jackdoson2011@gmail.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/jacky1234" title="Github" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/my/m/music/playlist?id=317363436" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2019-2024
+    <span>Jacky | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"><!----></div></div>
+    <script src="/blogPages/assets/js/app.7e06e929.js" defer></script><script src="/blogPages/assets/js/2.ce95ee6e.js" defer></script><script src="/blogPages/assets/js/233.322e6a38.js" defer></script>
+  </body>
+</html>
