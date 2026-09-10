@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>adb | Jacky&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <meta name="description" content="勤学如春起之苗, 不见其增, 日有所长；辍学如磨刀之石, 不见其损, 日有所亏。">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.4b391fdb.css" as="style"><link rel="preload" href="/assets/js/app.8b186cd9.js" as="script"><link rel="preload" href="/assets/js/2.26d228aa.js" as="script"><link rel="preload" href="/assets/js/223.3930aa85.js" as="script"><link rel="prefetch" href="/assets/js/10.6c179f40.js"><link rel="prefetch" href="/assets/js/100.617d75c0.js"><link rel="prefetch" href="/assets/js/101.9d9c34e7.js"><link rel="prefetch" href="/assets/js/102.088fa32e.js"><link rel="prefetch" href="/assets/js/103.0d93f6a2.js"><link rel="prefetch" href="/assets/js/104.b1a95f64.js"><link rel="prefetch" href="/assets/js/105.13668ae3.js"><link rel="prefetch" href="/assets/js/106.3e2c9c9e.js"><link rel="prefetch" href="/assets/js/107.eebe6ed3.js"><link rel="prefetch" href="/assets/js/108.57070d1f.js"><link rel="prefetch" href="/assets/js/109.493499e7.js"><link rel="prefetch" href="/assets/js/11.35b42107.js"><link rel="prefetch" href="/assets/js/110.b2fa79d1.js"><link rel="prefetch" href="/assets/js/111.211d03ff.js"><link rel="prefetch" href="/assets/js/112.03f26573.js"><link rel="prefetch" href="/assets/js/113.fe13a05d.js"><link rel="prefetch" href="/assets/js/114.61accf29.js"><link rel="prefetch" href="/assets/js/115.fac1e7d3.js"><link rel="prefetch" href="/assets/js/116.8dc5b1cc.js"><link rel="prefetch" href="/assets/js/117.4d0424bb.js"><link rel="prefetch" href="/assets/js/118.85e466c8.js"><link rel="prefetch" href="/assets/js/119.2ff15540.js"><link rel="prefetch" href="/assets/js/12.3c3cb4a2.js"><link rel="prefetch" href="/assets/js/120.3b91a26b.js"><link rel="prefetch" href="/assets/js/121.3190faca.js"><link rel="prefetch" href="/assets/js/122.71f37039.js"><link rel="prefetch" href="/assets/js/123.c1457d96.js"><link rel="prefetch" href="/assets/js/124.fdf73ca6.js"><link rel="prefetch" href="/assets/js/125.93d0c086.js"><link rel="prefetch" href="/assets/js/126.e299b027.js"><link rel="prefetch" href="/assets/js/127.c1173313.js"><link rel="prefetch" href="/assets/js/128.96afdf4e.js"><link rel="prefetch" href="/assets/js/129.6a4fe2d2.js"><link rel="prefetch" href="/assets/js/13.5279db03.js"><link rel="prefetch" href="/assets/js/130.4d3a5a63.js"><link rel="prefetch" href="/assets/js/131.35332f6b.js"><link rel="prefetch" href="/assets/js/132.da4be986.js"><link rel="prefetch" href="/assets/js/133.a20f8c7e.js"><link rel="prefetch" href="/assets/js/134.210edea0.js"><link rel="prefetch" href="/assets/js/135.97bdb081.js"><link rel="prefetch" href="/assets/js/136.554600b9.js"><link rel="prefetch" href="/assets/js/137.aeffb485.js"><link rel="prefetch" href="/assets/js/138.357d27f4.js"><link rel="prefetch" href="/assets/js/139.e414094c.js"><link rel="prefetch" href="/assets/js/14.f3ee1670.js"><link rel="prefetch" href="/assets/js/140.1f6db0c6.js"><link rel="prefetch" href="/assets/js/141.989d6e9f.js"><link rel="prefetch" href="/assets/js/142.99322dc8.js"><link rel="prefetch" href="/assets/js/143.bc14c219.js"><link rel="prefetch" href="/assets/js/144.3f93704d.js"><link rel="prefetch" href="/assets/js/145.f79c9e33.js"><link rel="prefetch" href="/assets/js/146.e7e97edd.js"><link rel="prefetch" href="/assets/js/147.8f9e6bbb.js"><link rel="prefetch" href="/assets/js/148.12aad337.js"><link rel="prefetch" href="/assets/js/149.768323d1.js"><link rel="prefetch" href="/assets/js/15.ac0cab4e.js"><link rel="prefetch" href="/assets/js/150.dd0aa353.js"><link rel="prefetch" href="/assets/js/151.a3925acf.js"><link rel="prefetch" href="/assets/js/152.7191854d.js"><link rel="prefetch" href="/assets/js/153.166c99a2.js"><link rel="prefetch" href="/assets/js/154.fee76c98.js"><link rel="prefetch" href="/assets/js/155.ed5f9859.js"><link rel="prefetch" href="/assets/js/156.9b59315a.js"><link rel="prefetch" href="/assets/js/157.93356e75.js"><link rel="prefetch" href="/assets/js/158.be8a1cbf.js"><link rel="prefetch" href="/assets/js/159.6f449dab.js"><link rel="prefetch" href="/assets/js/16.88ebbeab.js"><link rel="prefetch" href="/assets/js/160.935ce2d6.js"><link rel="prefetch" href="/assets/js/161.246b69cb.js"><link rel="prefetch" href="/assets/js/162.563efdc8.js"><link rel="prefetch" href="/assets/js/163.5cef95c5.js"><link rel="prefetch" href="/assets/js/164.284ed2cb.js"><link rel="prefetch" href="/assets/js/165.820fc26c.js"><link rel="prefetch" href="/assets/js/166.7d175715.js"><link rel="prefetch" href="/assets/js/167.8123ca66.js"><link rel="prefetch" href="/assets/js/168.fe4742a6.js"><link rel="prefetch" href="/assets/js/169.aa2d70b3.js"><link rel="prefetch" href="/assets/js/17.eff0a9c6.js"><link rel="prefetch" href="/assets/js/170.f87b91b3.js"><link rel="prefetch" href="/assets/js/171.ae1147eb.js"><link rel="prefetch" href="/assets/js/172.682dba5c.js"><link rel="prefetch" href="/assets/js/173.89cc3c1c.js"><link rel="prefetch" href="/assets/js/174.bf397f69.js"><link rel="prefetch" href="/assets/js/175.55953621.js"><link rel="prefetch" href="/assets/js/176.e39624c7.js"><link rel="prefetch" href="/assets/js/177.ceaa60c4.js"><link rel="prefetch" href="/assets/js/178.47d0691e.js"><link rel="prefetch" href="/assets/js/179.0a7ad163.js"><link rel="prefetch" href="/assets/js/18.0a200f94.js"><link rel="prefetch" href="/assets/js/180.28f01fd2.js"><link rel="prefetch" href="/assets/js/181.28e35b92.js"><link rel="prefetch" href="/assets/js/182.d20c4846.js"><link rel="prefetch" href="/assets/js/183.e515eaba.js"><link rel="prefetch" href="/assets/js/184.3ebb402f.js"><link rel="prefetch" href="/assets/js/185.301d3662.js"><link rel="prefetch" href="/assets/js/186.47dda200.js"><link rel="prefetch" href="/assets/js/187.cf184b8f.js"><link rel="prefetch" href="/assets/js/188.d1fd1014.js"><link rel="prefetch" href="/assets/js/189.563ae57f.js"><link rel="prefetch" href="/assets/js/19.469d8aff.js"><link rel="prefetch" href="/assets/js/190.618502af.js"><link rel="prefetch" href="/assets/js/191.a86eed19.js"><link rel="prefetch" href="/assets/js/192.1736c4b9.js"><link rel="prefetch" href="/assets/js/193.ffcbf774.js"><link rel="prefetch" href="/assets/js/194.d8b499ce.js"><link rel="prefetch" href="/assets/js/195.89ca3331.js"><link rel="prefetch" href="/assets/js/196.3c6fc376.js"><link rel="prefetch" href="/assets/js/197.4f2150ed.js"><link rel="prefetch" href="/assets/js/198.d0b6a974.js"><link rel="prefetch" href="/assets/js/199.eefa7b2b.js"><link rel="prefetch" href="/assets/js/20.926e28d5.js"><link rel="prefetch" href="/assets/js/200.2c489792.js"><link rel="prefetch" href="/assets/js/201.b7ebb619.js"><link rel="prefetch" href="/assets/js/202.3facdb82.js"><link rel="prefetch" href="/assets/js/203.3eed67cd.js"><link rel="prefetch" href="/assets/js/204.26efdb22.js"><link rel="prefetch" href="/assets/js/205.a9dc78f5.js"><link rel="prefetch" href="/assets/js/206.230cf9fa.js"><link rel="prefetch" href="/assets/js/207.51d2d15a.js"><link rel="prefetch" href="/assets/js/208.176157f9.js"><link rel="prefetch" href="/assets/js/209.24f02b82.js"><link rel="prefetch" href="/assets/js/21.79b4d9c4.js"><link rel="prefetch" href="/assets/js/210.bb8940e5.js"><link rel="prefetch" href="/assets/js/211.983de0c8.js"><link rel="prefetch" href="/assets/js/212.048d2de4.js"><link rel="prefetch" href="/assets/js/213.fd2f9df3.js"><link rel="prefetch" href="/assets/js/214.4f4cccd4.js"><link rel="prefetch" href="/assets/js/215.fceeca49.js"><link rel="prefetch" href="/assets/js/216.30eee6e6.js"><link rel="prefetch" href="/assets/js/217.36eaf34b.js"><link rel="prefetch" href="/assets/js/218.3c47e4a9.js"><link rel="prefetch" href="/assets/js/219.74644211.js"><link rel="prefetch" href="/assets/js/22.01ba0dbd.js"><link rel="prefetch" href="/assets/js/220.4c54e4f1.js"><link rel="prefetch" href="/assets/js/221.cb2656fb.js"><link rel="prefetch" href="/assets/js/222.e765686b.js"><link rel="prefetch" href="/assets/js/224.1392e2d5.js"><link rel="prefetch" href="/assets/js/225.6eb43ba2.js"><link rel="prefetch" href="/assets/js/226.a23432df.js"><link rel="prefetch" href="/assets/js/227.b0e1307f.js"><link rel="prefetch" href="/assets/js/228.43d3038c.js"><link rel="prefetch" href="/assets/js/229.47dc29ea.js"><link rel="prefetch" href="/assets/js/23.cd819494.js"><link rel="prefetch" href="/assets/js/230.027cc7bc.js"><link rel="prefetch" href="/assets/js/231.090d376c.js"><link rel="prefetch" href="/assets/js/232.bf8ab7a5.js"><link rel="prefetch" href="/assets/js/233.1fdc99d5.js"><link rel="prefetch" href="/assets/js/234.e0c542ee.js"><link rel="prefetch" href="/assets/js/235.5e497e2f.js"><link rel="prefetch" href="/assets/js/236.c7f3ab09.js"><link rel="prefetch" href="/assets/js/237.74ae2284.js"><link rel="prefetch" href="/assets/js/238.9e5c28d4.js"><link rel="prefetch" href="/assets/js/239.1024334d.js"><link rel="prefetch" href="/assets/js/24.a70bc9b3.js"><link rel="prefetch" href="/assets/js/240.f39860fd.js"><link rel="prefetch" href="/assets/js/241.f12c758a.js"><link rel="prefetch" href="/assets/js/242.cc116daf.js"><link rel="prefetch" href="/assets/js/243.13f8706f.js"><link rel="prefetch" href="/assets/js/244.078aa565.js"><link rel="prefetch" href="/assets/js/245.fe22c4be.js"><link rel="prefetch" href="/assets/js/246.dd8aabed.js"><link rel="prefetch" href="/assets/js/247.4ea27e26.js"><link rel="prefetch" href="/assets/js/248.cacdce47.js"><link rel="prefetch" href="/assets/js/249.a6b48238.js"><link rel="prefetch" href="/assets/js/25.26d33906.js"><link rel="prefetch" href="/assets/js/250.96e38cb6.js"><link rel="prefetch" href="/assets/js/251.12568aad.js"><link rel="prefetch" href="/assets/js/252.16e02386.js"><link rel="prefetch" href="/assets/js/253.007c443d.js"><link rel="prefetch" href="/assets/js/254.69960c6b.js"><link rel="prefetch" href="/assets/js/255.c84e67e1.js"><link rel="prefetch" href="/assets/js/256.805e5540.js"><link rel="prefetch" href="/assets/js/257.da8c032b.js"><link rel="prefetch" href="/assets/js/258.2946921e.js"><link rel="prefetch" href="/assets/js/259.1d6a65d8.js"><link rel="prefetch" href="/assets/js/26.b086504b.js"><link rel="prefetch" href="/assets/js/260.30563c32.js"><link rel="prefetch" href="/assets/js/261.7645a6dd.js"><link rel="prefetch" href="/assets/js/262.98a4a7f1.js"><link rel="prefetch" href="/assets/js/263.d9a9168a.js"><link rel="prefetch" href="/assets/js/264.9875a594.js"><link rel="prefetch" href="/assets/js/265.ba5ae0fe.js"><link rel="prefetch" href="/assets/js/266.c53bb25b.js"><link rel="prefetch" href="/assets/js/267.032fd651.js"><link rel="prefetch" href="/assets/js/268.a1f9158b.js"><link rel="prefetch" href="/assets/js/269.d7b62e91.js"><link rel="prefetch" href="/assets/js/27.284a7498.js"><link rel="prefetch" href="/assets/js/270.b53ecd97.js"><link rel="prefetch" href="/assets/js/271.81286eb5.js"><link rel="prefetch" href="/assets/js/272.763f0047.js"><link rel="prefetch" href="/assets/js/273.f849c492.js"><link rel="prefetch" href="/assets/js/274.c0bf675d.js"><link rel="prefetch" href="/assets/js/275.0586e9ca.js"><link rel="prefetch" href="/assets/js/276.50171124.js"><link rel="prefetch" href="/assets/js/277.dde738b4.js"><link rel="prefetch" href="/assets/js/278.9ff8be4b.js"><link rel="prefetch" href="/assets/js/279.03154fa2.js"><link rel="prefetch" href="/assets/js/28.d0e1f569.js"><link rel="prefetch" href="/assets/js/280.b61acd6c.js"><link rel="prefetch" href="/assets/js/281.2c098325.js"><link rel="prefetch" href="/assets/js/282.04aa2b7b.js"><link rel="prefetch" href="/assets/js/283.1a94d485.js"><link rel="prefetch" href="/assets/js/284.fc19c180.js"><link rel="prefetch" href="/assets/js/285.86beda86.js"><link rel="prefetch" href="/assets/js/286.ab0dbf15.js"><link rel="prefetch" href="/assets/js/287.2817ed7d.js"><link rel="prefetch" href="/assets/js/288.0d3e9b64.js"><link rel="prefetch" href="/assets/js/289.57cf7f81.js"><link rel="prefetch" href="/assets/js/29.b5024c3f.js"><link rel="prefetch" href="/assets/js/290.bbce81e9.js"><link rel="prefetch" href="/assets/js/291.4cb6b8a7.js"><link rel="prefetch" href="/assets/js/292.88eb3bd2.js"><link rel="prefetch" href="/assets/js/293.19b85dfd.js"><link rel="prefetch" href="/assets/js/294.eb8cd6bb.js"><link rel="prefetch" href="/assets/js/295.c223a0a4.js"><link rel="prefetch" href="/assets/js/296.0333fec5.js"><link rel="prefetch" href="/assets/js/297.3fee2335.js"><link rel="prefetch" href="/assets/js/298.4024d6ee.js"><link rel="prefetch" href="/assets/js/299.6157a688.js"><link rel="prefetch" href="/assets/js/3.e3b77338.js"><link rel="prefetch" href="/assets/js/30.7a883cb8.js"><link rel="prefetch" href="/assets/js/300.4af93a3c.js"><link rel="prefetch" href="/assets/js/301.88d2f222.js"><link rel="prefetch" href="/assets/js/302.500cd390.js"><link rel="prefetch" href="/assets/js/303.67dc00f7.js"><link rel="prefetch" href="/assets/js/304.bf3d5186.js"><link rel="prefetch" href="/assets/js/305.3519d0c7.js"><link rel="prefetch" href="/assets/js/306.6fbfa1a7.js"><link rel="prefetch" href="/assets/js/307.dde4cc35.js"><link rel="prefetch" href="/assets/js/308.3bd9fddd.js"><link rel="prefetch" href="/assets/js/309.09330207.js"><link rel="prefetch" href="/assets/js/31.bf16c203.js"><link rel="prefetch" href="/assets/js/310.579b8eaa.js"><link rel="prefetch" href="/assets/js/311.da1f508c.js"><link rel="prefetch" href="/assets/js/312.efa8fdae.js"><link rel="prefetch" href="/assets/js/313.a4e5093f.js"><link rel="prefetch" href="/assets/js/314.bf740db2.js"><link rel="prefetch" href="/assets/js/315.17a26bb5.js"><link rel="prefetch" href="/assets/js/316.21fa4b1e.js"><link rel="prefetch" href="/assets/js/317.59368199.js"><link rel="prefetch" href="/assets/js/318.3ce1942a.js"><link rel="prefetch" href="/assets/js/319.b053bfe1.js"><link rel="prefetch" href="/assets/js/32.4f3d2040.js"><link rel="prefetch" href="/assets/js/320.998fc06b.js"><link rel="prefetch" href="/assets/js/321.881f00b3.js"><link rel="prefetch" href="/assets/js/322.a07075aa.js"><link rel="prefetch" href="/assets/js/323.5e7e6451.js"><link rel="prefetch" href="/assets/js/324.0b18641a.js"><link rel="prefetch" href="/assets/js/325.19122083.js"><link rel="prefetch" href="/assets/js/326.516ec13b.js"><link rel="prefetch" href="/assets/js/327.123df26f.js"><link rel="prefetch" href="/assets/js/328.cef3dccb.js"><link rel="prefetch" href="/assets/js/329.5f9daacb.js"><link rel="prefetch" href="/assets/js/33.2c2b8641.js"><link rel="prefetch" href="/assets/js/330.ab4dd077.js"><link rel="prefetch" href="/assets/js/331.28d2f69e.js"><link rel="prefetch" href="/assets/js/332.0e771b4d.js"><link rel="prefetch" href="/assets/js/333.fea93c0f.js"><link rel="prefetch" href="/assets/js/334.34544505.js"><link rel="prefetch" href="/assets/js/335.99bd3f06.js"><link rel="prefetch" href="/assets/js/336.96e7d033.js"><link rel="prefetch" href="/assets/js/337.24182b29.js"><link rel="prefetch" href="/assets/js/338.c157d56a.js"><link rel="prefetch" href="/assets/js/339.b89363b0.js"><link rel="prefetch" href="/assets/js/34.65849e5f.js"><link rel="prefetch" href="/assets/js/340.9c6fca84.js"><link rel="prefetch" href="/assets/js/341.5d939b80.js"><link rel="prefetch" href="/assets/js/342.be0b2fae.js"><link rel="prefetch" href="/assets/js/343.282e13b1.js"><link rel="prefetch" href="/assets/js/344.2cd6769d.js"><link rel="prefetch" href="/assets/js/345.d7fbcb59.js"><link rel="prefetch" href="/assets/js/346.18c9f830.js"><link rel="prefetch" href="/assets/js/347.9b5055f5.js"><link rel="prefetch" href="/assets/js/348.c8ce9f13.js"><link rel="prefetch" href="/assets/js/349.e2cc625f.js"><link rel="prefetch" href="/assets/js/35.5a5389d4.js"><link rel="prefetch" href="/assets/js/36.1ee655a7.js"><link rel="prefetch" href="/assets/js/37.656a3050.js"><link rel="prefetch" href="/assets/js/38.fef78cc6.js"><link rel="prefetch" href="/assets/js/39.1d74f05d.js"><link rel="prefetch" href="/assets/js/4.0cce405c.js"><link rel="prefetch" href="/assets/js/40.1a88063d.js"><link rel="prefetch" href="/assets/js/41.f77e9949.js"><link rel="prefetch" href="/assets/js/42.a2f2ecc4.js"><link rel="prefetch" href="/assets/js/43.f56d8265.js"><link rel="prefetch" href="/assets/js/44.2172ec7d.js"><link rel="prefetch" href="/assets/js/45.f9584eb8.js"><link rel="prefetch" href="/assets/js/46.449646d6.js"><link rel="prefetch" href="/assets/js/47.8b9f24cd.js"><link rel="prefetch" href="/assets/js/48.8dac7cae.js"><link rel="prefetch" href="/assets/js/49.c051a2d5.js"><link rel="prefetch" href="/assets/js/5.83321ea0.js"><link rel="prefetch" href="/assets/js/50.592bbfd6.js"><link rel="prefetch" href="/assets/js/51.8e28319c.js"><link rel="prefetch" href="/assets/js/52.c99a564d.js"><link rel="prefetch" href="/assets/js/53.63041a5e.js"><link rel="prefetch" href="/assets/js/54.0b3b8a01.js"><link rel="prefetch" href="/assets/js/55.e875e628.js"><link rel="prefetch" href="/assets/js/56.5c0258ca.js"><link rel="prefetch" href="/assets/js/57.de57b3ad.js"><link rel="prefetch" href="/assets/js/58.c5116600.js"><link rel="prefetch" href="/assets/js/59.15d9fd31.js"><link rel="prefetch" href="/assets/js/6.32279958.js"><link rel="prefetch" href="/assets/js/60.adce9726.js"><link rel="prefetch" href="/assets/js/61.ab0cc428.js"><link rel="prefetch" href="/assets/js/62.24ecb3fe.js"><link rel="prefetch" href="/assets/js/63.fdbfcbab.js"><link rel="prefetch" href="/assets/js/64.732965f3.js"><link rel="prefetch" href="/assets/js/65.38e130ad.js"><link rel="prefetch" href="/assets/js/66.17648c08.js"><link rel="prefetch" href="/assets/js/67.92432d08.js"><link rel="prefetch" href="/assets/js/68.f5a2a210.js"><link rel="prefetch" href="/assets/js/69.22195665.js"><link rel="prefetch" href="/assets/js/7.5c29c6bf.js"><link rel="prefetch" href="/assets/js/70.e0a45c78.js"><link rel="prefetch" href="/assets/js/71.984e8f30.js"><link rel="prefetch" href="/assets/js/72.0c81f09c.js"><link rel="prefetch" href="/assets/js/73.a144107a.js"><link rel="prefetch" href="/assets/js/74.5298e33a.js"><link rel="prefetch" href="/assets/js/75.29246634.js"><link rel="prefetch" href="/assets/js/76.1f7ed65d.js"><link rel="prefetch" href="/assets/js/77.3cdfd8e6.js"><link rel="prefetch" href="/assets/js/78.ac0e694a.js"><link rel="prefetch" href="/assets/js/79.97019a3f.js"><link rel="prefetch" href="/assets/js/8.bc783db4.js"><link rel="prefetch" href="/assets/js/80.651b5ae8.js"><link rel="prefetch" href="/assets/js/81.46f62722.js"><link rel="prefetch" href="/assets/js/82.a4fcacf0.js"><link rel="prefetch" href="/assets/js/83.521d6082.js"><link rel="prefetch" href="/assets/js/84.9ad644cc.js"><link rel="prefetch" href="/assets/js/85.bafaf769.js"><link rel="prefetch" href="/assets/js/86.5101f9b5.js"><link rel="prefetch" href="/assets/js/87.39d756b8.js"><link rel="prefetch" href="/assets/js/88.3b4ecdf9.js"><link rel="prefetch" href="/assets/js/89.00043df1.js"><link rel="prefetch" href="/assets/js/9.df0100bb.js"><link rel="prefetch" href="/assets/js/90.de943624.js"><link rel="prefetch" href="/assets/js/91.82e50de0.js"><link rel="prefetch" href="/assets/js/92.53579163.js"><link rel="prefetch" href="/assets/js/93.aad7c9c2.js"><link rel="prefetch" href="/assets/js/94.2323ca12.js"><link rel="prefetch" href="/assets/js/95.81024d17.js"><link rel="prefetch" href="/assets/js/96.d21c2b23.js"><link rel="prefetch" href="/assets/js/97.d1ee279e.js"><link rel="prefetch" href="/assets/js/98.f7ebe37e.js"><link rel="prefetch" href="/assets/js/99.764af62f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4b391fdb.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jacky's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><a href="/fe/" class="link-title">前端</a> <span class="title" style="display:none;">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/" class="nav-link">web</a></li><li class="dropdown-subitem"><a href="/android/" class="nav-link">android</a></li><li class="dropdown-subitem"><a href="/iOS/" class="nav-link">iOS</a></li><li class="dropdown-subitem"><a href="/vue/" class="nav-link">vue</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="/pages/5a96b7/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><a href="/other/" class="link-title">其他</a> <span class="title" style="display:none;">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tool/" class="nav-link">tool</a></li><li class="dropdown-item"><!----> <a href="/algo/" class="nav-link">algo</a></li><li class="dropdown-item"><!----> <a href="/python/" class="nav-link">python</a></li><li class="dropdown-item"><!----> <a href="/java/" class="nav-link">java</a></li><li class="dropdown-item"><!----> <a href="/server/" class="nav-link">server</a></li><li class="dropdown-item"><!----> <a href="/growth/" class="nav-link">growth</a></li><li class="dropdown-item"><!----> <a href="/pages/0fe5d6/" class="nav-link">frida</a></li><li class="dropdown-item"><!----> <a href="/blog/" class="nav-link">blog</a></li><li class="dropdown-item"><!----> <a href="/sp/" class="nav-link">SP</a></li><li class="dropdown-item"><!----> <a href="/more/" class="nav-link">more</a></li></ul></div></div> <a href="https://github.com/jacky1234" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://raw.githubusercontent.com/jacky1234/picArchieve/master/uPic/dUmDI0.jpg"> <div class="blogger-info"><h3>Jack Yang</h3> <span>编程; 随笔</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><a href="/fe/" class="link-title">前端</a> <span class="title" style="display:none;">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/" class="nav-link">web</a></li><li class="dropdown-subitem"><a href="/android/" class="nav-link">android</a></li><li class="dropdown-subitem"><a href="/iOS/" class="nav-link">iOS</a></li><li class="dropdown-subitem"><a href="/vue/" class="nav-link">vue</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="/pages/5a96b7/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><a href="/other/" class="link-title">其他</a> <span class="title" style="display:none;">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tool/" class="nav-link">tool</a></li><li class="dropdown-item"><!----> <a href="/algo/" class="nav-link">algo</a></li><li class="dropdown-item"><!----> <a href="/python/" class="nav-link">python</a></li><li class="dropdown-item"><!----> <a href="/java/" class="nav-link">java</a></li><li class="dropdown-item"><!----> <a href="/server/" class="nav-link">server</a></li><li class="dropdown-item"><!----> <a href="/growth/" class="nav-link">growth</a></li><li class="dropdown-item"><!----> <a href="/pages/0fe5d6/" class="nav-link">frida</a></li><li class="dropdown-item"><!----> <a href="/blog/" class="nav-link">blog</a></li><li class="dropdown-item"><!----> <a href="/sp/" class="nav-link">SP</a></li><li class="dropdown-item"><!----> <a href="/more/" class="nav-link">more</a></li></ul></div></div> <a href="https://github.com/jacky1234" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/pages/dd1044/" class="sidebar-link">tutorial</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>jetpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>components</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>androidx</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/pages/1b83e2/" class="sidebar-link">动态化</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>apm</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>module</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>harmony</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>tool</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/37f363/" aria-current="page" class="active sidebar-link">adb</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/pages/37f363/#基础知识" class="sidebar-link">基础知识</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#核心概念" class="sidebar-link">核心概念</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#运行原理" class="sidebar-link">运行原理</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#安装与配置" class="sidebar-link">安装与配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#安装-adb" class="sidebar-link">安装 ADB</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#环境配置" class="sidebar-link">环境配置</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#设备连接" class="sidebar-link">设备连接</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#command" class="sidebar-link">command</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#devices" class="sidebar-link">devices</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#push-pull" class="sidebar-link">push/pull</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#ip" class="sidebar-link">ip</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#settings-list-设置" class="sidebar-link">settings list 设置</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#getprop-设备属性" class="sidebar-link">getprop 设备属性</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#查看系统信息" class="sidebar-link">查看系统信息</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#ps" class="sidebar-link">ps</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#pm" class="sidebar-link">pm</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#am" class="sidebar-link">am</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#dumpsys" class="sidebar-link">dumpsys</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#activity" class="sidebar-link">activity</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#网络状态" class="sidebar-link">网络状态</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#性能分析" class="sidebar-link">性能分析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#常用信息" class="sidebar-link">常用信息</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#设置调试应用" class="sidebar-link">设置调试应用</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#获取fd" class="sidebar-link">获取fd</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#测试自动化脚本" class="sidebar-link">测试自动化脚本</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#资源监控脚本" class="sidebar-link">资源监控脚本</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#日志管理" class="sidebar-link">日志管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#日志查看-logcat" class="sidebar-link">日志查看 (logcat)</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#基础用法" class="sidebar-link">基础用法</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#日志级别过滤" class="sidebar-link">日志级别过滤</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#日志格式控制" class="sidebar-link">日志格式控制</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#日志缓冲区" class="sidebar-link">日志缓冲区</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#实用技巧" class="sidebar-link">实用技巧</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#输入模拟" class="sidebar-link">输入模拟</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#输入事件-input" class="sidebar-link">输入事件 (input)</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#基础输入" class="sidebar-link">基础输入</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#常用按键码" class="sidebar-link">常用按键码</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#高级用法" class="sidebar-link">高级用法</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#debug" class="sidebar-link">debug</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#bugreport" class="sidebar-link">bugreport</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#dumpheap" class="sidebar-link">dumpheap</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#uiautomator" class="sidebar-link">uiautomator</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#_7-实用技能" class="sidebar-link">7. 实用技能</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_7-1-forward-revese-端口转发" class="sidebar-link">7.1 forward/revese 端口转发</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#_7-1-1-adb-forward-电脑访问手机" class="sidebar-link">7.1.1 adb forward：电脑访问手机</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#_7-1-2-adb-reverse-手机访问电脑" class="sidebar-link">7.1.2 adb reverse：手机访问电脑</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#_7-1-3-常用管理命令" class="sidebar-link">7.1.3 常用管理命令</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#_7-1-4-注意事项" class="sidebar-link">7.1.4 注意事项</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_7-2-网络代理" class="sidebar-link">7.2 网络代理</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_7-3-无线调试" class="sidebar-link">7.3 无线调试</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#实际应用案例" class="sidebar-link">实际应用案例</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_1-自动化测试" class="sidebar-link">1. 自动化测试</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#应用安装和启动" class="sidebar-link">应用安装和启动</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_2-应用调试" class="sidebar-link">2. 应用调试</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#日志收集" class="sidebar-link">日志收集</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#内存泄漏检测" class="sidebar-link">内存泄漏检测</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_3-设备管理" class="sidebar-link">3. 设备管理</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#批量设备操作" class="sidebar-link">批量设备操作</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#设备信息收集" class="sidebar-link">设备信息收集</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_4-网络调试" class="sidebar-link">4. 网络调试</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#网络连接测试" class="sidebar-link">网络连接测试</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#代理配置" class="sidebar-link">代理配置</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_3-日志优化" class="sidebar-link">3. 日志优化</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#日志过滤优化" class="sidebar-link">日志过滤优化</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#日志文件管理" class="sidebar-link">日志文件管理</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#常见问题解决" class="sidebar-link">常见问题解决</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_1-连接问题" class="sidebar-link">1. 连接问题</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#设备未识别" class="sidebar-link">设备未识别</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#无线连接失败" class="sidebar-link">无线连接失败</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_2-权限问题" class="sidebar-link">2. 权限问题</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#文件访问权限" class="sidebar-link">文件访问权限</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#系统权限" class="sidebar-link">系统权限</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_3-性能问题" class="sidebar-link">3. 性能问题</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#命令执行缓慢" class="sidebar-link">命令执行缓慢</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#内存不足" class="sidebar-link">内存不足</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#最佳实践" class="sidebar-link">最佳实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_1-脚本编写" class="sidebar-link">1. 脚本编写</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#错误处理" class="sidebar-link">错误处理</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#日志记录" class="sidebar-link">日志记录</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_2-安全考虑" class="sidebar-link">2. 安全考虑</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#权限最小化" class="sidebar-link">权限最小化</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#数据保护" class="sidebar-link">数据保护</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#调试技巧" class="sidebar-link">调试技巧</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_1-问题诊断" class="sidebar-link">1. 问题诊断</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#连接诊断" class="sidebar-link">连接诊断</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#应用诊断" class="sidebar-link">应用诊断</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_2-性能分析" class="sidebar-link">2. 性能分析</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#cpu分析" class="sidebar-link">CPU分析</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#内存分析" class="sidebar-link">内存分析</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_3-自动化测试" class="sidebar-link">3. 自动化测试</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#ui自动化测试" class="sidebar-link">UI自动化测试</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#压力测试" class="sidebar-link">压力测试</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#问题解决记录" class="sidebar-link">问题解决记录</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#查找应用中的png缓存-从大到小排序" class="sidebar-link">查找应用中的png缓存，从大到小排序</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#扩展资源" class="sidebar-link">扩展资源</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_1-相关工具" class="sidebar-link">1. 相关工具</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#图形化工具" class="sidebar-link">图形化工具</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#命令行工具" class="sidebar-link">命令行工具</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_2-学习资源" class="sidebar-link">2. 学习资源</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#官方文档" class="sidebar-link">官方文档</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#社区资源" class="sidebar-link">社区资源</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_3-实用脚本库" class="sidebar-link">3. 实用脚本库</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#自动化脚本" class="sidebar-link">自动化脚本</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#_4-故障排除指南" class="sidebar-link">4. 故障排除指南</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#常见错误及解决方案" class="sidebar-link">常见错误及解决方案</a></li><li class="sidebar-sub-header level4"><a href="/pages/37f363/#性能优化建议" class="sidebar-link">性能优化建议</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/37f363/#总结" class="sidebar-link">总结</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/37f363/#关键要点" class="sidebar-link">关键要点</a></li><li class="sidebar-sub-header level3"><a href="/pages/37f363/#持续学习" class="sidebar-link">持续学习</a></li></ul></li></ul></li><li><a href="/pages/4ddfe5/" class="sidebar-link">fastboot</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>other</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>kotlin</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/categories/?category=%E3%80%8Aandroid%E3%80%8B" title="分类" data-v-06225672>《android》</a></li><li data-v-06225672><a href="/categories/?category=tool" title="分类" data-v-06225672>tool</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/jacky1234" target="_blank" title="作者" class="beLink" data-v-06225672>Jacky</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2023-04-28</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">adb<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="基础知识"><a href="#基础知识" class="header-anchor">#</a> 基础知识</h2> <p>Android Debug Bridge (adb) 是一个功能强大的命令行工具，允许您与 Android 设备进行通信。adb 命令可以执行各种设备操作，如安装和调试应用程序。adb 提供了对 Unix shell 的访问，您可以在设备上运行各种命令。</p> <h3 id="核心概念"><a href="#核心概念" class="header-anchor">#</a> 核心概念</h3> <ul><li><strong>adb client</strong>: 在开发机器上运行的客户端程序</li> <li><strong>adb server</strong>: 在开发机器上运行的后台进程，管理客户端与设备的通信</li> <li><strong>adbd</strong>: 在 Android 设备上运行的守护进程</li></ul> <h3 id="运行原理"><a href="#运行原理" class="header-anchor">#</a> 运行原理</h3> <p>adb 的运行原理是 PC 端的 adb server 与手机端的守护进程 adbd 建立连接，然后 PC 端的 adb client 通过 adb server 转发命令，adbd 接收命令后解析运行。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 连接流程</span>
+adb client → adb server → adbd <span class="token punctuation">(</span>设备端<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="安装与配置"><a href="#安装与配置" class="header-anchor">#</a> 安装与配置</h2> <h3 id="安装-adb"><a href="#安装-adb" class="header-anchor">#</a> 安装 ADB</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># macOS (使用 Homebrew)</span>
+brew <span class="token function">install</span> android-platform-tools
+
+<span class="token comment"># Ubuntu/Debian</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> android-tools-adb
+
+<span class="token comment"># Windows</span>
+<span class="token comment"># 下载 Android SDK Platform Tools</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="环境配置"><a href="#环境配置" class="header-anchor">#</a> 环境配置</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 添加到 PATH</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$ANDROID_HOME</span>/platform-tools
+
+<span class="token comment"># 验证安装</span>
+adb version
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="设备连接"><a href="#设备连接" class="header-anchor">#</a> 设备连接</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看连接的设备</span>
+adb devices
+
+<span class="token comment"># 无线连接</span>
+adb tcpip <span class="token number">5555</span>
+adb connect <span class="token operator">&lt;</span>device_ip<span class="token operator">&gt;</span>:5555
+
+<span class="token comment"># 断开连接</span>
+adb disconnect <span class="token operator">&lt;</span>device_ip<span class="token operator">&gt;</span>:5555
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="command"><a href="#command" class="header-anchor">#</a> command</h2> <h3 id="devices"><a href="#devices" class="header-anchor">#</a> devices</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看设备信息</span>
+adb devices <span class="token parameter variable">-l</span>
+
+<span class="token comment"># 重启 adb 服务</span>
+adb kill-server
+adb start-server
+
+<span class="token comment"># 指定端口启动服务</span>
+adb <span class="token parameter variable">-P</span> <span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> start-server
+
+<span class="token comment"># 重启设备</span>
+adb <span class="token function">reboot</span>
+adb <span class="token function">reboot</span> bootloader
+adb <span class="token function">reboot</span> recovery
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="push-pull"><a href="#push-pull" class="header-anchor">#</a> push/pull</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 推送文件到设备</span>
+adb push <span class="token operator">&lt;</span>local_file<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>remote_path<span class="token operator">&gt;</span>
+
+<span class="token comment"># 从设备拉取文件</span>
+adb pull <span class="token operator">&lt;</span>remote_file<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>local_path<span class="token operator">&gt;</span>
+
+<span class="token comment"># 安装 APK</span>
+adb <span class="token function">install</span> <span class="token parameter variable">-r</span> <span class="token operator">&lt;</span>apk_path<span class="token operator">&gt;</span>
+
+<span class="token comment"># 卸载应用</span>
+adb uninstall <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 查看设备存储</span>
+adb shell <span class="token function">df</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="ip"><a href="#ip" class="header-anchor">#</a> ip</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看网络接口</span>
+adb shell <span class="token function">ip</span> address show wlan0
+adb shell <span class="token function">ifconfig</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;inet &quot;</span>
+
+<span class="token comment"># 查看网络状态</span>
+adb shell <span class="token string">&quot;su -c ifconfig&quot;</span>
+
+<span class="token comment"># 设置网络代理</span>
+adb shell settings put global http_proxy <span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span>
+
+<span class="token comment"># 清除HTTP代理设置</span>
+<span class="token comment">#   方法1：设置为空值（推荐）</span>
+adb shell settings put global http_proxy :0
+<span class="token comment">#   方法2：删除设置</span>
+adb shell settings delete global http_proxy
+<span class="token comment">#   方法3：设置为null</span>
+adb shell settings put global http_proxy null
+
+<span class="token comment"># 查看当前代理设置</span>
+adb shell settings get global http_proxy
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="settings-list-设置"><a href="#settings-list-设置" class="header-anchor">#</a> settings list 设置</h3> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token comment"># </span>
+adb shell settings list system
+adb shell settings list secure
+adb shell settings list global
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="getprop-设备属性"><a href="#getprop-设备属性" class="header-anchor">#</a> getprop 设备属性</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看所有属性</span>
+adb shell getprop
+
+<span class="token comment"># 查看特定属性</span>
+adb shell getprop ro.product.model          <span class="token comment"># 手机型号</span>
+adb shell getprop ro.product.brand          <span class="token comment"># 品牌</span>
+adb shell getprop ro.product.device         <span class="token comment"># 设备代号</span>
+adb shell getprop ro.build.version.release  <span class="token comment"># 系统版本</span>
+adb shell getprop ro.product.cpu.abi        <span class="token comment"># CPU架构</span>
+
+<span class="token comment"># 高级选项</span>
+adb shell getprop <span class="token parameter variable">-T</span>  <span class="token comment"># 显示属性类型</span>
+adb shell getprop <span class="token parameter variable">-Z</span>  <span class="token comment"># 显示属性上下文</span>
+
+<span class="token comment"># 批量查询</span>
+adb shell getprop <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-E</span> <span class="token string">'ro.product.model|ro.product.brand|ro.product.device'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="查看系统信息"><a href="#查看系统信息" class="header-anchor">#</a> 查看系统信息</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># CPU信息</span>
+adb shell <span class="token function">cat</span> /proc/cpuinfo
+
+<span class="token comment"># 内存信息</span>
+adb shell <span class="token function">cat</span> /proc/meminfo
+
+<span class="token comment"># 系统版本</span>
+adb shell <span class="token function">cat</span> /proc/version
+
+<span class="token comment"># 设备树</span>
+adb shell <span class="token function">cat</span> /proc/device-tree/model
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="ps"><a href="#ps" class="header-anchor">#</a> ps</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看所有进程</span>
+adb shell <span class="token function">ps</span> <span class="token parameter variable">-A</span>
+
+<span class="token comment"># 查看用户进程</span>
+adb shell <span class="token function">ps</span> <span class="token parameter variable">-a</span>
+
+<span class="token comment"># 按内存排序</span>
+adb shell <span class="token function">ps</span> <span class="token parameter variable">-r</span>
+
+<span class="token comment"># 显示详细信息</span>
+adb shell <span class="token function">ps</span> <span class="token parameter variable">-u</span> <span class="token parameter variable">-p</span>
+
+<span class="token comment"># 过滤特定进程</span>
+adb shell <span class="token function">ps</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="pm"><a href="#pm" class="header-anchor">#</a> pm</h3> <p>曝光里</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 列出所有应用</span>
+adb shell pm list packages
+
+<span class="token comment"># 列出第三方应用</span>
+adb shell pm list packages <span class="token parameter variable">-3</span>
+
+<span class="token comment"># 列出系统应用</span>
+adb shell pm list packages <span class="token parameter variable">-s</span>
+
+<span class="token comment"># 显示应用路径</span>
+adb shell pm list packages <span class="token parameter variable">-f</span>
+
+<span class="token comment"># 获取特定应用路径</span>
+adb shell pm path <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 清除应用数据</span>
+adb shell pm <span class="token function">clear</span> <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 禁用/启用应用</span>
+adb shell pm disable-user <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+adb shell pm <span class="token builtin class-name">enable</span> <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h3 id="am"><a href="#am" class="header-anchor">#</a> am</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 强制停止应用</span>
+adb shell am force-stop <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 启动应用</span>
+adb shell am start <span class="token parameter variable">-n</span> <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>/<span class="token operator">&lt;</span>activity_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 启动应用并传递数据</span>
+adb shell am start <span class="token parameter variable">-n</span> <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>/<span class="token operator">&lt;</span>activity_name<span class="token operator">&gt;</span> <span class="token parameter variable">-d</span> <span class="token operator">&lt;</span>data_uri<span class="token operator">&gt;</span>
+
+<span class="token comment"># 发送广播</span>
+adb shell am broadcast <span class="token parameter variable">-a</span> <span class="token operator">&lt;</span>action<span class="token operator">&gt;</span>
+adb shell am broadcast <span class="token parameter variable">-a</span> <span class="token operator">&lt;</span>action<span class="token operator">&gt;</span> <span class="token parameter variable">-e</span> <span class="token operator">&lt;</span>key<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>value<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="dumpsys"><a href="#dumpsys" class="header-anchor">#</a> dumpsys</h3> <p>转储系统服务信息，是调试和性能分析的重要工具。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看所有可用服务</span>
+adb shell dumpsys <span class="token parameter variable">-l</span>
+
+<span class="token comment"># 转储特定服务</span>
+adb shell dumpsys <span class="token operator">&lt;</span>service_name<span class="token operator">&gt;</span>
+
+<span class="token comment">#   codec </span>
+adb shell dumpsys media.codec
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="activity"><a href="#activity" class="header-anchor">#</a> activity</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 帮助信息</span>
+adb shell dumpsys activity <span class="token parameter variable">-h</span>
+
+<span class="token comment"># 查看前台 Activity</span>
+adb shell dumpsys activity activities
+<span class="token comment"># 包含了fragment信息</span>
+adb shell dumpsys activity <span class="token function">top</span>
+
+<span class="token comment"># 查看特定 Activity 信息</span>
+adb shell dumpsys activity <span class="token operator">&lt;</span>activity_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 查看广播接收器</span>
+adb shell dumpsys activity broadcasts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 查看服务</span>
+adb shell dumpsys activity services <span class="token punctuation">[</span><span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 查看最近任务</span>
+adb shell dumpsys activity recents
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h4 id="网络状态"><a href="#网络状态" class="header-anchor">#</a> 网络状态</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 网络统计</span>
+adb shell dumpsys netstats
+
+<span class="token comment"># 连接信息</span>
+adb shell dumpsys connectivity
+
+<span class="token comment"># WiFi 信息</span>
+adb shell dumpsys wifi
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="性能分析"><a href="#性能分析" class="header-anchor">#</a> 性能分析</h2> <h3 id="常用信息"><a href="#常用信息" class="header-anchor">#</a> 常用信息</h3> <ul><li><strong>内存信息</strong>: <code>adb shell dumpsys meminfo &lt;process_name_or_pid&gt;</code></li> <li><strong>图形渲染信息</strong>: <code>adb shell dumpsys gfxinfo &lt;process_name&gt;</code></li> <li><strong>SurfaceFlinger 延迟</strong>: <code>adb shell dumpsys SurfaceFlinger --latency</code></li> <li><strong>窗口信息</strong>: <code>adb shell dumpsys window | grep mCurrentFocus</code></li> <li><strong>启动性能分析</strong>: <code>adb shell am profile start &lt;process&gt; &lt;file&gt;</code>: file 示例 <code>/sdcard/profile.trace</code></li> <li><strong>停止性能分析</strong>: <code>adb shell am profile stop &lt;process&gt;</code></li> <li><strong>转储堆内存</strong>: <code>adb shell am dumpheap &lt;process&gt; &lt;file&gt;</code>: file 示例 <code>/data/local/tmp/&lt;xxx&gt;.hprof</code></li></ul> <h3 id="设置调试应用"><a href="#设置调试应用" class="header-anchor">#</a> 设置调试应用</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>adb shell am set-debug-app <span class="token parameter variable">-w</span> <span class="token operator">&lt;</span>package<span class="token operator">&gt;</span>
+adb shell am set-debug-app <span class="token parameter variable">-w</span> <span class="token parameter variable">--persistent</span> <span class="token operator">&lt;</span>package<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="获取fd"><a href="#获取fd" class="header-anchor">#</a> 获取fd</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查询指定包名的应用文件描述符 (FD) 数量</span>
+adb shell <span class="token string">&quot;MAIN_PID=\<span class="token variable"><span class="token variable">$(</span>pidof <span class="token operator">&lt;</span>package<span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print \$1}'</span><span class="token variable">)</span></span>; run-as &lt;package&gt; ls -l /proc/\<span class="token variable">$MAIN_PID</span>/fd&quot;</span> <span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span>
+<span class="token comment"># shell function 实现</span>
+<span class="token function-name function">get_fd_count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">package</span><span class="token operator">=</span><span class="token variable">$1</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">&quot;<span class="token variable">$package</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;使用方法: get_fd_count &lt;package_name&gt;&quot;</span>
+        <span class="token builtin class-name">return</span> <span class="token number">1</span>
+    <span class="token keyword">fi</span>
+
+    <span class="token comment"># 执行命令</span>
+    adb shell <span class="token string">&quot;MAIN_PID=\<span class="token variable"><span class="token variable">$(</span>pidof $package <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print \$1}'</span><span class="token variable">)</span></span>; run-as <span class="token variable">$package</span> ls -l /proc/\<span class="token variable">$MAIN_PID</span>/fd&quot;</span> <span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="测试自动化脚本"><a href="#测试自动化脚本" class="header-anchor">#</a> 测试自动化脚本</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 性能测试脚本</span>
+
+<span class="token assign-left variable">PACKAGE_NAME</span><span class="token operator">=</span><span class="token string">&quot;com.example.app&quot;</span>
+<span class="token assign-left variable">TEST_DURATION</span><span class="token operator">=</span><span class="token number">60</span>  <span class="token comment"># 测试时长（秒）</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;开始性能测试...&quot;</span>
+
+<span class="token comment"># 启动应用</span>
+adb shell am start <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>/.MainActivity&quot;</span>
+
+<span class="token comment"># 开始性能监控</span>
+adb shell am profile start <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span> /sdcard/performance.trace
+
+<span class="token comment"># 执行测试操作</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">..</span><span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;执行第 <span class="token variable">$i</span> 轮测试...&quot;</span>
+    adb shell input swipe <span class="token number">300</span> <span class="token number">1000</span> <span class="token number">300</span> <span class="token number">500</span>
+    <span class="token function">sleep</span> <span class="token number">2</span>
+    adb shell input tap <span class="token number">500</span> <span class="token number">500</span>
+    <span class="token function">sleep</span> <span class="token number">1</span>
+<span class="token keyword">done</span>
+
+<span class="token comment"># 停止性能监控</span>
+adb shell am profile stop <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span>
+
+<span class="token comment"># 拉取性能数据</span>
+adb pull /sdcard/performance.trace ./performance_<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%Y%m%d_%H%M%S<span class="token variable">)</span></span>.trace
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;性能测试完成&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h3 id="资源监控脚本"><a href="#资源监控脚本" class="header-anchor">#</a> 资源监控脚本</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 资源监控脚本</span>
+
+<span class="token function-name function">monitor_resources</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;=== <span class="token variable"><span class="token variable">$(</span><span class="token function">date</span><span class="token variable">)</span></span> ===&quot;</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;CPU使用率:&quot;</span>
+        adb shell <span class="token function">top</span> <span class="token parameter variable">-n</span> <span class="token number">1</span> <span class="token operator">|</span> <span class="token function">head</span> <span class="token parameter variable">-10</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;&quot;</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;内存使用:&quot;</span>
+        adb shell <span class="token function">cat</span> /proc/meminfo <span class="token operator">|</span> <span class="token function">head</span> <span class="token parameter variable">-5</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;&quot;</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;存储使用:&quot;</span>
+        adb shell <span class="token function">df</span> /sdcard
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;==================&quot;</span>
+        <span class="token function">sleep</span> <span class="token number">30</span>
+    <span class="token keyword">done</span>
+<span class="token punctuation">}</span>
+
+monitor_resources
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="日志管理"><a href="#日志管理" class="header-anchor">#</a> 日志管理</h2> <h3 id="日志查看-logcat"><a href="#日志查看-logcat" class="header-anchor">#</a> 日志查看 (logcat)</h3> <p>logcat 是 Android 系统日志查看工具，提供丰富的过滤和格式化选项。</p> <h4 id="基础用法"><a href="#基础用法" class="header-anchor">#</a> 基础用法</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看帮助</span>
+adb logcat <span class="token parameter variable">-h</span>
+
+<span class="token comment"># 清除日志缓存</span>
+adb logcat <span class="token parameter variable">-c</span>
+
+<span class="token comment"># 设置缓冲区大小</span>
+adb logcat <span class="token parameter variable">-G</span> 16M
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="日志级别过滤"><a href="#日志级别过滤" class="header-anchor">#</a> 日志级别过滤</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 按级别过滤</span>
+adb logcat *:V    <span class="token comment"># Verbose (所有级别)</span>
+adb logcat *:D    <span class="token comment"># Debug 及以上</span>
+adb logcat *:I    <span class="token comment"># Info 及以上</span>
+adb logcat *:W    <span class="token comment"># Warning 及以上</span>
+adb logcat *:E    <span class="token comment"># Error 及以上</span>
+adb logcat *:F    <span class="token comment"># Fatal 及以上</span>
+adb logcat *:S    <span class="token comment"># Silent (静默模式)</span>
+
+<span class="token comment"># 按标签过滤</span>
+adb logcat <span class="token parameter variable">-s</span> <span class="token string">&quot;TAG_NAME&quot;</span>
+adb logcat *:E <span class="token parameter variable">-s</span> <span class="token string">&quot;TAG_NAME&quot;</span>  <span class="token comment"># Error级别且包含标签</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="日志格式控制"><a href="#日志格式控制" class="header-anchor">#</a> 日志格式控制</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 不同格式选项</span>
+adb logcat <span class="token parameter variable">-v</span> <span class="token function">time</span>        <span class="token comment"># 显示时间戳</span>
+adb logcat <span class="token parameter variable">-v</span> threadtime  <span class="token comment"># 显示时间戳、线程ID和优先级</span>
+adb logcat <span class="token parameter variable">-v</span> long        <span class="token comment"># 显示所有元数据字段</span>
+adb logcat <span class="token parameter variable">-v</span> brief       <span class="token comment"># 显示优先级、标签和PID</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h4 id="日志缓冲区"><a href="#日志缓冲区" class="header-anchor">#</a> 日志缓冲区</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 选择缓冲区</span>
+adb logcat <span class="token parameter variable">-b</span> main    <span class="token comment"># 主缓冲区（默认）</span>
+adb logcat <span class="token parameter variable">-b</span> system  <span class="token comment"># 系统缓冲区</span>
+adb logcat <span class="token parameter variable">-b</span> radio   <span class="token comment"># 无线缓冲区</span>
+adb logcat <span class="token parameter variable">-b</span> events  <span class="token comment"># 事件缓冲区</span>
+adb logcat <span class="token parameter variable">-b</span> all     <span class="token comment"># 所有缓冲区</span>
+adb logcat <span class="token parameter variable">-b</span> crash   <span class="token comment"># 崩溃日志</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="实用技巧"><a href="#实用技巧" class="header-anchor">#</a> 实用技巧</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 保存日志到文件</span>
+adb logcat <span class="token operator">&gt;</span> log.txt
+adb logcat <span class="token parameter variable">-d</span> <span class="token operator">&gt;</span> log.txt  <span class="token comment"># 转储后退出</span>
+adb logcat <span class="token parameter variable">-f</span> log.txt    <span class="token comment"># 持续写入</span>
+
+<span class="token comment"># 日志文件管理</span>
+adb logcat <span class="token parameter variable">-r</span> <span class="token number">1024</span> <span class="token parameter variable">-n</span> <span class="token number">10</span>  <span class="token comment"># 设置文件大小1024KB，最多保存10个文件</span>
+
+<span class="token comment"># 过滤特定信息</span>
+adb logcat <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> <span class="token string">&quot;crash\|exception\|error&quot;</span>
+adb logcat <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> <span class="token string">&quot;anr&quot;</span>
+adb logcat <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> <span class="token string">&quot;outofmemory&quot;</span>
+
+<span class="token comment"># 按标签过滤并显示详细时间</span>
+adb logcat <span class="token parameter variable">-v</span> threadtime <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> <span class="token string">&quot;your_tag&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="输入模拟"><a href="#输入模拟" class="header-anchor">#</a> 输入模拟</h2> <h3 id="输入事件-input"><a href="#输入事件-input" class="header-anchor">#</a> 输入事件 (input)</h3> <p>input 命令用于模拟各种输入事件，包括点击、按键、滑动和文本输入。</p> <h4 id="基础输入"><a href="#基础输入" class="header-anchor">#</a> 基础输入</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 模拟点击</span>
+adb shell input tap <span class="token operator">&lt;</span>x<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>y<span class="token operator">&gt;</span>
+
+<span class="token comment"># 模拟按键</span>
+adb shell input keyevent <span class="token operator">&lt;</span>keycode<span class="token operator">&gt;</span>
+
+<span class="token comment"># 模拟滑动</span>
+adb shell input swipe <span class="token operator">&lt;</span>x<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span> <span class="token operator">&lt;</span>y<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span> <span class="token operator">&lt;</span>x<span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span> <span class="token operator">&lt;</span>y<span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span> <span class="token punctuation">[</span>duration<span class="token punctuation">]</span>
+
+<span class="token comment"># 模拟文本输入</span>
+adb shell input text <span class="token string">&quot;your_text&quot;</span>
+
+<span class="token comment"># 长按按键</span>
+adb shell input keyevent <span class="token parameter variable">--longpress</span> <span class="token operator">&lt;</span>keycode<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h4 id="常用按键码"><a href="#常用按键码" class="header-anchor">#</a> 常用按键码</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 系统按键</span>
+adb shell input keyevent <span class="token number">3</span>    <span class="token comment"># HOME</span>
+adb shell input keyevent <span class="token number">4</span>    <span class="token comment"># BACK</span>
+adb shell input keyevent <span class="token number">24</span>   <span class="token comment"># VOLUME_UP</span>
+adb shell input keyevent <span class="token number">25</span>   <span class="token comment"># VOLUME_DOWN</span>
+adb shell input keyevent <span class="token number">26</span>   <span class="token comment"># POWER</span>
+adb shell input keyevent <span class="token number">27</span>   <span class="token comment"># CAMERA</span>
+
+<span class="token comment"># 导航按键</span>
+adb shell input keyevent <span class="token number">19</span>   <span class="token comment"># DPAD_UP</span>
+adb shell input keyevent <span class="token number">20</span>   <span class="token comment"># DPAD_DOWN</span>
+adb shell input keyevent <span class="token number">21</span>   <span class="token comment"># DPAD_LEFT</span>
+adb shell input keyevent <span class="token number">22</span>   <span class="token comment"># DPAD_RIGHT</span>
+adb shell input keyevent <span class="token number">23</span>   <span class="token comment"># DPAD_CENTER</span>
+
+<span class="token comment"># 功能按键</span>
+adb shell input keyevent <span class="token number">82</span>   <span class="token comment"># MENU</span>
+adb shell input keyevent <span class="token number">84</span>   <span class="token comment"># SEARCH</span>
+adb shell input keyevent <span class="token number">85</span>   <span class="token comment"># MEDIA_PLAY_PAUSE</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h4 id="高级用法"><a href="#高级用法" class="header-anchor">#</a> 高级用法</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 连续点击</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">..</span><span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    adb shell input tap <span class="token number">500</span> <span class="token number">500</span>
+    <span class="token function">sleep</span> <span class="token number">0.1</span>
+<span class="token keyword">done</span>
+
+<span class="token comment"># 滑动解锁</span>
+adb shell input swipe <span class="token number">300</span> <span class="token number">1000</span> <span class="token number">300</span> <span class="token number">500</span>
+
+<span class="token comment"># 输入特殊字符</span>
+adb shell input text <span class="token string">&quot;Hello\ World&quot;</span>  <span class="token comment"># 转义空格</span>
+adb shell input text <span class="token string">&quot;Hello%20World&quot;</span> <span class="token comment"># URL编码</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="debug"><a href="#debug" class="header-anchor">#</a> debug</h2> <h3 id="bugreport"><a href="#bugreport" class="header-anchor">#</a> bugreport</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 生成完整设备报告</span>
+adb bugreport crash.txt
+
+<span class="token comment"># 获取 ANR 信息</span>
+adb shell
+run-as <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+<span class="token function">kill</span> <span class="token parameter variable">-s</span> SIGQUIT <span class="token operator">&lt;</span>pid<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="dumpheap"><a href="#dumpheap" class="header-anchor">#</a> dumpheap</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 转储堆内存</span>
+adb shell am dumpheap <span class="token operator">&lt;</span>process<span class="token operator">&gt;</span> /sdcard/heap.hprof
+
+<span class="token comment"># 拉取堆内存文件</span>
+adb pull /sdcard/heap.hprof <span class="token builtin class-name">.</span>
+
+<span class="token comment"># 使用 MAT 或 Android Studio 分析</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="uiautomator"><a href="#uiautomator" class="header-anchor">#</a> uiautomator</h3> <p>目的： dump ui</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>adb shell uiautomator dump /sdcard/view.xml
+<span class="token comment"># adb pull /sdcard/view.xml</span>
+<span class="token comment"># view /sdcard/view.xml</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>注： 你也可以使用工具如 Layout Inspector、尝试 weditor 或 Appium Inspector</p> <h2 id="_7-实用技能"><a href="#_7-实用技能" class="header-anchor">#</a> 7. 实用技能</h2> <h3 id="_7-1-forward-revese-端口转发"><a href="#_7-1-forward-revese-端口转发" class="header-anchor">#</a> 7.1 forward/revese 端口转发</h3> <p><code>adb forward</code> 是 Android 开发中非常强大的一个“内网穿透”工具。它的本质是 <strong>端口转发</strong>：将你 <strong>电脑（Host）</strong> 上的某个端口，映射到 <strong>手机（Android）</strong> 内部的某个端口。<a href="/pages/3807ea/">Android 端口转发（Forward &amp; Reverse） 的实操与避坑全指南</a></p> <ol><li><p>adb forward (正向转发)</p> <p><strong>方向：</strong> 电脑 (Host) -&gt; 手机 (Android)
+<strong>本质：</strong> 将电脑上的某个端口映射到手机内部的某个端口。当电脑访问自己的这个端口时，请求会被转发到手机。</p></li> <li><p>adb reverse (反向代理)</p> <p><strong>方向：</strong> 手机 (Android) -&gt; 电脑 (Host)
+<strong>本质：</strong> 将手机上的某个端口映射到电脑的某个端口。当手机访问自己的 <code>localhost</code> 端口时，请求会被转发到电脑。</p></li></ol> <hr> <h4 id="_7-1-1-adb-forward-电脑访问手机"><a href="#_7-1-1-adb-forward-电脑访问手机" class="header-anchor">#</a> 7.1.1 adb forward：电脑访问手机</h4> <p><strong>使用场景</strong>
+- <strong>数据库调试</strong>：访问手机 App 内置的数据库查看器（如 DebugDB 等）。
+- <strong>Webview 远程调试</strong>：通过电脑浏览器调试手机上的网页。
+- <strong>App 内部服务</strong>：App 内部开启了轻量级 HTTP/WebSocket Server 供外部调用。</p> <p><strong>示例</strong>
+假设手机 App 在 <code>8080</code> 端口开启了一个服务，你想在电脑上访问它：
+<code>bash # 将电脑的 9000 端口转发到手机的 8080 端口 adb forward tcp:9000 tcp:8080</code></p> <p><strong>结果：</strong> 在电脑浏览器访问 <code>http://localhost:9000</code> 即可看到手机上的内容。</p> <hr> <h4 id="_7-1-2-adb-reverse-手机访问电脑"><a href="#_7-1-2-adb-reverse-手机访问电脑" class="header-anchor">#</a> 7.1.2 adb reverse：手机访问电脑</h4> <p><strong>使用场景</strong></p> <ul><li><strong>本地后端联调</strong>：电脑正在开发 API 接口（如 Node.js/Python 服务），手机 App 需要请求这些接口。</li> <li><strong>前端开发预览</strong>：手机访问电脑上 <code>npm run dev</code> 启动的 H5 页面。</li> <li><strong>物理机联调</strong>：手机和电脑即便不在同一局域网，只要插线就能直接通信。</li></ul> <p><strong>示例</strong>
+假设电脑在 <code>9999</code> 端口开启了开发服务，你想在手机上预览：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 将手机的 9999 端口反向代理到电脑的 9999 端口</span>
+adb reverse tcp:9999 tcp:9999
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>结果：</strong> 在手机端访问 <code>http://localhost:9999</code> 即可访问电脑服务。</p> <hr> <h4 id="_7-1-3-常用管理命令"><a href="#_7-1-3-常用管理命令" class="header-anchor">#</a> 7.1.3 常用管理命令</h4> <p>建议将这些指令集成到 Shell 脚本或常用工具流中：</p> <table><thead><tr><th style="text-align:left;">功能</th> <th style="text-align:left;">命令</th></tr></thead> <tbody><tr><td style="text-align:left;"><strong>查看所有正向转发</strong></td> <td style="text-align:left;"><code>adb forward --list</code></td></tr> <tr><td style="text-align:left;"><strong>查看所有反向代理</strong></td> <td style="text-align:left;"><code>adb reverse --list</code></td></tr> <tr><td style="text-align:left;"><strong>删除特定正向转发</strong></td> <td style="text-align:left;"><code>adb forward --remove tcp:&lt;local_port&gt;</code></td></tr> <tr><td style="text-align:left;"><strong>删除特定反向代理</strong></td> <td style="text-align:left;"><code>adb reverse --remove tcp:&lt;remote_port&gt;</code></td></tr> <tr><td style="text-align:left;"><strong>清空所有规则</strong></td> <td style="text-align:left;"><code>adb forward --remove-all</code> / <code>adb reverse --remove-all</code></td></tr></tbody></table> <hr> <h4 id="_7-1-4-注意事项"><a href="#_7-1-4-注意事项" class="header-anchor">#</a> 7.1.4 注意事项</h4> <ol><li><strong>监听地址</strong>：电脑端的服务建议监听 <code>127.0.0.1</code>。</li> <li><strong>系统要求</strong>：<code>adb reverse</code> 需要 Android 5.0 (API 21) 及以上版本。</li> <li><strong>多设备</strong>：如果连接了多台设备，需通过 <code>-s &lt;serial_no&gt;</code> 指定设备。</li> <li><strong>稳定性</strong>：USB 线断开连接后，转发规则会自动失效，重连后需重新设置。</li></ol> <h3 id="_7-2-网络代理"><a href="#_7-2-网络代理" class="header-anchor">#</a> 7.2 网络代理</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 设置 HTTP 代理</span>
+adb shell settings put global http_proxy <span class="token operator">&lt;</span>host<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>port<span class="token operator">&gt;</span>
+
+<span class="token comment"># 清除代理设置</span>
+adb shell settings put global http_proxy :0
+
+<span class="token comment"># 查看当前代理</span>
+adb shell settings get global http_proxy
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="_7-3-无线调试"><a href="#_7-3-无线调试" class="header-anchor">#</a> 7.3 无线调试</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 启用无线调试</span>
+adb tcpip <span class="token number">5555</span>
+
+<span class="token comment"># 连接到设备</span>
+adb connect <span class="token operator">&lt;</span>device_ip<span class="token operator">&gt;</span>:5555
+
+<span class="token comment"># 断开连接</span>
+adb disconnect <span class="token operator">&lt;</span>device_ip<span class="token operator">&gt;</span>:5555
+
+<span class="token comment"># 查看连接状态</span>
+adb devices
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="实际应用案例"><a href="#实际应用案例" class="header-anchor">#</a> 实际应用案例</h2> <h3 id="_1-自动化测试"><a href="#_1-自动化测试" class="header-anchor">#</a> 1. 自动化测试</h3> <h4 id="应用安装和启动"><a href="#应用安装和启动" class="header-anchor">#</a> 应用安装和启动</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 自动化测试脚本</span>
+
+<span class="token assign-left variable">PACKAGE_NAME</span><span class="token operator">=</span><span class="token string">&quot;com.example.app&quot;</span>
+<span class="token assign-left variable">ACTIVITY_NAME</span><span class="token operator">=</span><span class="token string">&quot;com.example.app.MainActivity&quot;</span>
+<span class="token assign-left variable">APK_PATH</span><span class="token operator">=</span><span class="token string">&quot;./app-debug.apk&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;开始自动化测试...&quot;</span>
+
+<span class="token comment"># 安装应用</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;安装应用...&quot;</span>
+adb <span class="token function">install</span> <span class="token parameter variable">-r</span> <span class="token string">&quot;<span class="token variable">$APK_PATH</span>&quot;</span>
+
+<span class="token comment"># 启动应用</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;启动应用...&quot;</span>
+adb shell am start <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>/<span class="token variable">$ACTIVITY_NAME</span>&quot;</span>
+
+<span class="token comment"># 等待应用启动</span>
+<span class="token function">sleep</span> <span class="token number">3</span>
+
+<span class="token comment"># 执行测试操作</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;执行测试操作...&quot;</span>
+adb shell input tap <span class="token number">500</span> <span class="token number">500</span>  <span class="token comment"># 点击屏幕中心</span>
+<span class="token function">sleep</span> <span class="token number">1</span>
+adb shell input text <span class="token string">&quot;test_input&quot;</span>  <span class="token comment"># 输入文本</span>
+<span class="token function">sleep</span> <span class="token number">1</span>
+adb shell input keyevent <span class="token number">4</span>  <span class="token comment"># 返回键</span>
+
+<span class="token comment"># 停止应用</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;停止应用...&quot;</span>
+adb shell am force-stop <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;测试完成&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h3 id="_2-应用调试"><a href="#_2-应用调试" class="header-anchor">#</a> 2. 应用调试</h3> <h4 id="日志收集"><a href="#日志收集" class="header-anchor">#</a> 日志收集</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 日志收集脚本</span>
+
+<span class="token assign-left variable">PACKAGE_NAME</span><span class="token operator">=</span><span class="token string">&quot;com.example.app&quot;</span>
+<span class="token assign-left variable">LOG_FILE</span><span class="token operator">=</span><span class="token string">&quot;app_logs_<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%Y%m%d_%H%M%S<span class="token variable">)</span></span>.txt&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;开始收集日志...&quot;</span>
+
+<span class="token comment"># 清除旧日志</span>
+adb logcat <span class="token parameter variable">-c</span>
+
+<span class="token comment"># 设置日志级别</span>
+adb shell setprop log.tag.Main D
+adb shell setprop log.tag.MessageFragment D
+
+<span class="token comment"># 启动应用</span>
+adb shell am start <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>/.MainActivity&quot;</span>
+
+<span class="token comment"># 收集日志</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;收集日志到 <span class="token variable">$LOG_FILE</span>...&quot;</span>
+adb logcat <span class="token parameter variable">-v</span> threadtime <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-E</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>|crash|exception|error|anr&quot;</span> <span class="token operator">&gt;</span> <span class="token string">&quot;<span class="token variable">$LOG_FILE</span>&quot;</span> <span class="token operator">&amp;</span>
+<span class="token assign-left variable">LOG_PID</span><span class="token operator">=</span><span class="token variable">$!</span>
+
+<span class="token comment"># 等待用户操作</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;请在设备上执行操作，完成后按 Ctrl+C 停止日志收集&quot;</span>
+<span class="token builtin class-name">trap</span> <span class="token string">&quot;kill <span class="token variable">$LOG_PID</span>; echo '日志收集完成'; exit&quot;</span> INT
+
+<span class="token function">wait</span> <span class="token variable">$LOG_PID</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h4 id="内存泄漏检测"><a href="#内存泄漏检测" class="header-anchor">#</a> 内存泄漏检测</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 内存泄漏检测脚本</span>
+
+<span class="token assign-left variable">PACKAGE_NAME</span><span class="token operator">=</span><span class="token string">&quot;com.example.app&quot;</span>
+<span class="token assign-left variable">HEAP_FILE</span><span class="token operator">=</span><span class="token string">&quot;heap_<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%Y%m%d_%H%M%S<span class="token variable">)</span></span>.hprof&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;开始内存泄漏检测...&quot;</span>
+
+<span class="token comment"># 启动应用</span>
+adb shell am start <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>/.MainActivity&quot;</span>
+<span class="token function">sleep</span> <span class="token number">5</span>
+
+<span class="token comment"># 执行可能导致内存泄漏的操作</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">..</span><span class="token number">20</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;执行第 <span class="token variable">$i</span> 轮操作...&quot;</span>
+    adb shell input tap <span class="token number">500</span> <span class="token number">500</span>
+    <span class="token function">sleep</span> <span class="token number">1</span>
+    adb shell input keyevent <span class="token number">4</span>
+    <span class="token function">sleep</span> <span class="token number">1</span>
+<span class="token keyword">done</span>
+
+<span class="token comment"># 转储堆内存</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;转储堆内存...&quot;</span>
+adb shell am dumpheap <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span> <span class="token string">&quot;/sdcard/<span class="token variable">$HEAP_FILE</span>&quot;</span>
+
+<span class="token comment"># 拉取堆内存文件</span>
+adb pull <span class="token string">&quot;/sdcard/<span class="token variable">$HEAP_FILE</span>&quot;</span> <span class="token string">&quot;./<span class="token variable">$HEAP_FILE</span>&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;内存泄漏检测完成，堆文件: <span class="token variable">$HEAP_FILE</span>&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;请使用 MAT 或 Android Studio 分析堆文件&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h3 id="_3-设备管理"><a href="#_3-设备管理" class="header-anchor">#</a> 3. 设备管理</h3> <h4 id="批量设备操作"><a href="#批量设备操作" class="header-anchor">#</a> 批量设备操作</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 批量设备操作脚本</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;批量设备操作...&quot;</span>
+
+<span class="token comment"># 获取所有连接的设备</span>
+<span class="token assign-left variable">DEVICES</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>adb devices <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-E</span> <span class="token string">&quot;device$&quot;</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $1}'</span><span class="token variable">)</span></span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">&quot;<span class="token variable">$DEVICES</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;没有找到连接的设备&quot;</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword">fi</span>
+
+<span class="token comment"># 遍历所有设备</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">device</span> <span class="token keyword">in</span> <span class="token variable">$DEVICES</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;处理设备: <span class="token variable">$device</span>&quot;</span>
+    
+    <span class="token comment"># 在设备上执行操作</span>
+    adb <span class="token parameter variable">-s</span> <span class="token string">&quot;<span class="token variable">$device</span>&quot;</span> shell <span class="token builtin class-name">echo</span> <span class="token string">&quot;Hello from <span class="token variable">$device</span>&quot;</span>
+    adb <span class="token parameter variable">-s</span> <span class="token string">&quot;<span class="token variable">$device</span>&quot;</span> shell input keyevent <span class="token number">26</span>  <span class="token comment"># 锁屏</span>
+    adb <span class="token parameter variable">-s</span> <span class="token string">&quot;<span class="token variable">$device</span>&quot;</span> shell input keyevent <span class="token number">26</span>  <span class="token comment"># 解锁</span>
+    
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;设备 <span class="token variable">$device</span> 处理完成&quot;</span>
+<span class="token keyword">done</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;批量操作完成&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h4 id="设备信息收集"><a href="#设备信息收集" class="header-anchor">#</a> 设备信息收集</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 设备信息收集脚本</span>
+
+<span class="token assign-left variable">OUTPUT_FILE</span><span class="token operator">=</span><span class="token string">&quot;device_info_<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%Y%m%d_%H%M%S<span class="token variable">)</span></span>.txt&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;收集设备信息到 <span class="token variable">$OUTPUT_FILE</span>...&quot;</span>
+
+<span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;=== 设备信息报告 ===&quot;</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;生成时间: <span class="token variable"><span class="token variable">$(</span><span class="token function">date</span><span class="token variable">)</span></span>&quot;</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;&quot;</span>
+    
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;=== 连接设备 ===&quot;</span>
+    adb devices <span class="token parameter variable">-l</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;&quot;</span>
+    
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;=== 设备属性 ===&quot;</span>
+    adb shell getprop <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-E</span> <span class="token string">'ro\.product\.|ro\.build\.|ro\.version\.'</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;&quot;</span>
+    
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;=== 系统信息 ===&quot;</span>
+    adb shell <span class="token function">cat</span> /proc/version
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;&quot;</span>
+    
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;=== 存储信息 ===&quot;</span>
+    adb shell <span class="token function">df</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;&quot;</span>
+    
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;=== 内存信息 ===&quot;</span>
+    adb shell <span class="token function">cat</span> /proc/meminfo <span class="token operator">|</span> <span class="token function">head</span> <span class="token parameter variable">-10</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;&quot;</span>
+    
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;=== 已安装应用 ===&quot;</span>
+    adb shell pm list packages <span class="token parameter variable">-3</span> <span class="token operator">|</span> <span class="token function">head</span> <span class="token parameter variable">-20</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;&quot;</span>
+    
+<span class="token punctuation">}</span> <span class="token operator">&gt;</span> <span class="token string">&quot;<span class="token variable">$OUTPUT_FILE</span>&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;设备信息收集完成: <span class="token variable">$OUTPUT_FILE</span>&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><h3 id="_4-网络调试"><a href="#_4-网络调试" class="header-anchor">#</a> 4. 网络调试</h3> <h4 id="网络连接测试"><a href="#网络连接测试" class="header-anchor">#</a> 网络连接测试</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 网络连接测试脚本</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;网络连接测试...&quot;</span>
+
+<span class="token comment"># 获取设备IP</span>
+<span class="token assign-left variable">DEVICE_IP</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>adb shell <span class="token function">ip</span> route <span class="token operator">|</span> <span class="token function">grep</span> wlan0 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $9}'</span><span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;设备IP: <span class="token variable">$DEVICE_IP</span>&quot;</span>
+
+<span class="token comment"># 测试网络连通性</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;测试网络连通性...&quot;</span>
+adb shell <span class="token function">ping</span> <span class="token parameter variable">-c</span> <span class="token number">4</span> <span class="token number">8.8</span>.8.8
+
+<span class="token comment"># 测试DNS解析</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;测试DNS解析...&quot;</span>
+adb shell <span class="token function">nslookup</span> google.com
+
+<span class="token comment"># 测试端口连通性</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;测试端口连通性...&quot;</span>
+adb shell <span class="token function">nc</span> <span class="token parameter variable">-zv</span> google.com <span class="token number">80</span>
+
+<span class="token comment"># 查看网络接口</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;网络接口信息...&quot;</span>
+adb shell <span class="token function">ip</span> addr show wlan0
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h4 id="代理配置"><a href="#代理配置" class="header-anchor">#</a> 代理配置</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 代理配置脚本</span>
+
+<span class="token assign-left variable">PROXY_HOST</span><span class="token operator">=</span><span class="token string">&quot;192.168.1.100&quot;</span>
+<span class="token assign-left variable">PROXY_PORT</span><span class="token operator">=</span><span class="token string">&quot;8080&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;配置网络代理...&quot;</span>
+
+<span class="token comment"># 设置HTTP代理</span>
+adb shell settings put global http_proxy <span class="token string">&quot;<span class="token variable">$PROXY_HOST</span>:<span class="token variable">$PROXY_PORT</span>&quot;</span>
+
+<span class="token comment"># 验证代理设置</span>
+<span class="token assign-left variable">CURRENT_PROXY</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>adb shell settings get global http_proxy<span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;当前代理设置: <span class="token variable">$CURRENT_PROXY</span>&quot;</span>
+
+<span class="token comment"># 测试代理连接</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;测试代理连接...&quot;</span>
+adb shell <span class="token function">curl</span> <span class="token parameter variable">-x</span> <span class="token string">&quot;<span class="token variable">$PROXY_HOST</span>:<span class="token variable">$PROXY_PORT</span>&quot;</span> http://httpbin.org/ip
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;代理配置完成&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="_3-日志优化"><a href="#_3-日志优化" class="header-anchor">#</a> 3. 日志优化</h3> <h4 id="日志过滤优化"><a href="#日志过滤优化" class="header-anchor">#</a> 日志过滤优化</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 使用精确的标签过滤</span>
+adb logcat <span class="token parameter variable">-s</span> <span class="token string">&quot;MyApp&quot;</span> <span class="token parameter variable">-s</span> <span class="token string">&quot;MyTag&quot;</span>
+
+<span class="token comment"># 使用正则表达式进行复杂过滤</span>
+adb logcat <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-E</span> <span class="token string">&quot;(ERROR|FATAL|ANR)&quot;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token string">&quot;spam_tag&quot;</span>
+
+<span class="token comment"># 使用日志级别减少输出</span>
+adb logcat *:W  <span class="token comment"># 只显示警告及以上级别</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="日志文件管理"><a href="#日志文件管理" class="header-anchor">#</a> 日志文件管理</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 使用循环日志文件</span>
+adb logcat <span class="token parameter variable">-r</span> <span class="token number">1024</span> <span class="token parameter variable">-n</span> <span class="token number">5</span> <span class="token parameter variable">-f</span> /tmp/android.log
+
+<span class="token comment"># 按时间分割日志</span>
+adb logcat <span class="token parameter variable">-v</span> <span class="token function">time</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print strftime(&quot;%Y%m%d_%H%M%S&quot;), $0}'</span> <span class="token operator">&gt;</span> <span class="token string">&quot;log_<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%Y%m%d<span class="token variable">)</span></span>.txt&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="常见问题解决"><a href="#常见问题解决" class="header-anchor">#</a> 常见问题解决</h2> <h3 id="_1-连接问题"><a href="#_1-连接问题" class="header-anchor">#</a> 1. 连接问题</h3> <h4 id="设备未识别"><a href="#设备未识别" class="header-anchor">#</a> 设备未识别</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 检查USB连接</span>
+lsusb <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> android
+
+<span class="token comment"># 重启ADB服务</span>
+adb kill-server
+adb start-server
+
+<span class="token comment"># 检查设备权限</span>
+<span class="token function">ls</span> <span class="token parameter variable">-la</span> ~/.android/adbkey
+
+<span class="token comment"># 重新生成ADB密钥</span>
+<span class="token function">rm</span> ~/.android/adbkey*
+adb start-server
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h4 id="无线连接失败"><a href="#无线连接失败" class="header-anchor">#</a> 无线连接失败</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 检查网络连通性</span>
+<span class="token function">ping</span> <span class="token operator">&lt;</span>device_ip<span class="token operator">&gt;</span>
+
+<span class="token comment"># 检查端口是否开放</span>
+<span class="token function">nc</span> <span class="token parameter variable">-zv</span> <span class="token operator">&lt;</span>device_ip<span class="token operator">&gt;</span> <span class="token number">5555</span>
+
+<span class="token comment"># 重新启用无线调试</span>
+adb tcpip <span class="token number">5555</span>
+adb connect <span class="token operator">&lt;</span>device_ip<span class="token operator">&gt;</span>:5555
+
+<span class="token comment"># 使用反向端口转发</span>
+adb reverse tcp:5555 tcp:5555
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="_2-权限问题"><a href="#_2-权限问题" class="header-anchor">#</a> 2. 权限问题</h3> <h4 id="文件访问权限"><a href="#文件访问权限" class="header-anchor">#</a> 文件访问权限</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 访问应用私有目录</span>
+adb shell run-as <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span> <span class="token function">ls</span> /data/data/<span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>/
+
+<span class="token comment"># 使用root权限（需要设备已root）</span>
+adb shell <span class="token function">su</span> <span class="token parameter variable">-c</span> <span class="token string">&quot;ls /data/data/&quot;</span>
+
+<span class="token comment"># 修改文件权限</span>
+adb shell <span class="token function">chmod</span> <span class="token number">755</span> /sdcard/test.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="系统权限"><a href="#系统权限" class="header-anchor">#</a> 系统权限</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 授予应用权限</span>
+adb shell pm grant <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>permission<span class="token operator">&gt;</span>
+
+<span class="token comment"># 撤销应用权限</span>
+adb shell pm revoke <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>permission<span class="token operator">&gt;</span>
+
+<span class="token comment"># 查看应用权限</span>
+adb shell dumpsys package <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token function">grep</span> permission
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="_3-性能问题"><a href="#_3-性能问题" class="header-anchor">#</a> 3. 性能问题</h3> <h4 id="命令执行缓慢"><a href="#命令执行缓慢" class="header-anchor">#</a> 命令执行缓慢</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 使用后台执行</span>
+adb shell <span class="token string">&quot;nohup &lt;command&gt; &gt; /dev/null 2&gt;&amp;1 &amp;&quot;</span>
+
+<span class="token comment"># 使用异步执行</span>
+adb shell <span class="token string">&quot;&lt;command&gt; &amp;&quot;</span>
+
+<span class="token comment"># 优化命令结构</span>
+adb shell <span class="token string">&quot;command1 &amp;&amp; command2 &amp;&amp; command3&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="内存不足"><a href="#内存不足" class="header-anchor">#</a> 内存不足</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 清理应用缓存</span>
+adb shell pm <span class="token function">clear</span> <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+
+<span class="token comment"># 清理系统缓存</span>
+adb shell <span class="token function">rm</span> <span class="token parameter variable">-rf</span> /data/local/tmp/*
+adb shell <span class="token function">rm</span> <span class="token parameter variable">-rf</span> /sdcard/Android/data/*/cache/*
+
+<span class="token comment"># 重启设备</span>
+adb <span class="token function">reboot</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="最佳实践"><a href="#最佳实践" class="header-anchor">#</a> 最佳实践</h2> <h3 id="_1-脚本编写"><a href="#_1-脚本编写" class="header-anchor">#</a> 1. 脚本编写</h3> <h4 id="错误处理"><a href="#错误处理" class="header-anchor">#</a> 错误处理</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 带错误处理的脚本</span>
+
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-e</span>  <span class="token comment"># 遇到错误立即退出</span>
+
+<span class="token comment"># 检查设备连接</span>
+<span class="token function-name function">check_device</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token operator">!</span> adb devices <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-q</span> <span class="token string">&quot;device$&quot;</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;错误：没有找到连接的设备&quot;</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 检查应用是否安装</span>
+<span class="token function-name function">check_app</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">package_name</span><span class="token operator">=</span><span class="token variable">$1</span>
+    <span class="token keyword">if</span> <span class="token operator">!</span> adb shell pm list packages <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-q</span> <span class="token string">&quot;<span class="token variable">$package_name</span>&quot;</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;错误：应用 <span class="token variable">$package_name</span> 未安装&quot;</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 主函数</span>
+<span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    check_device
+    check_app <span class="token string">&quot;com.example.app&quot;</span>
+    
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;开始执行操作...&quot;</span>
+    <span class="token comment"># 执行具体操作</span>
+<span class="token punctuation">}</span>
+
+main <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><h4 id="日志记录"><a href="#日志记录" class="header-anchor">#</a> 日志记录</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 带日志记录的脚本</span>
+
+<span class="token assign-left variable">LOG_FILE</span><span class="token operator">=</span><span class="token string">&quot;adb_script_<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%Y%m%d_%H%M%S<span class="token variable">)</span></span>.log&quot;</span>
+
+<span class="token function-name function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;[<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> <span class="token string">'+%Y-%m-%d %H:%M:%S'</span><span class="token variable">)</span></span>] <span class="token variable">$1</span>&quot;</span> <span class="token operator">|</span> <span class="token function">tee</span> <span class="token parameter variable">-a</span> <span class="token string">&quot;<span class="token variable">$LOG_FILE</span>&quot;</span>
+<span class="token punctuation">}</span>
+
+log <span class="token string">&quot;脚本开始执行&quot;</span>
+
+<span class="token comment"># 执行操作并记录日志</span>
+<span class="token keyword">if</span> adb <span class="token function">install</span> app.apk<span class="token punctuation">;</span> <span class="token keyword">then</span>
+    log <span class="token string">&quot;应用安装成功&quot;</span>
+<span class="token keyword">else</span>
+    log <span class="token string">&quot;应用安装失败&quot;</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword">fi</span>
+
+log <span class="token string">&quot;脚本执行完成&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="_2-安全考虑"><a href="#_2-安全考虑" class="header-anchor">#</a> 2. 安全考虑</h3> <h4 id="权限最小化"><a href="#权限最小化" class="header-anchor">#</a> 权限最小化</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 只授予必要的权限</span>
+adb shell pm grant <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span> android.permission.CAMERA
+
+<span class="token comment"># 使用临时权限</span>
+adb shell pm grant <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span> android.permission.WRITE_EXTERNAL_STORAGE
+<span class="token comment"># 操作完成后撤销</span>
+adb shell pm revoke <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span> android.permission.WRITE_EXTERNAL_STORAGE
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="数据保护"><a href="#数据保护" class="header-anchor">#</a> 数据保护</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 加密敏感数据</span>
+adb shell <span class="token string">&quot;echo 'sensitive_data' | openssl enc -aes-256-cbc -a&quot;</span>
+
+<span class="token comment"># 安全删除文件</span>
+adb shell shred <span class="token parameter variable">-u</span> /sdcard/sensitive_file.txt
+
+<span class="token comment"># 使用临时目录</span>
+adb shell <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /data/local/tmp/secure_workspace
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="调试技巧"><a href="#调试技巧" class="header-anchor">#</a> 调试技巧</h2> <h3 id="_1-问题诊断"><a href="#_1-问题诊断" class="header-anchor">#</a> 1. 问题诊断</h3> <h4 id="连接诊断"><a href="#连接诊断" class="header-anchor">#</a> 连接诊断</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 连接诊断脚本</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;=== ADB连接诊断 ===&quot;</span>
+
+<span class="token comment"># 检查ADB版本</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;1. ADB版本:&quot;</span>
+adb version
+
+<span class="token comment"># 检查设备连接</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;2. 设备连接状态:&quot;</span>
+adb devices <span class="token parameter variable">-l</span>
+
+<span class="token comment"># 检查网络连接</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;3. 网络连接:&quot;</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$DEVICE_IP</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">ping</span> <span class="token parameter variable">-c</span> <span class="token number">3</span> <span class="token string">&quot;<span class="token variable">$DEVICE_IP</span>&quot;</span>
+<span class="token keyword">else</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;未设置设备IP&quot;</span>
+<span class="token keyword">fi</span>
+
+<span class="token comment"># 检查端口状态</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;4. 端口状态:&quot;</span>
+<span class="token function">netstat</span> <span class="token parameter variable">-an</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token number">5555</span>
+
+<span class="token comment"># 检查USB设备</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;5. USB设备:&quot;</span>
+lsusb <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> android
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h4 id="应用诊断"><a href="#应用诊断" class="header-anchor">#</a> 应用诊断</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 应用诊断脚本</span>
+
+<span class="token assign-left variable">PACKAGE_NAME</span><span class="token operator">=</span><span class="token variable">$1</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;用法: <span class="token variable">$0</span> &lt;package_name&gt;&quot;</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;=== 应用诊断: <span class="token variable">$PACKAGE_NAME</span> ===&quot;</span>
+
+<span class="token comment"># 检查应用是否安装</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;1. 应用安装状态:&quot;</span>
+adb shell pm list packages <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span>
+
+<span class="token comment"># 检查应用权限</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;2. 应用权限:&quot;</span>
+adb shell dumpsys package <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">10</span> <span class="token string">&quot;requested permissions&quot;</span>
+
+<span class="token comment"># 检查应用进程</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;3. 应用进程:&quot;</span>
+adb shell <span class="token function">ps</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span>
+
+<span class="token comment"># 检查应用数据</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;4. 应用数据目录:&quot;</span>
+adb shell run-as <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span> <span class="token function">ls</span> <span class="token parameter variable">-la</span> /data/data/<span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span>/
+
+<span class="token comment"># 检查应用日志</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;5. 应用日志:&quot;</span>
+adb logcat <span class="token parameter variable">-d</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span> <span class="token operator">|</span> <span class="token function">tail</span> <span class="token parameter variable">-20</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h3 id="_2-性能分析"><a href="#_2-性能分析" class="header-anchor">#</a> 2. 性能分析</h3> <h4 id="cpu分析"><a href="#cpu分析" class="header-anchor">#</a> CPU分析</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># CPU性能分析脚本</span>
+
+<span class="token assign-left variable">PACKAGE_NAME</span><span class="token operator">=</span><span class="token variable">$1</span>
+<span class="token assign-left variable">DURATION</span><span class="token operator">=</span><span class="token variable">${2<span class="token operator">:-</span>60}</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;开始CPU性能分析...&quot;</span>
+
+<span class="token comment"># 启动应用</span>
+adb shell am start <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>/.MainActivity&quot;</span>
+
+<span class="token comment"># 收集CPU使用数据</span>
+adb shell <span class="token string">&quot;top -d 1 -n <span class="token variable">$DURATION</span>&quot;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span> <span class="token operator">&gt;</span> cpu_usage.txt
+
+<span class="token comment"># 分析CPU使用情况</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;CPU使用统计:&quot;</span>
+<span class="token function">awk</span> <span class="token string">'{sum+=$9; count++} END {print &quot;平均CPU使用率:&quot;, sum/count &quot;%&quot;}'</span> cpu_usage.txt
+
+<span class="token comment"># 生成CPU使用图表</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;生成CPU使用图表...&quot;</span>
+gnuplot <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+set terminal png
+set output 'cpu_usage.png'
+set title 'CPU Usage Over Time'
+set xlabel 'Time (s)'
+set ylabel 'CPU Usage (%)'
+plot 'cpu_usage.txt' using 9 with lines title 'CPU Usage'
+EOF</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h4 id="内存分析"><a href="#内存分析" class="header-anchor">#</a> 内存分析</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 内存性能分析脚本</span>
+
+<span class="token assign-left variable">PACKAGE_NAME</span><span class="token operator">=</span><span class="token variable">$1</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;开始内存性能分析...&quot;</span>
+
+<span class="token comment"># 获取初始内存使用</span>
+<span class="token assign-left variable">INITIAL_MEM</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>adb shell dumpsys meminfo <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;TOTAL&quot;</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span><span class="token variable">)</span></span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;初始内存使用: <span class="token variable">$INITIAL_MEM</span> KB&quot;</span>
+
+<span class="token comment"># 执行内存密集型操作</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">..</span><span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;执行第 <span class="token variable">$i</span> 轮操作...&quot;</span>
+    adb shell input tap <span class="token number">500</span> <span class="token number">500</span>
+    <span class="token function">sleep</span> <span class="token number">2</span>
+    
+    <span class="token comment"># 记录内存使用</span>
+    <span class="token assign-left variable">CURRENT_MEM</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>adb shell dumpsys meminfo <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;TOTAL&quot;</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span><span class="token variable">)</span></span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;第 <span class="token variable">$i</span> 轮内存使用: <span class="token variable">$CURRENT_MEM</span> KB&quot;</span>
+<span class="token keyword">done</span>
+
+<span class="token comment"># 获取最终内存使用</span>
+<span class="token assign-left variable">FINAL_MEM</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>adb shell dumpsys meminfo <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>&quot;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;TOTAL&quot;</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span><span class="token variable">)</span></span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;最终内存使用: <span class="token variable">$FINAL_MEM</span> KB&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;内存增长: <span class="token variable"><span class="token variable">$((</span>FINAL_MEM <span class="token operator">-</span> INITIAL_MEM<span class="token variable">))</span></span> KB&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h3 id="_3-自动化测试"><a href="#_3-自动化测试" class="header-anchor">#</a> 3. 自动化测试</h3> <h4 id="ui自动化测试"><a href="#ui自动化测试" class="header-anchor">#</a> UI自动化测试</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># UI自动化测试脚本</span>
+
+<span class="token assign-left variable">PACKAGE_NAME</span><span class="token operator">=</span><span class="token string">&quot;com.example.app&quot;</span>
+<span class="token assign-left variable">TEST_SCENARIOS</span><span class="token operator">=</span><span class="token punctuation">(</span>
+    <span class="token string">&quot;点击登录按钮&quot;</span>
+    <span class="token string">&quot;输入用户名&quot;</span>
+    <span class="token string">&quot;输入密码&quot;</span>
+    <span class="token string">&quot;提交表单&quot;</span>
+    <span class="token string">&quot;验证登录成功&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;开始UI自动化测试...&quot;</span>
+
+<span class="token comment"># 启动应用</span>
+adb shell am start <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>/.MainActivity&quot;</span>
+<span class="token function">sleep</span> <span class="token number">3</span>
+
+<span class="token comment"># 执行测试场景</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">scenario</span> <span class="token keyword">in</span> <span class="token string">&quot;<span class="token variable">${TEST_SCENARIOS<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>&quot;</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;执行测试场景: <span class="token variable">$scenario</span>&quot;</span>
+    
+    <span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$scenario</span>&quot;</span> <span class="token keyword">in</span>
+        <span class="token string">&quot;点击登录按钮&quot;</span><span class="token punctuation">)</span>
+            adb shell input tap <span class="token number">500</span> <span class="token number">800</span>
+            <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        <span class="token string">&quot;输入用户名&quot;</span><span class="token punctuation">)</span>
+            adb shell input tap <span class="token number">300</span> <span class="token number">400</span>
+            adb shell input text <span class="token string">&quot;testuser&quot;</span>
+            <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        <span class="token string">&quot;输入密码&quot;</span><span class="token punctuation">)</span>
+            adb shell input tap <span class="token number">300</span> <span class="token number">500</span>
+            adb shell input text <span class="token string">&quot;testpass&quot;</span>
+            <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        <span class="token string">&quot;提交表单&quot;</span><span class="token punctuation">)</span>
+            adb shell input keyevent <span class="token number">66</span>  <span class="token comment"># Enter键</span>
+            <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        <span class="token string">&quot;验证登录成功&quot;</span><span class="token punctuation">)</span>
+            <span class="token comment"># 检查是否跳转到主页面</span>
+            <span class="token function">sleep</span> <span class="token number">2</span>
+            <span class="token assign-left variable">CURRENT_ACTIVITY</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>adb shell dumpsys activity activities <span class="token operator">|</span> <span class="token function">grep</span> mResumedActivity <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $4}'</span><span class="token variable">)</span></span>
+            <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$CURRENT_ACTIVITY</span>&quot;</span> <span class="token operator">==</span> *<span class="token string">&quot;MainActivity&quot;</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+                <span class="token builtin class-name">echo</span> <span class="token string">&quot;✓ 登录成功&quot;</span>
+            <span class="token keyword">else</span>
+                <span class="token builtin class-name">echo</span> <span class="token string">&quot;✗ 登录失败&quot;</span>
+            <span class="token keyword">fi</span>
+            <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token keyword">esac</span>
+    
+    <span class="token function">sleep</span> <span class="token number">1</span>
+<span class="token keyword">done</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;UI自动化测试完成&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br></div></div><h4 id="压力测试"><a href="#压力测试" class="header-anchor">#</a> 压力测试</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># 压力测试脚本</span>
+
+<span class="token assign-left variable">PACKAGE_NAME</span><span class="token operator">=</span><span class="token string">&quot;com.example.app&quot;</span>
+<span class="token assign-left variable">TEST_DURATION</span><span class="token operator">=</span><span class="token number">300</span>  <span class="token comment"># 5分钟</span>
+<span class="token assign-left variable">INTERVAL</span><span class="token operator">=</span><span class="token number">1</span>         <span class="token comment"># 1秒间隔</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;开始压力测试...&quot;</span>
+
+<span class="token comment"># 启动应用</span>
+adb shell am start <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$PACKAGE_NAME</span>/.MainActivity&quot;</span>
+<span class="token function">sleep</span> <span class="token number">3</span>
+
+<span class="token comment"># 记录开始时间</span>
+<span class="token assign-left variable">START_TIME</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%s<span class="token variable">)</span></span>
+
+<span class="token comment"># 执行压力测试</span>
+<span class="token keyword">while</span> <span class="token punctuation">[</span> <span class="token variable"><span class="token variable">$((</span>$<span class="token punctuation">(</span>date <span class="token operator">+</span><span class="token operator">%</span>s<span class="token punctuation">)</span> <span class="token operator">-</span> START_TIME<span class="token variable">))</span></span> <span class="token parameter variable">-lt</span> <span class="token variable">$TEST_DURATION</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token comment"># 随机点击屏幕</span>
+    <span class="token assign-left variable">X</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>RANDOM <span class="token operator">%</span> <span class="token number">1000</span><span class="token variable">))</span></span>
+    <span class="token assign-left variable">Y</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>RANDOM <span class="token operator">%</span> <span class="token number">2000</span><span class="token variable">))</span></span>
+    adb shell input tap <span class="token variable">$X</span> <span class="token variable">$Y</span>
+    
+    <span class="token comment"># 随机按键</span>
+    <span class="token assign-left variable">KEYCODE</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>RANDOM <span class="token operator">%</span> <span class="token number">100</span><span class="token variable">))</span></span>
+    adb shell input keyevent <span class="token variable">$KEYCODE</span>
+    
+    <span class="token comment"># 随机滑动</span>
+    <span class="token assign-left variable">X1</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>RANDOM <span class="token operator">%</span> <span class="token number">1000</span><span class="token variable">))</span></span>
+    <span class="token assign-left variable">Y1</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>RANDOM <span class="token operator">%</span> <span class="token number">2000</span><span class="token variable">))</span></span>
+    <span class="token assign-left variable">X2</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>RANDOM <span class="token operator">%</span> <span class="token number">1000</span><span class="token variable">))</span></span>
+    <span class="token assign-left variable">Y2</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>RANDOM <span class="token operator">%</span> <span class="token number">2000</span><span class="token variable">))</span></span>
+    adb shell input swipe <span class="token variable">$X1</span> <span class="token variable">$Y1</span> <span class="token variable">$X2</span> <span class="token variable">$Y2</span>
+    
+    <span class="token function">sleep</span> <span class="token variable">$INTERVAL</span>
+<span class="token keyword">done</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;压力测试完成&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><h2 id="问题解决记录"><a href="#问题解决记录" class="header-anchor">#</a> 问题解决记录</h2> <h3 id="查找应用中的png缓存-从大到小排序"><a href="#查找应用中的png缓存-从大到小排序" class="header-anchor">#</a> 查找应用中的png缓存，从大到小排序</h3> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>adb shell <span class="token string">&quot;run-as &lt;package-name&gt; find . -type f -name '*.png' -exec ls -lh {} +&quot;</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $5, $NF}'</span> <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-rh</span> <span class="token operator">&gt;</span> <span class="token operator">&lt;</span>output_path<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>命令分解说明：</p> <ol><li><strong><code>ls -lh {} +</code></strong>:
+<ul><li>在手机端列出文件的详细信息。<code>+</code> 号表示将多个搜索结果一次性传给 <code>ls</code>，比 <code>;</code> 效率高得多。</li> <li><code>-h</code>: Human-readable</li> <li>输出格式通常为：<code>-rw------- 1 u0_a123 u0_a123 12345 2026-04-27 10:42 ./path/to/file.png</code></li></ul></li> <li><strong><code>awk '{print $5, $NF}'</code></strong>:
+<ul><li><strong><code>$5</code></strong>: 提取第五列，即<strong>文件字节大小 (bytes)</strong>。</li> <li><strong><code>$NF</code></strong>: 提取最后一列，即<strong>文件路径</strong>。</li> <li>这一步是为了过滤掉权限、所有者等无关信息，只保留“大小”和“路径”。</li></ul></li> <li><strong><code>sort -rh</code></strong>:
+<ul><li>在 Mac 端进行排序。</li> <li><strong><code>-r</code></strong>: 逆序（Reverse），让最大的文件排在最前面。</li> <li><strong><code>-h</code></strong>: 以人类可读格式排序（如果你之前的 <code>ls</code> 带了 <code>-h</code>，这个很有用；如果不带，加这个参数也更稳健）。</li></ul></li></ol> <h2 id="扩展资源"><a href="#扩展资源" class="header-anchor">#</a> 扩展资源</h2> <h3 id="_1-相关工具"><a href="#_1-相关工具" class="header-anchor">#</a> 1. 相关工具</h3> <h4 id="图形化工具"><a href="#图形化工具" class="header-anchor">#</a> 图形化工具</h4> <ul><li><strong>Android Studio</strong>: 集成开发环境，提供ADB图形化界面</li> <li><strong>ADB GUI</strong>: 轻量级ADB图形化工具</li> <li><strong>Scrcpy</strong>: 通过ADB显示和控制Android设备</li> <li><strong>Vysor</strong>: 在电脑上显示Android设备屏幕</li></ul> <h4 id="命令行工具"><a href="#命令行工具" class="header-anchor">#</a> 命令行工具</h4> <ul><li><strong>Fastboot</strong>: 用于刷机和设备恢复</li> <li><strong>ADB WiFi</strong>: 无线ADB连接工具</li> <li><strong>ADB Backup</strong>: 设备备份和恢复工具</li> <li><strong>自定义脚本</strong>: 基于官方ADB的自动化脚本</li></ul> <h3 id="_2-学习资源"><a href="#_2-学习资源" class="header-anchor">#</a> 2. 学习资源</h3> <h4 id="官方文档"><a href="#官方文档" class="header-anchor">#</a> 官方文档</h4> <ul><li><a href="https://developer.android.com/tools/adb" target="_blank" rel="noopener noreferrer">Android Debug Bridge (adb)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://developer.android.com/studio/command-line" target="_blank" rel="noopener noreferrer">ADB Command Line Tools<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://developer.android.com/studio/command-line/adb" target="_blank" rel="noopener noreferrer">Android Debug Bridge<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h4 id="社区资源"><a href="#社区资源" class="header-anchor">#</a> 社区资源</h4> <ul><li><a href="https://github.com/mzlogin/awesome-adb" target="_blank" rel="noopener noreferrer">awesome-adb<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>: ADB命令大全</li> <li><a href="https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8" target="_blank" rel="noopener noreferrer">ADB Cheat Sheet<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.xda-developers.com/android-adb-commands/" target="_blank" rel="noopener noreferrer">Android ADB Commands<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://developer.android.com/" target="_blank" rel="noopener noreferrer">Android开发者文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://developer.android.com/studio" target="_blank" rel="noopener noreferrer">Android Studio<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h3 id="_3-实用脚本库"><a href="#_3-实用脚本库" class="header-anchor">#</a> 3. 实用脚本库</h3> <h4 id="自动化脚本"><a href="#自动化脚本" class="header-anchor">#</a> 自动化脚本</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 批量安装APK</span>
+<span class="token comment">#!/bin/bash</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">apk</span> <span class="token keyword">in</span> *.apk<span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;安装 <span class="token variable">$apk</span>...&quot;</span>
+    adb <span class="token function">install</span> <span class="token parameter variable">-r</span> <span class="token string">&quot;<span class="token variable">$apk</span>&quot;</span>
+<span class="token keyword">done</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 批量截图</span>
+<span class="token comment">#!/bin/bash</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">..</span><span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    adb shell screencap <span class="token parameter variable">-p</span> /sdcard/screenshot_<span class="token variable">$i</span>.png
+    adb pull /sdcard/screenshot_<span class="token variable">$i</span>.png <span class="token builtin class-name">.</span>
+    <span class="token function">sleep</span> <span class="token number">2</span>
+<span class="token keyword">done</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 设备信息收集</span>
+<span class="token comment">#!/bin/bash</span>
+adb shell getprop <span class="token operator">&gt;</span> device_properties.txt
+adb shell <span class="token function">cat</span> /proc/cpuinfo <span class="token operator">&gt;</span> cpu_info.txt
+adb shell <span class="token function">cat</span> /proc/meminfo <span class="token operator">&gt;</span> memory_info.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="_4-故障排除指南"><a href="#_4-故障排除指南" class="header-anchor">#</a> 4. 故障排除指南</h3> <h4 id="常见错误及解决方案"><a href="#常见错误及解决方案" class="header-anchor">#</a> 常见错误及解决方案</h4> <table><thead><tr><th>错误信息</th> <th>可能原因</th> <th>解决方案</th></tr></thead> <tbody><tr><td><code>device not found</code></td> <td>设备未连接或驱动问题</td> <td>检查USB连接，重启ADB服务</td></tr> <tr><td><code>insufficient permissions</code></td> <td>权限不足</td> <td>使用<code>sudo</code>或检查设备权限</td></tr> <tr><td><code>connection refused</code></td> <td>端口被占用</td> <td>更改端口或重启服务</td></tr> <tr><td><code>timeout</code></td> <td>网络连接问题</td> <td>检查网络设置，使用USB连接</td></tr></tbody></table> <h4 id="性能优化建议"><a href="#性能优化建议" class="header-anchor">#</a> 性能优化建议</h4> <ol><li><strong>使用USB连接</strong>: 无线连接可能不稳定，建议使用USB连接进行调试</li> <li><strong>批量操作</strong>: 将多个命令合并执行，减少通信开销</li> <li><strong>日志过滤</strong>: 使用精确的过滤条件，减少不必要的数据传输</li> <li><strong>定期清理</strong>: 定期清理设备缓存和临时文件</li></ol> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>ADB是Android开发中不可或缺的工具，掌握其使用方法可以大大提高开发效率。本文档涵盖了ADB的基础知识、常用命令、高级功能、实际应用案例、性能优化技巧、调试方法等内容。</p> <h3 id="关键要点"><a href="#关键要点" class="header-anchor">#</a> 关键要点</h3> <ol><li><strong>理解ADB架构</strong>: 掌握client-server-adbd的三层架构</li> <li><strong>熟练基础命令</strong>: 掌握设备管理、文件操作、应用管理等基础命令</li> <li><strong>善用高级功能</strong>: 利用dumpsys、logcat、input等工具进行调试</li> <li><strong>编写自动化脚本</strong>: 提高重复性工作的效率</li> <li><strong>注意性能优化</strong>: 合理使用命令，避免不必要的资源消耗</li></ol> <h3 id="持续学习"><a href="#持续学习" class="header-anchor">#</a> 持续学习</h3> <p>ADB功能强大且不断更新，建议：</p> <ul><li>定期查看官方文档更新</li> <li>参与社区讨论，分享经验</li> <li>实践项目中的实际应用</li> <li>关注新版本的功能变化</li></ul> <p>通过不断学习和实践，您将能够更好地利用ADB工具进行Android开发和调试工作。</p></div></div> <!----> <div class="page-edit"><!----> <div class="tags"><a href="/tags/?tag=adb" title="标签">#adb</a><a href="/tags/?tag=Android" title="标签">#Android</a><a href="/tags/?tag=debug" title="标签">#debug</a><a href="/tags/?tag=tool" title="标签">#tool</a></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2026/09/10, 20:52:09</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/cba7c8/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">HarmonyOS 鸿蒙开发完整指南</div></a> <a href="/pages/4ddfe5/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">fastboot</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/cba7c8/" class="prev">HarmonyOS 鸿蒙开发完整指南</a></span> <span class="next"><a href="/pages/4ddfe5/">fastboot</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/ebbda0/"><div>
+            direnv
+            <!----></div></a> <span class="date">09-09</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/ae380b/"><div>
+            nvim
+            <!----></div></a> <span class="date">09-09</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/4a9cad/"><div>
+            wget
+            <!----></div></a> <span class="date">09-09</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:jackdoson2011@gmail.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/jacky1234" title="Github" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/my/m/music/playlist?id=317363436" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2019-2026
+    <span>Jacky | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8b186cd9.js" defer></script><script src="/assets/js/2.26d228aa.js" defer></script><script src="/assets/js/223.3930aa85.js" defer></script>
+  </body>
+</html>
