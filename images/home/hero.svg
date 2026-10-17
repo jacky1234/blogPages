@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" fill="none">
+  <title>代码与笔记</title>
+  <defs><linearGradient id="a" x1="65" y1="50" x2="335" y2="215" gradientUnits="userSpaceOnUse"><stop stop-color="#159b90"/><stop offset="1" stop-color="#438bd9"/></linearGradient></defs>
+  <circle cx="200" cy="130" r="115" fill="#32b9d0" fill-opacity=".07"/>
+  <rect x="47" y="46" width="266" height="170" rx="18" fill="#32b9d0" fill-opacity=".08" stroke="url(#a)" stroke-width="3"/>
+  <path d="M48 82h264" stroke="#66849e" stroke-width="2"/>
+  <circle cx="66" cy="64" r="4" fill="#159b90"/><circle cx="82" cy="64" r="4" fill="#438bd9"/><circle cx="98" cy="64" r="4" fill="#8199ac"/>
+  <path d="m113 118-24 23 24 23m80-46 24 23-24 23m-31-57-18 68" stroke="url(#a)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="250" y="114" width="95" height="119" rx="12" fill="#677fd0" fill-opacity=".08" stroke="#677fd0" stroke-width="3"/>
+  <path d="M270 138h54m-54 19h54m-54 19h39m-39 19h47" stroke="#66849e" stroke-width="4" stroke-linecap="round"/>
+  <path d="m321 65 5 11 12 2-9 9 2 12-10-6-11 6 2-12-9-9 12-2Z" fill="#159b90"/>
+</svg>
