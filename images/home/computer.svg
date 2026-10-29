@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <title>计算机科学</title>
+  <g stroke="#438bd9" stroke-width="4" stroke-linecap="round"><path d="M52 17v21m28-21v21m28-21v21M52 122v21m28-21v21m28-21v21M17 52h21m-21 28h21m-21 28h21m84-56h21m-21 28h21m-21 28h21"/></g>
+  <rect x="36" y="36" width="88" height="88" rx="18" fill="#32b9d0" fill-opacity=".08" stroke="#438bd9" stroke-width="3"/>
+  <rect x="55" y="55" width="50" height="50" rx="10" fill="#32b9d0" fill-opacity=".12" stroke="#159b90" stroke-width="3"/>
+  <path d="M69 72h22m-22 16h22" stroke="#66849e" stroke-width="4" stroke-linecap="round"/>
+</svg>
